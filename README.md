@@ -44,9 +44,9 @@ python3 -m venv .venv
 | 指令 | 用途 |
 |------|------|
 | `.venv/bin/python run.py` | 完整執行：抓取 → 整併 → 產出 `jobs_final.json` |
-| `.venv/bin/python fetch/fetchCake.py` | 只更新 Cake 職缺 |
-| `.venv/bin/python fetch/fetchRep.py` | 只更新面試趣口碑 |
-| `.venv/bin/python mergeChannels.py --date <日期>` | 只重跑整併（改完 yaml 後用） |
+| `.venv/bin/python run.py --no-cake --no-rep` | 只跑部分來源（四個略過旗標可組合） |
+| `.venv/bin/python mergeChannels.py --date <日期>` | 只重跑整併（改完 yaml 後用，不打網路） |
+| `.venv/bin/python report/buildArtifact.py --date <日期>` | 由資料產生報告 HTML |
 
 ### 104 人工匯入
 
@@ -76,15 +76,19 @@ martech-job-radar/
 ├── companies.yaml       # 公司主檔：四維基準、各平台 slug、面試趣 code（唯一需手動維護的檔）
 ├── run.py               # 主程式：抓取 → 整併
 ├── fetch/
-│   ├── fetchCake.py     # Cake 頁面內嵌 __NEXT_DATA__
+│   ├── fetchCake.py     # Cake 頁面內嵌 __NEXT_DATA__（結構化薪資＋確切更新日）
+│   ├── fetchYourator.py # Yourator（補上游沒追蹤的公司，如 SHOPLINE）
 │   └── fetchRep.py      # 面試趣公司評價與年薪中位
 ├── import104.py         # 解析本機另存的 104 頁面（不連網）
 ├── mergeChannels.py     # 單一入口：欄位契約、跨管道去重、新鮮度守門
-├── data/
-│   ├── auto/<日期>/     # 機械層抓的原始快照
-│   ├── manual/104/<日期>/ # 你匯入的 104 資料
-│   └── <日期>/jobs_final.json  # 合併去重後的基準（進 git）
-└── reports/             # 報告與分析
+├── report/
+│   ├── buildArtifact.py # 由資料產生報告 HTML（無手抄數字）
+│   └── template.html    # 版面與正文（與資料分離）
+└── data/
+    ├── auto/<日期>/     # 機械層抓的原始快照
+    ├── manual/104/<日期>/ # 你匯入的 104 資料
+    ├── reputation/<日期>.json # 面試趣口碑（非職缺，不進整併流）
+    └── <日期>/jobs_final.json # 合併去重後的基準（進 git）
 ```
 
 ## 與 martech-trend-agent 的關係
@@ -110,8 +114,9 @@ martech-job-radar/
 
 ### v1.0.0 (2026-08-05)
 
-- **首版** — companies.yaml 主檔、Cake／面試趣 fetcher、104 人工匯入、
-  整併守門（欄位契約＋去重＋新鮮度），以及 2026-08-05 的 143 筆基準快照
+- **首版** — `companies.yaml` 主檔（20 家公司、9 家面試趣代碼）、
+  Cake／Yourator／面試趣 fetcher、104 人工匯入、整併守門（欄位契約＋去重＋新鮮度）、
+  資料驅動的報告生成器，以及 2026-08-05 的 **196 筆**基準快照
 
 ## 授權
 
