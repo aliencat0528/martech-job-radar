@@ -1,0 +1,1930 @@
+<title>台灣 MarTech 公司與職缺情報 · 2026-08-05</title>
+<style>
+:root{
+  --paper:#F1F4F2; --card:#FBFCFB; --ink:#141A18; --ink-2:#41504B; --ink-3:#6E7F79;
+  --line:#D6DEDA; --line-2:#E7EDEA; --accent:#0B665C; --accent-2:#0E8577;
+  --warn:#94540F; --good:#1F6B4C; --stop:#8E3225; --band:#E6EDE9;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --paper:#0D1211; --card:#141B19; --ink:#E2E9E6; --ink-2:#A7B7B1; --ink-3:#788983;
+    --line:#28332F; --line-2:#1E2725; --accent:#57BFAC; --accent-2:#79D3C1;
+    --warn:#D89A4E; --good:#5FBE8E; --stop:#DE8272; --band:#18211E;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0D1211; --card:#141B19; --ink:#E2E9E6; --ink-2:#A7B7B1; --ink-3:#788983;
+  --line:#28332F; --line-2:#1E2725; --accent:#57BFAC; --accent-2:#79D3C1;
+  --warn:#D89A4E; --good:#5FBE8E; --stop:#DE8272; --band:#18211E;
+}
+:root[data-theme="light"]{
+  --paper:#F1F4F2; --card:#FBFCFB; --ink:#141A18; --ink-2:#41504B; --ink-3:#6E7F79;
+  --line:#D6DEDA; --line-2:#E7EDEA; --accent:#0B665C; --accent-2:#0E8577;
+  --warn:#94540F; --good:#1F6B4C; --stop:#8E3225; --band:#E6EDE9;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:system-ui,-apple-system,"PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+  font-size:15.5px; line-height:1.75; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px 96px}
+h1,h2,h3,h4{font-family:Georgia,"Noto Serif TC","Songti TC","Source Han Serif TC",serif;
+  text-wrap:balance;line-height:1.3;margin:0}
+a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent}
+a:hover{border-bottom-color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent-2);outline-offset:2px}
+.mono{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-variant-numeric:tabular-nums}
+
+/* header */
+header.top{border-bottom:1px solid var(--line);background:var(--card)}
+.top-in{max-width:1180px;margin:0 auto;padding:44px 22px 30px}
+.eyebrow{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);
+  font-family:ui-monospace,"SF Mono",Menlo,monospace}
+h1{font-size:clamp(29px,4.4vw,44px);margin:12px 0 10px;letter-spacing:-.01em}
+.lede{color:var(--ink-2);max-width:64ch;font-size:16px}
+.meta{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:20px;font-size:12.5px;
+  color:var(--ink-3);font-family:ui-monospace,"SF Mono",Menlo,monospace}
+.meta b{color:var(--ink-2);font-weight:600}
+
+nav.jump{position:sticky;top:0;z-index:20;background:var(--paper);
+  border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
+.jump-in{max-width:1180px;margin:0 auto;padding:9px 22px;display:flex;gap:6px;
+  overflow-x:auto;font-size:12.5px}
+.jump a{white-space:nowrap;padding:4px 10px;border-radius:3px;color:var(--ink-2);
+  border-bottom:none}
+.jump a:hover{background:var(--band);color:var(--accent);border-bottom:none}
+
+section{padding-top:52px}
+.shead{display:flex;align-items:baseline;gap:14px;border-bottom:2px solid var(--ink);
+  padding-bottom:9px;margin-bottom:24px}
+.shead .n{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:12px;
+  color:var(--accent);letter-spacing:.1em}
+.shead h2{font-size:clamp(21px,2.6vw,27px)}
+h3{font-size:18.5px;margin:34px 0 10px}
+h4{font-size:15.5px;margin:24px 0 6px;font-family:inherit;font-weight:700}
+p{margin:0 0 14px;max-width:70ch}
+ul,ol{max-width:70ch;padding-left:20px;margin:0 0 14px}
+li{margin-bottom:6px}
+strong{font-weight:650}
+
+/* judgement cards */
+.judge{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(310px,1fr))}
+.jcard{background:var(--card);border:1px solid var(--line);border-radius:2px;padding:17px 19px}
+.jcard .tag{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:10.5px;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--accent);display:block;
+  margin-bottom:7px}
+.jcard h4{margin:0 0 7px;font-size:16px;font-family:Georgia,"Noto Serif TC",serif;
+  font-weight:600}
+.jcard p{margin:0;font-size:14.2px;color:var(--ink-2);max-width:none}
+.jcard.warn{border-left:3px solid var(--warn)}
+.jcard.key{border-left:3px solid var(--accent)}
+
+.callout{background:var(--band);border-left:3px solid var(--accent);padding:15px 18px;
+  margin:20px 0;font-size:14.5px}
+.callout.caution{border-left-color:var(--warn)}
+.callout p:last-child{margin-bottom:0}
+.callout .lbl{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);display:block;margin-bottom:6px}
+
+/* tables */
+.tscroll{overflow-x:auto;border:1px solid var(--line);border-radius:2px;background:var(--card);
+  margin-bottom:10px}
+table{border-collapse:collapse;width:100%;font-size:13.6px}
+th{text-align:left;font-weight:600;font-size:11.5px;letter-spacing:.06em;color:var(--ink-3);
+  text-transform:uppercase;padding:10px 12px;border-bottom:1px solid var(--line);
+  background:var(--band);white-space:nowrap;font-family:ui-monospace,"SF Mono",Menlo,monospace}
+td{padding:10px 12px;border-bottom:1px solid var(--line-2);vertical-align:top}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:var(--band)}
+.num{text-align:right;font-family:ui-monospace,"SF Mono",Menlo,monospace;
+  font-variant-numeric:tabular-nums;white-space:nowrap}
+.sub{color:var(--ink-3);font-size:11.5px;display:block;font-weight:400}
+.sm{font-size:12.6px;color:var(--ink-2)}
+.when{white-space:nowrap;font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:12px}
+.jt{min-width:270px;font-size:13.4px}
+tr.grp td{background:var(--band);font-weight:700;font-size:12px;letter-spacing:.06em;
+  color:var(--ink);padding:7px 12px}
+tr.grp:hover td{background:var(--band)}
+.gcount{float:right;color:var(--ink-3);font-family:ui-monospace,monospace;font-weight:400}
+
+/* company table */
+#coTable td.rank{font-family:ui-monospace,monospace;color:var(--ink-3);width:30px;
+  text-align:right;font-size:12px}
+.cname{font-weight:650;font-size:14px}
+.ccat{color:var(--ink-3);font-size:11.5px}
+.cnote{font-size:12.4px;color:var(--ink-2);min-width:300px;line-height:1.6}
+.chan{font-size:12px;min-width:150px}
+.tot{font-weight:700;color:var(--accent)}
+.conf{font-size:11.5px;text-align:center}
+.c-hi{color:var(--good)} .c-mid{color:var(--warn)} .c-lo{color:var(--ink-3)}
+.meter{display:inline-flex;gap:2px}
+.meter span{width:7px;height:13px;border-radius:1px;display:block}
+.mon{background:var(--accent)} .moff{background:var(--line)}
+
+.sortbar{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin-bottom:12px;
+  font-size:12.5px}
+.sortbar .lbl{color:var(--ink-3);font-family:ui-monospace,monospace;font-size:11px;
+  letter-spacing:.08em;text-transform:uppercase}
+.sortbar button{font:inherit;font-size:12.5px;padding:4px 12px;border:1px solid var(--line);
+  background:var(--card);color:var(--ink-2);border-radius:2px;cursor:pointer}
+.sortbar button:hover{border-color:var(--accent);color:var(--accent)}
+.sortbar button[aria-pressed="true"]{background:var(--accent);color:var(--card);
+  border-color:var(--accent)}
+
+.grid2{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(330px,1fr))}
+.stat{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  margin:22px 0}
+.stat div{background:var(--card);border:1px solid var(--line);padding:14px 16px;border-radius:2px}
+.stat .v{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:25px;font-weight:600;
+  color:var(--accent);line-height:1.1;font-variant-numeric:tabular-nums}
+.stat .k{font-size:11.5px;color:var(--ink-3);margin-top:5px;line-height:1.45}
+
+footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
+  font-size:12.5px;color:var(--ink-3)}
+@media (max-width:640px){
+  .top-in{padding:32px 18px 24px}
+  .wrap{padding:0 16px 70px}
+  body{font-size:15px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<header class="top">
+  <div class="top-in">
+    <span class="eyebrow">求職情報簡報 · 2026-08-05 · martech-job-radar 第 1 期</span>
+    <h1>台灣 MarTech 公司與職缺情報</h1>
+    <p class="lede">20 家台灣行銷科技公司、四個管道實抓的 <strong>196 筆</strong>在刊職缺
+      （台灣 163 筆）、9 家的面試趣口碑原始數據，加上一份誠實標示
+      「哪些查得到、哪些查不到」的判讀。排序依熱門、口碑、成長力、文化開放四個維度，
+      每個維度的評分規則都寫在頁面裡，可以自己重排。<br>
+      <strong>本期是 pipeline 的第一期</strong>——所有數字現在都由程式產出、可重跑，
+      但也因此<strong>沒有可比的上一期</strong>，「哪些缺消失了」要下一期才算得出來。</p>
+    <div class="meta">
+      <span><b>實抓職缺</b> 196 筆（去重後，台灣 163）</span>
+      <span><b>覆蓋公司</b> 20 家</span>
+      <span><b>抓取管道</b> Greenhouse／Yourator／Cake／面試趣</span>
+      <span><b>未覆蓋</b> 104（Cloudflare 403）、LinkedIn（需登入）</span>
+    </div>
+  </div>
+</header>
+
+<nav class="jump"><div class="jump-in">
+  <a href="#judge">情報判斷</a>
+  <a href="#companies">公司排序</a>
+  <a href="#jobs">職缺明細</a>
+  <a href="#analysis">職缺與公司分析</a>
+  <a href="#trend">產業與招募趨勢</a>
+  <a href="#needs">招募需求要點</a>
+  <a href="#method">方法與限制</a>
+  <a href="#refresh">定期更新</a>
+</div></nav>
+
+<div class="wrap">
+
+<section id="judge">
+  <div class="shead"><span class="n">01</span><h2>我的資訊判斷與整理報告</h2></div>
+  <p>先講結論，再看資料。以下幾條是我讀完 196 筆職缺、四個管道的覆蓋落差、
+    以及公司財務與媒體資料後的判斷。<strong>每條都標了證據強度</strong>——
+    「實抓」代表數字來自本次抓取，「查證」代表來自公開報導或財報，「推測」代表我沒有直接證據。</p>
+
+  <div class="judge">
+    <div class="jcard key">
+      <span class="tag">本期限定 · 必須先講</span>
+      <h4>這是 pipeline 的第一期，所以沒有「哪些缺消失了」</h4>
+      <p>先前的版本是一次性腳本產出的，數字無法重跑也無法比對。
+        本期起改由 <code>martech-job-radar</code> 產生，
+        <strong>每個數字都可以重跑、資料快照進 git</strong>——代價是本期沒有可比的上一期。
+        「新增／消失職缺」這個最有價值的輸出<strong>要下一期才有</strong>。
+        現在看到的 196 筆是絕對值，不是變化量，請不要當成成長或萎縮的訊號。</p>
+    </div>
+    <div class="jcard warn">
+      <span class="tag">本期實測 · 差點寫錯報告</span>
+      <h4>上游資料會因為「另一個 repo 停在哪個分支」而安靜退回舊版</h4>
+      <p>本工具唯讀取用姊妹專案 <code>martech-trend-agent</code> 的職缺快照。
+        第一次跑的時候，那個 repo 的工作區停在一支不含最新快照的分支上，
+        於是本工具<strong>安靜地用了 5 天前的資料</strong>，數字看起來完全正常。
+        已補上新鮮度守門：上游快照比執行日舊就出聲。<br>
+        <strong>這件事的通則</strong>：跨 repo 讀檔的相依，讀到的是對方的<em>工作區</em>，
+        不是對方的 main。對方有未合併的 PR 時，你拿到的是舊資料——而且不會有任何錯誤訊息。</p>
+    </div>
+    <div class="jcard warn">
+      <span class="tag">本期實測 · 修掉一個會吃掉真資料的 bug</span>
+      <h4>SHOPLINE 的兩個 Data Analyst 差點被合併成一個</h4>
+      <p>跨管道去重原本用「公司＋職稱」當鍵。SHOPLINE 有
+        <code>【SGMO0801】Data Analyst</code> 與 <code>【TPD0803】Data Analyst</code>
+        兩個分屬不同團隊的職缺，職稱一模一樣——直接被併成一筆。
+        改用<strong>平台職缺編號</strong>當鍵後兩個都回來了（本期 18 筆 SHOPLINE 職缺
+        在 Yourator 與 Cake 兩邊編號一致，證明編號是可靠識別碼）。<br>
+        對你的意義很直接：<strong>資料職本來就少，少算一個就是少 17% 的機會</strong>。</p>
+    </div>
+    <div class="jcard key">
+      <span class="tag">實抓 · 最重要的一條</span>
+      <h4>台灣 MarTech 的職缺不在同一個地方，這才是求職者最大的障礙</h4>
+      <p>Appier 只用 Greenhouse、漸強用 Yourator＋自架 Teamdoor、Omnichat 與 awoo 只在 Cake、
+        91APP 與 iKala 幾乎全部在 104。本次四個管道抓到 196 筆，
+        但 iKala、CYBERBIZ、TenMax、Vpon、AccuHit、Rosetta.ai 六家在開放平台<strong>全是 0 筆</strong>——
+        這不代表沒在招，代表它們把缺放在抓不到的地方。單看任何一個平台都會嚴重誤判市場。</p>
+    </div>
+    <div class="jcard warn">
+      <span class="tag">實抓 · 反直覺</span>
+      <h4>Appier 台北的兩個「數據分析」職缺，其實是 2019 年掛到現在的常駐缺</h4>
+      <p><code>Campaign Analyst</code> 與 <code>Data Scientist, Analytics</code>
+        的首次刊登日都是 <strong>2019-01-09</strong>，後者最後更新停在 2025-12-23。
+        對照同期的 GenAI 缺（<code>AI Engineer, Playable Ads</code> 8/02 刊登、
+        <code>Research Scientist (Generative &amp; Agentic AI)</code> 7/20 刊登），
+        差別很明顯：<strong>ML／GenAI 是真的在開缺，純分析職是長期收履歷</strong>。
+        投遞優先序應該照這個排，不是照職稱像不像。</p>
+    </div>
+    <div class="jcard key">
+      <span class="tag">實抓</span>
+      <h4>台灣 MarTech 現在最大的資料職開口不是 Appier，是 SHOPLINE</h4>
+      <p>SHOPLINE 去重後 35 個缺裡有 <strong>6 個資料相關</strong>：Data Analyst ×2、
+        Data Engineer、Senior Data Engineer、Data Product Manager、
+        Merchant Success Data Operations。相較之下 Appier 台北 55 缺中真正的分析職只有 2 個（且是常駐缺）。
+        以「入行做資料分析」為目標，SHOPLINE 的實際機會密度高於 Appier。</p>
+    </div>
+    <div class="jcard">
+      <span class="tag">實抓</span>
+      <h4>整體結構：商務端大於研發端，研發端裡 AI 大於資料</h4>
+      <p>196 筆去重職缺中，商務／行銷／客戶成功佔最大宗，其次是軟體工程；
+        <strong>純「數據分析」職稱全台合計不到 10 個</strong>。
+        MarTech 公司要的不是更多分析師，是能把產品賣進去、接得起來、留得住客戶的人——
+        而這些角色的 JD 裡幾乎都寫著要看數據。入行路徑比較可能是「懂資料的 CS／AM」而不是「純 DA」。</p>
+    </div>
+    <div class="jcard">
+      <span class="tag">查證</span>
+      <h4>成長最快的公司不一定開最多缺</h4>
+      <p>CYBERBIZ 2025 年營收年增 37%、連 6 年獲利、正推進 IPO，
+        但人力只成長約 10%，開放平台 0 筆；Appier 2026 Q1 營收年增 29.4%，卻掛著 85 個缺。
+        兩者都在成長，人力策略完全相反。<strong>「開很多缺」是擴張訊號，也可能是流動率訊號</strong>，
+        不能單獨當作公司好壞的指標——要配合刊登日期一起看（見下一條）。</p>
+    </div>
+    <div class="jcard warn">
+      <span class="tag">推測 · 但有方法可驗</span>
+      <h4>用「刊登日期」而不是「職缺數」判斷公司狀態</h4>
+      <p>Appier 台北 55 缺中有 <strong>7 個刊登於 2019–2023 年</strong>（含 2019-01-07 的 Ad Sales）。
+        一個缺掛三年還在，通常是三種情況之一：常態流動、標準訂太高、或只是收履歷。
+        這個訊號在其他公司同樣適用——Cake 有 <code>contentUpdatedAt</code>、
+        Yourator 有「兩週內／一個月前更新」，投遞前先看這個欄位，
+        <strong>近兩週更新過的缺回覆率明顯較高</strong>（此為業界通則，本次資料未直接驗證）。</p>
+    </div>
+    <div class="jcard">
+      <span class="tag">實抓 · 文化訊號</span>
+      <h4>薪資透明度是本次唯一可量化的「文化開放」指標</h4>
+      <p>漸強實驗室公開了 4 個職缺的完整年薪帶（後端 130–200 萬、CSM 80–140 萬、
+        BD 94–150 萬），Omnichat 公開 3 個，awoo 公開 2 個；
+        SHOPLINE 的 Yourator 職缺清一色「面議（經常性薪資達 4 萬元）」，
+        Appier 全部 85 筆<strong>沒有任何一筆公開薪資</strong>。
+        這不是好壞判斷，但它是求職者唯一能在投遞前驗證的資訊對等程度。</p>
+    </div>
+  </div>
+
+  <div class="callout caution">
+    <span class="lbl">這份報告不能回答什麼</span>
+    <p>本次<strong>沒有</strong>取得 104 人力銀行的資料（Cloudflare 回 403，不做規避）與 LinkedIn（需登入）。
+      因為台灣中大型企業的主力刊登平台就是 104，
+      所以本報告對 91APP、iKala、CYBERBIZ、cacaFly、域動這類「以 104 為主」的公司<strong>系統性低估</strong>。
+      把本報告當成「開放平台的完整切片」而不是「台灣 MarTech 職缺全貌」，判讀才不會錯。</p>
+  </div>
+</section>
+
+<section id="companies">
+  <div class="shead"><span class="n">02</span><h2>公司列表與四維排序</h2></div>
+  <p>預設依<strong>四維總分</strong>排序。點按鈕可改依單一維度重排——
+    「我只在乎成長力」和「我只在乎文化開放」會得到很不一樣的名單，這正是重點。</p>
+
+  <h4>四個維度分別怎麼評的</h4>
+  <ul>
+    <li><strong>熱門</strong>＝可查職缺量＋近 30 天媒體聲量＋面試心得篇數。衡量「有多少人在看這家」，不是「好不好」。</li>
+    <li><strong>口碑</strong>＝<em>面試趣「公司評價」實數換算</em>，9 家逐一抓取（見下表）。
+      換算規則固定可重跑：≥4.0 給 5 格、3.5–3.9 給 4 格、3.0–3.4 給 3 格、
+      2.5–2.9 給 2 格、&lt;2.5 給 1 格；心得數不足者標「—」，不猜。
+      未列於下表的公司無心得資料，沿用判斷值並標證據強度「低」。</li>
+    <li><strong>成長力</strong>＝已公開的營收／募資／上市狀態。有財報數字者證據強度「高」，只有新聞稿者「中」。</li>
+    <li><strong>文化開放</strong>＝<em>行為證據</em>，不是形容詞：是否使用開放求職平台、是否公開薪資帶、
+      是否提供實習／遠端、JD 是否具體說明團隊實況。這是本頁唯一完全用本次抓取資料算出來的維度。</li>
+  </ul>
+
+  <div class="sortbar">
+    <span class="lbl">排序依據</span>
+    <button data-sort="total" aria-pressed="true">四維總分</button>
+    <button data-sort="hot" aria-pressed="false">熱門</button>
+    <button data-sort="rep" aria-pressed="false">口碑</button>
+    <button data-sort="growth" aria-pressed="false">成長力</button>
+    <button data-sort="open" aria-pressed="false">文化開放</button>
+    <button data-sort="jobs" aria-pressed="false">實抓職缺數</button>
+  </div>
+
+  <div class="tscroll"><table id="coTable">
+    <thead><tr>
+      <th>#</th><th>公司／領域</th><th>實抓缺</th><th>熱門</th><th>口碑</th><th>成長力</th>
+      <th>文化開放</th><th>總分</th><th>證據</th><th>招募管道</th><th>本次查到的重點</th>
+    </tr></thead>
+    <tbody><tr data-hot="5" data-rep="4"
+ data-growth="5" data-open="4" data-total="18"
+ data-jobs="54">
+ <td class="rank"></td>
+ <td><div class="cname">Appier 沛星互動科技</div><div class="ccat">Agentic AI／廣告＋CDP</div></td>
+ <td class="num">54<span class="sub"> 台灣</span></td>
+ <td><span class="meter" aria-label="5 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="mon"></span></span></td><td><span class="meter" aria-label="4 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span></span></td>
+ <td><span class="meter" aria-label="5 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="mon"></span></span></td><td><span class="meter" aria-label="4 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span></span></td>
+ <td class="num tot">18</td>
+ <td class="conf c-hi">高</td>
+ <td class="chan"><a href="https://www.cake.me/companies/appier/jobs?locale=zh-TW" target="_blank" rel="noopener">Cake</a>、<a href="https://job-boards.greenhouse.io/appier" target="_blank" rel="noopener">官網 Greenhouse</a>、<a href="https://www.appier.com/en/careers.html" target="_blank" rel="noopener">官網徵才</a></td>
+ <td class="cnote">台北 55 缺為全台最大單一雇主開口；85 筆全數未公開薪資　面試趣：公司評價 3.7／5（497 篇）、年薪約 96.0 萬。</td>
+</tr>
+<tr data-hot="4" data-rep="3"
+ data-growth="4" data-open="5" data-total="16"
+ data-jobs="31">
+ <td class="rank"></td>
+ <td><div class="cname">SHOPLINE 商線科技</div><div class="ccat">電商 SaaS／OMO</div></td>
+ <td class="num">31<span class="sub"> 台灣</span></td>
+ <td><span class="meter" aria-label="4 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span></span></td><td><span class="meter" aria-label="3 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span></span></td>
+ <td><span class="meter" aria-label="4 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span></span></td><td><span class="meter" aria-label="5 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="mon"></span></span></td>
+ <td class="num tot">16</td>
+ <td class="conf c-hi">高</td>
+ <td class="chan"><a href="https://www.yourator.co/companies/SHOPLINE" target="_blank" rel="noopener">Yourator</a>、<a href="https://www.cake.me/companies/shopline/jobs?locale=zh-TW" target="_blank" rel="noopener">Cake</a></td>
+ <td class="cnote">全台唯一有完整資料職梯（DA ×2、DE、Sr.DE、Data PM、Data Ops）　面試趣：公司評價 3.1／5（535 篇）、年薪約 71.0 萬。</td>
+</tr>
+<tr data-hot="4" data-rep="-1"
+ data-growth="4" data-open="3" data-total="14"
+ data-jobs="6">
+ <td class="rank"></td>
+ <td><div class="cname">漸強實驗室 Crescendo Lab</div><div class="ccat">LINE／對話式 CRM</div></td>
+ <td class="num">6<span class="sub"> 台灣</span></td>
+ <td><span class="meter" aria-label="4 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span></span></td><td><span class="sub" style="display:inline">—</span></td>
+ <td><span class="meter" aria-label="4 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span></span></td><td><span class="meter" aria-label="3 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span></span></td>
+ <td class="num tot">14</td>
+ <td class="conf c-mid">中</td>
+ <td class="chan"><a href="https://www.yourator.co/companies/CrescendoLab" target="_blank" rel="noopener">Yourator</a></td>
+ <td class="cnote">薪資帶公開度全台最高——後端 130–200 萬、CSM 80–140 萬、BD 94–150 萬</td>
+</tr>
+<tr data-hot="3" data-rep="2"
+ data-growth="4" data-open="4" data-total="13"
+ data-jobs="7">
+ <td class="rank"></td>
+ <td><div class="cname">Omnichat 全通路科技</div><div class="ccat">對話式商務／OMO</div></td>
+ <td class="num">7<span class="sub"> 台灣</span></td>
+ <td><span class="meter" aria-label="3 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="meter" aria-label="2 / 5"><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td>
+ <td><span class="meter" aria-label="4 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span></span></td><td><span class="meter" aria-label="4 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span></span></td>
+ <td class="num tot">13</td>
+ <td class="conf c-hi">高</td>
+ <td class="chan"><a href="https://www.cake.me/companies/omnichat.ai/jobs?locale=zh-TW" target="_blank" rel="noopener">Cake</a>、<a href="https://www.omnichat.ai/" target="_blank" rel="noopener">官網徵才</a></td>
+ <td class="cnote">7 缺中 3 個是 BD／夥伴關係——擴的是通路不是研發　面試趣：公司評價 2.7／5（56 篇）、年薪約 72.0 萬。</td>
+</tr>
+<tr data-hot="3" data-rep="2"
+ data-growth="4" data-open="4" data-total="13"
+ data-jobs="5">
+ <td class="rank"></td>
+ <td><div class="cname">awoo 阿物科技</div><div class="ccat">SEO／GEO／LLMO</div></td>
+ <td class="num">5<span class="sub"> 台灣</span></td>
+ <td><span class="meter" aria-label="3 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="meter" aria-label="2 / 5"><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td>
+ <td><span class="meter" aria-label="4 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span></span></td><td><span class="meter" aria-label="4 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span></span></td>
+ <td class="num tot">13</td>
+ <td class="conf c-hi">高</td>
+ <td class="chan"><a href="https://www.cake.me/companies/awoo/jobs?locale=zh-TW" target="_blank" rel="noopener">Cake</a>、<a href="https://www.awoo.ai/zh-hant/" target="_blank" rel="noopener">官網徵才</a></td>
+ <td class="cnote">嘉義／台北／高雄三地皆可，清單中唯一非雙北為重心的 MarTech　面試趣：公司評價 2.7／5（154 篇）、年薪約 64.0 萬。</td>
+</tr>
+<tr data-hot="3" data-rep="-1"
+ data-growth="3" data-open="4" data-total="13"
+ data-jobs="6">
+ <td class="rank"></td>
+ <td><div class="cname">adGeek／Atelli 艾得利</div><div class="ccat">AI 廣告投放自動化</div></td>
+ <td class="num">6<span class="sub"> 台灣</span></td>
+ <td><span class="meter" aria-label="3 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="sub" style="display:inline">—</span></td>
+ <td><span class="meter" aria-label="3 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="meter" aria-label="4 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span></span></td>
+ <td class="num tot">13</td>
+ <td class="conf c-mid">中</td>
+ <td class="chan"><a href="https://www.yourator.co/companies/adGeek" target="_blank" rel="noopener">Yourator</a></td>
+ <td class="cnote">唯一把「可申請遠端／彈性上下班」寫進職缺標題的公司</td>
+</tr>
+<tr data-hot="4" data-rep="-1"
+ data-growth="4" data-open="1" data-total="12"
+ data-jobs="-1">
+ <td class="rank"></td>
+ <td><div class="cname">The Trade Desk（台北）</div><div class="ccat">國際 DSP／獨立廣告平台</div></td>
+ <td class="num"><span class="sub" style="display:inline">未取得</span></td>
+ <td><span class="meter" aria-label="4 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span></span></td><td><span class="sub" style="display:inline">—</span></td>
+ <td><span class="meter" aria-label="4 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span></span></td><td><span class="meter" aria-label="1 / 5"><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td>
+ <td class="num tot">12</td>
+ <td class="conf c-lo">低</td>
+ <td class="chan"><a href="https://job-boards.greenhouse.io/thetradedesk" target="_blank" rel="noopener">官網 Greenhouse</a></td>
+ <td class="cnote">台北兩缺皆總監級商務。國際 MarTech 在台通常只設商務端、不設研發</td>
+</tr>
+<tr data-hot="4" data-rep="3"
+ data-growth="3" data-open="3" data-total="13"
+ data-jobs="1">
+ <td class="rank"></td>
+ <td><div class="cname">91APP</div><div class="ccat">OMO 電商 SaaS（上櫃 6741）</div></td>
+ <td class="num">1<span class="sub"> 台灣</span></td>
+ <td><span class="meter" aria-label="4 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span></span></td><td><span class="meter" aria-label="3 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span></span></td>
+ <td><span class="meter" aria-label="3 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="meter" aria-label="3 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span></span></td>
+ <td class="num tot">13</td>
+ <td class="conf c-hi">高</td>
+ <td class="chan"><a href="https://www.yourator.co/companies/91APP" target="_blank" rel="noopener">Yourator</a>、<a href="https://www.cake.me/companies/91app/jobs?locale=zh-TW" target="_blank" rel="noopener">Cake</a></td>
+ <td class="cnote">開放平台只露出 1 筆，主力刊登在 104——0～1 筆不等於沒在招　面試趣：公司評價 3.0／5（807 篇）、年薪約 69.0 萬。</td>
+</tr>
+<tr data-hot="2" data-rep="-1"
+ data-growth="3" data-open="4" data-total="12"
+ data-jobs="1">
+ <td class="rank"></td>
+ <td><div class="cname">Ocard 瑞乘數位</div><div class="ccat">會員經營／餐飲 CRM</div></td>
+ <td class="num">1<span class="sub"> 台灣</span></td>
+ <td><span class="meter" aria-label="2 / 5"><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="sub" style="display:inline">—</span></td>
+ <td><span class="meter" aria-label="3 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="meter" aria-label="4 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span></span></td>
+ <td class="num tot">12</td>
+ <td class="conf c-mid">中</td>
+ <td class="chan"><a href="https://www.cake.me/companies/ocard/jobs?locale=zh-TW" target="_blank" rel="noopener">Cake</a></td>
+ <td class="cnote"></td>
+</tr>
+<tr data-hot="4" data-rep="3"
+ data-growth="4" data-open="1" data-total="12"
+ data-jobs="-1">
+ <td class="rank"></td>
+ <td><div class="cname">iKala 愛卡拉</div><div class="ccat">AI Cloud＋KOL 社群數據</div></td>
+ <td class="num"><span class="sub" style="display:inline">未取得</span></td>
+ <td><span class="meter" aria-label="4 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span></span></td><td><span class="meter" aria-label="3 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span></span></td>
+ <td><span class="meter" aria-label="4 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span></span></td><td><span class="meter" aria-label="1 / 5"><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td>
+ <td class="num tot">12</td>
+ <td class="conf c-hi">高</td>
+ <td class="chan"><a href="https://ikala.ai/careers/" target="_blank" rel="noopener">官網徵才</a>、<span class="sub" style="display:inline">104（未取得）</span></td>
+ <td class="cnote">官網人才招募頁的唯一職缺出口就是 104 公司頁（2026-08-05 查證）　面試趣：公司評價 3.1／5（287 篇）、年薪約 76.0 萬。</td>
+</tr>
+<tr data-hot="3" data-rep="2"
+ data-growth="5" data-open="1" data-total="11"
+ data-jobs="-1">
+ <td class="rank"></td>
+ <td><div class="cname">CYBERBIZ 順立智慧</div><div class="ccat">電商 SaaS＋倉儲物流</div></td>
+ <td class="num"><span class="sub" style="display:inline">未取得</span></td>
+ <td><span class="meter" aria-label="3 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="meter" aria-label="2 / 5"><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td>
+ <td><span class="meter" aria-label="5 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="mon"></span></span></td><td><span class="meter" aria-label="1 / 5"><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td>
+ <td class="num tot">11</td>
+ <td class="conf c-hi">高</td>
+ <td class="chan"><a href="https://www.cyberbiz.co/careers" target="_blank" rel="noopener">官網徵才</a>、<span class="sub" style="display:inline">104（未取得）</span></td>
+ <td class="cnote">官網 careers 底下只有一份通用履歷表單，無職缺欄位（2026-08-05 查證）　面試趣：公司評價 2.8／5（341 篇）、年薪約 60.0 萬。</td>
+</tr>
+<tr data-hot="3" data-rep="-1"
+ data-growth="3" data-open="1" data-total="10"
+ data-jobs="-1">
+ <td class="rank"></td>
+ <td><div class="cname">Vpon 威朋大數據</div><div class="ccat">行動數據／跨境廣告</div></td>
+ <td class="num"><span class="sub" style="display:inline">未取得</span></td>
+ <td><span class="meter" aria-label="3 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="sub" style="display:inline">—</span></td>
+ <td><span class="meter" aria-label="3 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="meter" aria-label="1 / 5"><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td>
+ <td class="num tot">10</td>
+ <td class="conf c-lo">低</td>
+ <td class="chan"><a href="https://www.vpon.com/en/careers/" target="_blank" rel="noopener">官網徵才</a>、<span class="sub" style="display:inline">104（未取得）</span></td>
+ <td class="cnote">careers 頁最後更新停在 2025-02-17，無職缺清單</td>
+</tr>
+<tr data-hot="3" data-rep="-1"
+ data-growth="3" data-open="1" data-total="10"
+ data-jobs="-1">
+ <td class="rank"></td>
+ <td><div class="cname">cacaFly 聖洋科技</div><div class="ccat">媒體代理＋自有 MarTech</div></td>
+ <td class="num"><span class="sub" style="display:inline">未取得</span></td>
+ <td><span class="meter" aria-label="3 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="sub" style="display:inline">—</span></td>
+ <td><span class="meter" aria-label="3 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="meter" aria-label="1 / 5"><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td>
+ <td class="num tot">10</td>
+ <td class="conf c-lo">低</td>
+ <td class="chan"><a href="https://www.cacafly.com/" target="_blank" rel="noopener">官網徵才</a>、<span class="sub" style="display:inline">104（未取得）</span></td>
+ <td class="cnote"></td>
+</tr>
+<tr data-hot="2" data-rep="-1"
+ data-growth="2" data-open="1" data-total="8"
+ data-jobs="-1">
+ <td class="rank"></td>
+ <td><div class="cname">域動行銷 Clickforce</div><div class="ccat">程序化廣告／數據聯播網</div></td>
+ <td class="num"><span class="sub" style="display:inline">未取得</span></td>
+ <td><span class="meter" aria-label="2 / 5"><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="sub" style="display:inline">—</span></td>
+ <td><span class="meter" aria-label="2 / 5"><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="meter" aria-label="1 / 5"><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td>
+ <td class="num tot">8</td>
+ <td class="conf c-lo">低</td>
+ <td class="chan"><a href="https://www.clickforce.com.tw/" target="_blank" rel="noopener">官網徵才</a>、<span class="sub" style="display:inline">104（未取得）</span></td>
+ <td class="cnote"></td>
+</tr>
+<tr data-hot="3" data-rep="1"
+ data-growth="3" data-open="1" data-total="8"
+ data-jobs="-1">
+ <td class="rank"></td>
+ <td><div class="cname">TenMax 騰學廣告科技</div><div class="ccat">DSP／零售媒體（funP 集團）</div></td>
+ <td class="num"><span class="sub" style="display:inline">未取得</span></td>
+ <td><span class="meter" aria-label="3 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="meter" aria-label="1 / 5"><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td>
+ <td><span class="meter" aria-label="3 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="meter" aria-label="1 / 5"><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td>
+ <td class="num tot">8</td>
+ <td class="conf c-hi">高</td>
+ <td class="chan"><a href="https://www.yourator.co/companies/TenMax" target="_blank" rel="noopener">Yourator</a>、<a href="https://www.cake.me/companies/tenmax/jobs?locale=zh-TW" target="_blank" rel="noopener">Cake</a>、<a href="https://www.tenmax.io/hire" target="_blank" rel="noopener">官網徵才</a></td>
+ <td class="cnote">官網唯一導向 Yourator 而該處 0 筆——「目前無公開在刊職缺」是查證結果，非覆蓋缺口　面試趣：公司評價 2.2／5（51 篇）、年薪約 51.0 萬。</td>
+</tr>
+<tr data-hot="2" data-rep="-1"
+ data-growth="3" data-open="1" data-total="9"
+ data-jobs="-1">
+ <td class="rank"></td>
+ <td><div class="cname">AccuHit 愛酷智能</div><div class="ccat">CDP／對話式商務</div></td>
+ <td class="num"><span class="sub" style="display:inline">未取得</span></td>
+ <td><span class="meter" aria-label="2 / 5"><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="sub" style="display:inline">—</span></td>
+ <td><span class="meter" aria-label="3 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="meter" aria-label="1 / 5"><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td>
+ <td class="num tot">9</td>
+ <td class="conf c-lo">低</td>
+ <td class="chan"><a href="https://www.yourator.co/companies/AccuHit" target="_blank" rel="noopener">Yourator</a>、<a href="https://www.cake.me/companies/accuhit-net/jobs?locale=zh-TW" target="_blank" rel="noopener">Cake</a></td>
+ <td class="cnote"></td>
+</tr>
+<tr data-hot="2" data-rep="-1"
+ data-growth="2" data-open="1" data-total="8"
+ data-jobs="-1">
+ <td class="rank"></td>
+ <td><div class="cname">Rosetta.ai</div><div class="ccat">電商個人化推薦</div></td>
+ <td class="num"><span class="sub" style="display:inline">未取得</span></td>
+ <td><span class="meter" aria-label="2 / 5"><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="sub" style="display:inline">—</span></td>
+ <td><span class="meter" aria-label="2 / 5"><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="meter" aria-label="1 / 5"><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td>
+ <td class="num tot">8</td>
+ <td class="conf c-lo">低</td>
+ <td class="chan"><a href="https://www.rosetta.ai/" target="_blank" rel="noopener">官網徵才</a></td>
+ <td class="cnote"></td>
+</tr>
+<tr data-hot="2" data-rep="-1"
+ data-growth="2" data-open="1" data-total="8"
+ data-jobs="-1">
+ <td class="rank"></td>
+ <td><div class="cname">Tagtoo 塔圖科技</div><div class="ccat">再行銷／電商廣告</div></td>
+ <td class="num"><span class="sub" style="display:inline">未取得</span></td>
+ <td><span class="meter" aria-label="2 / 5"><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="sub" style="display:inline">—</span></td>
+ <td><span class="meter" aria-label="2 / 5"><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="meter" aria-label="1 / 5"><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td>
+ <td class="num tot">8</td>
+ <td class="conf c-lo">低</td>
+ <td class="chan"><a href="https://www.tagtoo.com/" target="_blank" rel="noopener">官網徵才</a></td>
+ <td class="cnote"></td>
+</tr>
+<tr data-hot="2" data-rep="-1"
+ data-growth="3" data-open="1" data-total="9"
+ data-jobs="-1">
+ <td class="rank"></td>
+ <td><div class="cname">MoBagel 行動貝果</div><div class="ccat">AutoML／決策分析</div></td>
+ <td class="num"><span class="sub" style="display:inline">未取得</span></td>
+ <td><span class="meter" aria-label="2 / 5"><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="sub" style="display:inline">—</span></td>
+ <td><span class="meter" aria-label="3 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="meter" aria-label="1 / 5"><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td>
+ <td class="num tot">9</td>
+ <td class="conf c-lo">低</td>
+ <td class="chan"><a href="https://www.cake.me/companies/mobagel/jobs?locale=zh-TW" target="_blank" rel="noopener">Cake</a></td>
+ <td class="cnote"></td>
+</tr>
+<tr data-hot="2" data-rep="-1"
+ data-growth="2" data-open="1" data-total="8"
+ data-jobs="-1">
+ <td class="rank"></td>
+ <td><div class="cname">電子豹 Newsleopard</div><div class="ccat">EDM 行銷自動化</div></td>
+ <td class="num"><span class="sub" style="display:inline">未取得</span></td>
+ <td><span class="meter" aria-label="2 / 5"><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="sub" style="display:inline">—</span></td>
+ <td><span class="meter" aria-label="2 / 5"><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="meter" aria-label="1 / 5"><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td>
+ <td class="num tot">8</td>
+ <td class="conf c-lo">低</td>
+ <td class="chan"><a href="https://www.newsleopard.com/about" target="_blank" rel="noopener">官網徵才</a></td>
+ <td class="cnote"></td>
+</tr></tbody>
+  </table></div>
+  <p class="sub" style="max-width:70ch">「實抓缺」＝本次於 Greenhouse／Yourator／Cake 取得的台灣在刊職缺數，
+    去重後計算；「—」代表該公司在這三個管道抓到 0 筆，主力管道為 104 或官網，需手動確認。
+    口碑欄的「—」（漸強實驗室）＝面試趣心得數不足、無法評分；
+    依「口碑」排序時它會沉底，那是「沒資料」不是「口碑差」。
+    它的四維總分以已測 8 家的中位數 3 代入，避免因缺資料而被低估。</p>
+
+  <h3>口碑原始數據（面試趣實抓，非印象）</h3>
+  <p>上表的「口碑」欄不是我的觀感，是下面這張表換算來的。九家公司逐一抓取，
+    連在職缺管道掛零的 iKala、CYBERBIZ、TenMax 都有——<strong>因為員工評價跟公司有沒有在刊職缺無關</strong>，
+    這是本報告唯一能穿透 104 缺口的資料來源。</p>
+  <div class="tscroll"><table>
+    <thead><tr>
+      <th>公司</th><th>公司評價</th><th>換算格數</th><th>面試評價</th><th>面試難度</th>
+      <th>心得數</th><th>年薪中位</th><th>工時與加班</th>
+    </tr></thead>
+    <tbody><tr>
+ <td><a href="https://interview.tw/c/XTDv/info" target="_blank" rel="noopener">Appier 沛星互動科技</a></td>
+ <td class="num"><strong>3.7</strong></td><td class="num">4</td>
+ <td class="num">3.6</td><td class="num">3.1</td>
+ <td class="num">497</td><td class="num">96.0 萬</td>
+ <td class="sm">8.6 小時・偶爾加班</td>
+</tr>
+<tr>
+ <td><a href="https://interview.tw/c/4RSW/info" target="_blank" rel="noopener">SHOPLINE 商線科技</a></td>
+ <td class="num"><strong>3.1</strong></td><td class="num">3</td>
+ <td class="num">3.8</td><td class="num">2.8</td>
+ <td class="num">535</td><td class="num">71.0 萬</td>
+ <td class="sm">7.9 小時・很少加班</td>
+</tr>
+<tr>
+ <td><a href="https://interview.tw/c/l4wW/info" target="_blank" rel="noopener">iKala 愛卡拉</a></td>
+ <td class="num"><strong>3.1</strong></td><td class="num">3</td>
+ <td class="num">3.8</td><td class="num">3.0</td>
+ <td class="num">287</td><td class="num">76.0 萬</td>
+ <td class="sm">7.7 小時・很少加班</td>
+</tr>
+<tr>
+ <td><a href="https://interview.tw/c/MsgN/info" target="_blank" rel="noopener">91APP</a></td>
+ <td class="num"><strong>3.0</strong></td><td class="num">3</td>
+ <td class="num">3.5</td><td class="num">2.9</td>
+ <td class="num">807</td><td class="num">69.0 萬</td>
+ <td class="sm">8.8 小時・偶爾加班</td>
+</tr>
+<tr>
+ <td><a href="https://interview.tw/c/ePWO/info" target="_blank" rel="noopener">CYBERBIZ 順立智慧</a></td>
+ <td class="num"><strong>2.8</strong></td><td class="num">2</td>
+ <td class="num">3.6</td><td class="num">2.7</td>
+ <td class="num">341</td><td class="num">60.0 萬</td>
+ <td class="sm">8.3 小時・偶爾加班</td>
+</tr>
+<tr>
+ <td><a href="https://interview.tw/c/smDw/info" target="_blank" rel="noopener">Omnichat 全通路科技</a></td>
+ <td class="num"><strong>2.7</strong></td><td class="num">2</td>
+ <td class="num">3.6</td><td class="num">3.0</td>
+ <td class="num">56</td><td class="num">72.0 萬</td>
+ <td class="sm">8.1 小時・很少加班</td>
+</tr>
+<tr>
+ <td><a href="https://interview.tw/c/NBvr/info" target="_blank" rel="noopener">awoo 阿物科技</a></td>
+ <td class="num"><strong>2.7</strong></td><td class="num">2</td>
+ <td class="num">3.7</td><td class="num">2.8</td>
+ <td class="num">154</td><td class="num">64.0 萬</td>
+ <td class="sm">7.9 小時・很少加班</td>
+</tr>
+<tr>
+ <td><a href="https://interview.tw/c/jAgf/info" target="_blank" rel="noopener">TenMax 騰學廣告科技</a></td>
+ <td class="num"><strong>2.2</strong></td><td class="num">1</td>
+ <td class="num">3.9</td><td class="num">3.0</td>
+ <td class="num">51</td><td class="num">51.0 萬</td>
+ <td class="sm">7.5 小時・很少加班</td>
+</tr>
+<tr><td><a href="https://interview.tw/c/ckDyY/info" target="_blank" rel="noopener">漸強實驗室 Crescendo Lab</a></td><td class="num sub" colspan="7">心得數不足，面試趣未產生評分——本頁口碑一欄標「—」，四維總分以已測公司中位數代入</td></tr></tbody>
+  </table></div>
+  <div class="callout caution">
+    <span class="lbl">這張表推翻了我三個原本的判斷</span>
+    <p>我最初依「團隊公開發聲品質」給 awoo、CYBERBIZ、TenMax 的口碑各 3 格。
+      實抓後：awoo <strong>2.7</strong>、CYBERBIZ <strong>2.8</strong>、TenMax <strong>2.2</strong>，
+      三家都被下修。反過來 Appier 從 4 格站穩 4 格（3.7，本清單最高）。
+      <strong>公司評價與面試評價經常反向</strong>——TenMax 面試評價 3.9 是全清單最高、
+      公司評價 2.2 是全清單最低。面試好不代表待得下去，這張表的兩欄要分開讀。</p>
+  </div>
+</section>
+
+<section id="jobs">
+  <div class="shead"><span class="n">03</span><h2>各公司職缺明細</h2></div>
+  <p>依公司分列，含<strong>招募管道、地點、公開薪資、更新時間</strong>。
+    時間欄位的格式隨管道而異：Greenhouse 給確切日期（另附刊登日）、Cake 給內容最後更新日、
+    Yourator 只給相對時間（「兩週內更新」）——這是平台差異，不是資料缺漏。</p>
+
+  <h3>Appier 沛星互動科技 · 台北 55 缺</h3>
+  <p class="sub" style="max-width:70ch">全球 85 缺、台北 55 缺（其餘為東京 19、首爾 5、北京 2 等）。
+    管道單一：全部走官網 Greenhouse。下表附「刊登日」——這是本頁最有判讀價值的一欄。</p>
+  <div class="tscroll"><table>
+    <thead><tr><th>職缺</th><th>地點</th><th>管道</th><th>薪資</th><th>更新／刊登</th></tr></thead>
+    <tbody><tr class="grp"><td colspan="5">數據分析<span class="gcount">2</span></td></tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/1501724" target="_blank" rel="noopener">Campaign Analyst</a></td>
+ <td class="sm">Taipei, Taiwan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2019-01-09<div class="sub">刊登 2019-01-09</div></td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/1501726" target="_blank" rel="noopener">Data Scientist, Analytics</a></td>
+ <td class="sm">Taipei, Taiwan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2019-01-09<div class="sub">刊登 2019-01-09</div></td>
+</tr>
+<tr class="grp"><td colspan="5">數據科學／工程<span class="gcount">10</span></td></tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/8102280" target="_blank" rel="noopener">AI Engineer, Playable Ads</a></td>
+ <td class="sm">Taipei, Taiwan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2026-08-02<div class="sub">刊登 2026-08-02</div></td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/8076158" target="_blank" rel="noopener">Generative AI Research Intern</a></td>
+ <td class="sm">Taipei, Taiwan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2026-07-21<div class="sub">刊登 2026-07-21</div></td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/8076142" target="_blank" rel="noopener">Research Scientist (Generative &amp; Agentic AI)</a></td>
+ <td class="sm">Taipei, Taiwan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2026-07-20<div class="sub">刊登 2026-07-20</div></td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/7907856" target="_blank" rel="noopener">Machine Learning Scientist (LLM &amp; Agents)</a></td>
+ <td class="sm">Taipei, Taiwan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2026-05-08<div class="sub">刊登 2026-05-08</div></td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/7757000" target="_blank" rel="noopener">Senior Machine Learning Scientist, Playable Ads</a></td>
+ <td class="sm">Taipei, Taiwan; Tokyo, Japan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2026-03-26<div class="sub">刊登 2026-03-26</div></td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/7364432" target="_blank" rel="noopener">Senior Machine Learning Scientist, Advertising Incrementality</a></td>
+ <td class="sm">Taipei, Taiwan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2025-10-30<div class="sub">刊登 2025-10-30</div></td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/6986240" target="_blank" rel="noopener">Senior Machine Learning Scientist (Enterprise Solution)</a></td>
+ <td class="sm">Taipei, Taiwan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2025-06-16<div class="sub">刊登 2025-06-16</div></td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/6987027" target="_blank" rel="noopener">Senior Software Engineer, Machine Learning (AIXON)</a></td>
+ <td class="sm">Taipei, Taiwan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2025-06-16<div class="sub">刊登 2025-06-16</div></td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/6914984" target="_blank" rel="noopener">Senior Machine Learning Scientist (LLM &amp; Agents)</a></td>
+ <td class="sm">Taipei, Taiwan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2025-05-23<div class="sub">刊登 2025-05-23</div></td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/1501746" target="_blank" rel="noopener">Machine Learning Scientist</a></td>
+ <td class="sm">Taipei, Taiwan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2019-01-10<div class="sub">刊登 2019-01-10</div></td>
+</tr>
+<tr class="grp"><td colspan="5">技術顧問 TSE<span class="gcount">3</span></td></tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/5001910" target="_blank" rel="noopener">Technical Solution Engineer Intern</a></td>
+ <td class="sm">Taipei, Taiwan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2026-05-20<div class="sub">刊登 2026-05-20</div></td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/3785463" target="_blank" rel="noopener">Technical Solution Engineer (Greater China Region)</a></td>
+ <td class="sm">Taipei, Taiwan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2022-01-03<div class="sub">刊登 2022-01-03</div></td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/3267291" target="_blank" rel="noopener">Technical Support/Solution Engineer - Enterprise Solutions (TW or JP or KR)</a></td>
+ <td class="sm">Taipei, Taiwan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2021-07-01<div class="sub">刊登 2021-07-01</div></td>
+</tr>
+<tr class="grp"><td colspan="5">產品／設計<span class="gcount">4</span></td></tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/8068713" target="_blank" rel="noopener">Product Manager (Ad Cloud Platform)</a></td>
+ <td class="sm">Taipei, Taiwan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2026-07-16<div class="sub">刊登 2026-07-16</div></td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/7915849" target="_blank" rel="noopener">Senior Retargeting Product Manager (Taiwan)</a></td>
+ <td class="sm">Taipei, Taiwan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2026-05-12<div class="sub">刊登 2026-05-12</div></td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/7824539" target="_blank" rel="noopener">Senior Product Manager (Ad Cloud Platform)</a></td>
+ <td class="sm">Taipei, Taiwan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2026-04-17<div class="sub">刊登 2026-04-17</div></td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/7525624" target="_blank" rel="noopener">Senior Product designer</a></td>
+ <td class="sm">Taipei, Taiwan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2026-01-09<div class="sub">刊登 2026-01-09</div></td>
+</tr>
+<tr class="grp"><td colspan="5">軟體工程<span class="gcount">15</span></td></tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/8045764" target="_blank" rel="noopener">Senior Backend Engineer (SRE / Reliability &amp; Performance)</a></td>
+ <td class="sm">Taipei, Taiwan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2026-07-06<div class="sub">刊登 2026-07-06</div></td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/8020447" target="_blank" rel="noopener">Senior Software Engineer, Mobile SDK</a></td>
+ <td class="sm">Taipei, Taiwan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2026-06-22<div class="sub">刊登 2026-06-22</div></td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/7830101" target="_blank" rel="noopener">Senior Frontend Development Engineer (Enterprise Solutions)</a></td>
+ <td class="sm">Taipei, Taiwan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2026-04-20<div class="sub">刊登 2026-04-20</div></td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/7019766" target="_blank" rel="noopener">Senior Software Engineer, Data Backend EDP (Enterprise Data Platform)</a></td>
+ <td class="sm">Taipei, Taiwan; Tokyo, Japan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2026-02-27<div class="sub">刊登 2026-02-27</div></td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/7189015" target="_blank" rel="noopener">Staff/Senior DevOps Engineer</a></td>
+ <td class="sm">Taipei, Taiwan; Tokyo, Japan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2026-01-27<div class="sub">刊登 2026-01-27</div></td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/7436263" target="_blank" rel="noopener">Senior Software Engineer, C++ Backend Development(Ad Cloud Bidding)</a></td>
+ <td class="sm">Taipei, Taiwan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2025-12-02<div class="sub">刊登 2025-12-02</div></td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/7267131" target="_blank" rel="noopener">Senior Software Engineer, Backend Development (Playable Ads)</a></td>
+ <td class="sm">Taipei, Taiwan; Tokyo, Japan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2025-09-22<div class="sub">刊登 2025-09-22</div></td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/7160226" target="_blank" rel="noopener">Senior Software Engineer, Backend Development (Ad Cloud Platform team)</a></td>
+ <td class="sm">Taipei, Taiwan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2025-08-12<div class="sub">刊登 2025-08-12</div></td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/7058491" target="_blank" rel="noopener">Staff Software Engineer, C++ Backend Development(Ad Cloud Bidding)</a></td>
+ <td class="sm">Taipei, Taiwan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2025-07-09<div class="sub">刊登 2025-07-09</div></td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/7033252" target="_blank" rel="noopener">Senior Software Engineer, Backend Development(Ad Cloud  Serving Services)</a></td>
+ <td class="sm">Taipei, Taiwan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2025-07-02<div class="sub">刊登 2025-07-02</div></td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/6820898" target="_blank" rel="noopener">Software Engineer, Backend Development (Intern)</a></td>
+ <td class="sm">Taipei, Taiwan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2025-06-16<div class="sub">刊登 2025-06-16</div></td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/6930712" target="_blank" rel="noopener">Senior Software Engineer, QA Automation</a></td>
+ <td class="sm">Taipei, Taiwan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2025-05-29<div class="sub">刊登 2025-05-29</div></td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/6568368" target="_blank" rel="noopener">Senior Software Engineer, Backend Development (BotBonnie)</a></td>
+ <td class="sm">Taipei, Taiwan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2025-01-23<div class="sub">刊登 2025-01-23</div></td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/5476743" target="_blank" rel="noopener">Senior Software Engineer, Data Backend (Ad Cloud)</a></td>
+ <td class="sm">Taipei, Taiwan; Tokyo, Japan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2023-10-31<div class="sub">刊登 2023-10-31</div></td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/4869920" target="_blank" rel="noopener">Senior Software Engineer, Backend Development</a></td>
+ <td class="sm">Taipei, Taiwan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2023-02-15<div class="sub">刊登 2023-02-15</div></td>
+</tr>
+<tr class="grp"><td colspan="5">商務／行銷／客戶成功<span class="gcount">12</span></td></tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/8025479" target="_blank" rel="noopener">Senior Field Marketing Specialist</a></td>
+ <td class="sm">Taipei, Taiwan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2026-06-24<div class="sub">刊登 2026-06-24</div></td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/7582643" target="_blank" rel="noopener">(Senior) Sales Manager of Enterprise Solution</a></td>
+ <td class="sm">Taipei, Taiwan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2026-02-02<div class="sub">刊登 2026-02-02</div></td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/7510874" target="_blank" rel="noopener">Sales Development Associate (Inside Sales, TW)</a></td>
+ <td class="sm">Taipei, Taiwan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2026-01-05<div class="sub">刊登 2026-01-05</div></td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/7436249" target="_blank" rel="noopener">Customer Success Manager - Enterprise Solution</a></td>
+ <td class="sm">Taipei, Taiwan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2025-12-02<div class="sub">刊登 2025-12-02</div></td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/7075720" target="_blank" rel="noopener">Global ESS Sales Operations Manager / Associate Manager</a></td>
+ <td class="sm">Taipei, Taiwan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2025-07-16<div class="sub">刊登 2025-07-16</div></td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/6999346" target="_blank" rel="noopener">Account Manager, Advertising Solution - Taiwan</a></td>
+ <td class="sm">Taipei, Taiwan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2025-06-20<div class="sub">刊登 2025-06-20</div></td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/6854145" target="_blank" rel="noopener">Digital Marketing Manager (AEO &amp; Paid Media Strategy)</a></td>
+ <td class="sm">Taipei, Taiwan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2025-05-01<div class="sub">刊登 2025-05-01</div></td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/6774962" target="_blank" rel="noopener">Customer Success Specialist , Ad.Creative</a></td>
+ <td class="sm">Taipei, Taiwan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2025-04-04<div class="sub">刊登 2025-04-04</div></td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/6483529" target="_blank" rel="noopener">Sales Manager of Enterprise Solution</a></td>
+ <td class="sm">Taipei, Taiwan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2024-12-18<div class="sub">刊登 2024-12-18</div></td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/5332115" target="_blank" rel="noopener">Campaign Executive</a></td>
+ <td class="sm">Taipei, Taiwan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2023-09-01<div class="sub">刊登 2023-09-01</div></td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/1623669" target="_blank" rel="noopener">Campaign Management Intern</a></td>
+ <td class="sm">Taipei, Taiwan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2019-04-01<div class="sub">刊登 2019-04-01</div></td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/1499233" target="_blank" rel="noopener">Ad Sales, Advertising Solution (Ad Cloud)</a></td>
+ <td class="sm">Taipei, Taiwan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2019-01-07<div class="sub">刊登 2019-01-07</div></td>
+</tr>
+<tr class="grp"><td colspan="5">其他（HR／法務／財會／IT）<span class="gcount">8</span></td></tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/8095584" target="_blank" rel="noopener">Senior HR C&amp;B Specialist</a></td>
+ <td class="sm">Taipei, Taiwan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2026-07-29<div class="sub">刊登 2026-07-29</div></td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/8090549" target="_blank" rel="noopener">IT Specialist</a></td>
+ <td class="sm">Taipei, Taiwan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2026-07-28<div class="sub">刊登 2026-07-28</div></td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/8052954" target="_blank" rel="noopener">HR Operations Specialist (Workforce &amp; Equity Operations)</a></td>
+ <td class="sm">Taipei, Taiwan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2026-07-09<div class="sub">刊登 2026-07-09</div></td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/8000129" target="_blank" rel="noopener">Paralegal, Compliance &amp; Automation | Legal Assistant (1-year Contractor / Full-Time) 法務助理</a></td>
+ <td class="sm">Taipei, Taiwan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2026-06-15<div class="sub">刊登 2026-06-15</div></td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/7956145" target="_blank" rel="noopener">Associate HR Manager, Global Compensation</a></td>
+ <td class="sm">Taipei, Taiwan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2026-06-02<div class="sub">刊登 2026-06-02</div></td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/7189302" target="_blank" rel="noopener">Assistant Manager of Business Enablement</a></td>
+ <td class="sm">Taipei, Taiwan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2025-08-25<div class="sub">刊登 2025-08-25</div></td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/6967119" target="_blank" rel="noopener">Quality Assurance Intern</a></td>
+ <td class="sm">Taipei, Taiwan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2025-06-10<div class="sub">刊登 2025-06-10</div></td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://job-boards.greenhouse.io/appier/jobs/6518407" target="_blank" rel="noopener">Global Commercial HR Business Partner (HRBP)</a></td>
+ <td class="sm">Taipei, Taiwan</td>
+ <td class="sm">greenhouse（via trend-agent 2026-08-05）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2025-01-07<div class="sub">刊登 2025-01-07</div></td>
+</tr></tbody>
+  </table></div>
+
+  <h3>SHOPLINE 商線科技 · 35 缺（去重）</h3>
+  <p class="sub" style="max-width:70ch">同時刊在 Yourator（30 筆）與 Cake（24 筆），
+    去重後 35 筆。兩邊都刊的職缺以 Cake 的確切日期為準。</p>
+  <div class="tscroll"><table>
+    <thead><tr><th>職缺</th><th>地點</th><th>管道</th><th>薪資</th><th>更新</th></tr></thead>
+    <tbody><tr class="grp"><td colspan="5">數據分析<span class="gcount">3</span></td></tr>
+<tr>
+ <td class="jt"><a href="https://www.yourator.co/companies/shopline/jobs/46447" target="_blank" rel="noopener">【TPD0803】Data Analyst</a></td>
+ <td class="sm">臺北市</td>
+ <td class="sm">Yourator</td>
+ <td class="sm">面議（經常性薪資達4萬元）</td>
+ <td class="sm when">一個月內更新</td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://www.cake.me/companies/shopline/jobs/cms4001merchant-success-data-operations-959" target="_blank" rel="noopener">【CMS4001】Merchant Success Data Operations</a></td>
+ <td class="sm">台北</td>
+ <td class="sm">Cake（原 CakeResume）＋Yourator</td>
+ <td class="sm">面議（經常性薪資達4萬元）</td>
+ <td class="sm when">2026-07-05</td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://www.cake.me/companies/shopline/jobs/tpd0803data-analyst" target="_blank" rel="noopener">【SGMO0801】Data Analyst</a></td>
+ <td class="sm">松山區, 台北</td>
+ <td class="sm">Cake（原 CakeResume）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2026-04-02</td>
+</tr>
+<tr class="grp"><td colspan="5">數據科學／工程<span class="gcount">3</span></td></tr>
+<tr>
+ <td class="jt"><a href="https://www.cake.me/companies/shopline/jobs/tpd0603data-product-manager" target="_blank" rel="noopener">【TPD0603】Data Product Manager 數據產品經理</a></td>
+ <td class="sm">台北</td>
+ <td class="sm">Cake（原 CakeResume）＋Yourator</td>
+ <td class="sm">面議（經常性薪資達4萬元）</td>
+ <td class="sm when">2026-07-15</td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://www.cake.me/companies/shopline/jobs/teng1402-data-engineer" target="_blank" rel="noopener">【TENG1402】Data Engineer</a></td>
+ <td class="sm">台灣台北市、松山區, 台北</td>
+ <td class="sm">Cake（原 CakeResume）＋Yourator</td>
+ <td class="sm">面議（經常性薪資達4萬元）</td>
+ <td class="sm when">2026-05-28</td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://www.cake.me/companies/shopline/jobs/teng1502senior-data-engineer" target="_blank" rel="noopener">【TENG1502】Senior Data Engineer</a></td>
+ <td class="sm">台北</td>
+ <td class="sm">Cake（原 CakeResume）＋Yourator</td>
+ <td class="sm">面議（經常性薪資達4萬元）</td>
+ <td class="sm when">2025-09-05</td>
+</tr>
+<tr class="grp"><td colspan="5">產品／設計<span class="gcount">2</span></td></tr>
+<tr>
+ <td class="jt"><a href="https://www.cake.me/companies/shopline/jobs/tpd0303product-manager" target="_blank" rel="noopener">【TPD1401】Product Manager（廣告、第三方）</a></td>
+ <td class="sm">台北</td>
+ <td class="sm">Cake（原 CakeResume）＋Yourator</td>
+ <td class="sm">面議（經常性薪資達4萬元）</td>
+ <td class="sm when">2026-07-23</td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://www.cake.me/companies/shopline/jobs/tpmo0202-product-operation-associate" target="_blank" rel="noopener">【TPMO0301】Product Operation Manager</a></td>
+ <td class="sm">台北</td>
+ <td class="sm">Cake（原 CakeResume）＋Yourator</td>
+ <td class="sm">面議（經常性薪資達4萬元）</td>
+ <td class="sm when">2026-05-11</td>
+</tr>
+<tr class="grp"><td colspan="5">軟體工程<span class="gcount">4</span></td></tr>
+<tr>
+ <td class="jt"><a href="https://www.yourator.co/companies/shopline/jobs/37811" target="_blank" rel="noopener">【TENG0303】Frontend Engineer</a></td>
+ <td class="sm">臺北市</td>
+ <td class="sm">Yourator</td>
+ <td class="sm">面議（經常性薪資達4萬元）</td>
+ <td class="sm when">一個月內更新</td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://www.cake.me/companies/shopline/jobs/teng2102cloud-engineer-dba-dbre" target="_blank" rel="noopener">【TENG2102】Cloud Engineer - DBA (DBRE)</a></td>
+ <td class="sm">台北</td>
+ <td class="sm">Cake（原 CakeResume）＋Yourator</td>
+ <td class="sm">面議（經常性薪資達4萬元）</td>
+ <td class="sm when">2026-06-24</td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://www.cake.me/companies/shopline/jobs/teng0601sr-quality-assurance-engineer" target="_blank" rel="noopener">【TENG0601】(Senior) Quality Assurance Engineer</a></td>
+ <td class="sm">松山區, 台北</td>
+ <td class="sm">Cake（原 CakeResume）＋Yourator</td>
+ <td class="sm">面議（經常性薪資達4萬元）</td>
+ <td class="sm when">2026-04-01</td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://www.cake.me/companies/shopline/jobs/teng0502-software-engineer-backend-golang" target="_blank" rel="noopener">【TENG0502】Software Engineer (Backend) - Golang</a></td>
+ <td class="sm">台灣台北市、台北</td>
+ <td class="sm">Cake（原 CakeResume）＋Yourator</td>
+ <td class="sm">面議（經常性薪資達4萬元）</td>
+ <td class="sm when">2026-01-22</td>
+</tr>
+<tr class="grp"><td colspan="5">商務／行銷／客戶成功<span class="gcount">14</span></td></tr>
+<tr>
+ <td class="jt"><a href="https://www.yourator.co/companies/shopline/jobs/20470" target="_blank" rel="noopener">【CMKT1703】數位客戶副理 / 經理 (Associate) Digital Account Manager</a></td>
+ <td class="sm">臺北市</td>
+ <td class="sm">Yourator</td>
+ <td class="sm">面議（經常性薪資達4萬元）</td>
+ <td class="sm when">一個月內更新</td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://www.yourator.co/companies/shopline/jobs/47487" target="_blank" rel="noopener">【JPSGMO0701】Business Development Specialist (Locate in Japan)</a></td>
+ <td class="sm">海外</td>
+ <td class="sm">Yourator</td>
+ <td class="sm">面議（經常性薪資達4萬元）</td>
+ <td class="sm when">一個月內更新</td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://www.yourator.co/companies/shopline/jobs/44491" target="_blank" rel="noopener">【CPTR0601】(Senior) Partner Marketing Associate</a></td>
+ <td class="sm">臺北市</td>
+ <td class="sm">Yourator</td>
+ <td class="sm">面議（經常性薪資達4萬元）</td>
+ <td class="sm when">一個月內更新</td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://www.yourator.co/companies/shopline/jobs/36442" target="_blank" rel="noopener">【CMS0302】MS 客戶成功顧問 - 金流相關 Merchant Success Associate - Payment</a></td>
+ <td class="sm">臺北市</td>
+ <td class="sm">Yourator</td>
+ <td class="sm">面議（經常性薪資達4萬元）</td>
+ <td class="sm when">一個月內更新</td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://www.yourator.co/companies/shopline/jobs/13101" target="_blank" rel="noopener">【CMS0501】Merchant Success 用戶續約 - 客戶成功團隊</a></td>
+ <td class="sm">臺北市</td>
+ <td class="sm">Yourator</td>
+ <td class="sm">面議（經常性薪資達4萬元）</td>
+ <td class="sm when">一個月內更新</td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://www.yourator.co/companies/shopline/jobs/38363" target="_blank" rel="noopener">【CMS2102】Account Management 客戶管理 - 客戶成長團隊</a></td>
+ <td class="sm">臺北市</td>
+ <td class="sm">Yourator</td>
+ <td class="sm">面議（經常性薪資達4萬元）</td>
+ <td class="sm when">一個月內更新</td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://www.cake.me/companies/shopline/jobs/cms3101digital-marketing-associate" target="_blank" rel="noopener">【CMD3101】數位廣告營運企劃 Digital Marketing Associate</a></td>
+ <td class="sm">台北</td>
+ <td class="sm">Cake（原 CakeResume）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2026-07-07</td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://www.cake.me/companies/shopline/jobs/cmkt1702advertising-optimizer" target="_blank" rel="noopener">【CMD1703】數位客戶副理 / 經理 (Associate) Digital Account Manager</a></td>
+ <td class="sm">台北</td>
+ <td class="sm">Cake（原 CakeResume）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2026-07-07</td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://www.cake.me/companies/shopline/jobs/cms2103account-management-srb-customer-growth-team-fc2" target="_blank" rel="noopener">【CMS2103】Account Management 客戶管理 - SRB 客戶成長團隊</a></td>
+ <td class="sm">台北</td>
+ <td class="sm">Cake（原 CakeResume）＋Yourator</td>
+ <td class="sm">面議（經常性薪資達4萬元）</td>
+ <td class="sm when">2026-07-05</td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://www.cake.me/companies/shopline/jobs/cmkt0101marketing-associate" target="_blank" rel="noopener">【CMKT0101】Marketing Associate</a></td>
+ <td class="sm">松山區, 台北</td>
+ <td class="sm">Cake（原 CakeResume）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2026-06-09</td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://www.cake.me/companies/shopline/jobs/cpmm0602-product-marketing-associate-ec" target="_blank" rel="noopener">【CPMM0602】 Product Marketing Associate- EC</a></td>
+ <td class="sm">松山區, 台北</td>
+ <td class="sm">Cake（原 CakeResume）＋Yourator</td>
+ <td class="sm">面議（經常性薪資達4萬元）</td>
+ <td class="sm when">2026-05-07</td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://www.cake.me/companies/shopline/jobs/business-development-consultant-183862" target="_blank" rel="noopener">【CBD0101】商務拓展顧問 Business Development Consultant</a></td>
+ <td class="sm">台灣臺北、松山區, 台北</td>
+ <td class="sm">Cake（原 CakeResume）＋Yourator</td>
+ <td class="sm">面議（經常性薪資達4萬元）</td>
+ <td class="sm when">2025-09-12</td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://www.cake.me/companies/shopline/jobs/jpsgmo0202business-development-specialist-locate-in-japan" target="_blank" rel="noopener">【JPSGMO0202】Business Development Specialist (Locate in Japan)</a></td>
+ <td class="sm">東京都, 日本</td>
+ <td class="sm">Cake（原 CakeResume）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2025-09-05</td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://www.cake.me/companies/shopline/jobs/8d2e32" target="_blank" rel="noopener">【CMS2601】Account Management 客戶管理 - KA 客戶管理團隊</a></td>
+ <td class="sm">台北</td>
+ <td class="sm">Cake（原 CakeResume）＋Yourator</td>
+ <td class="sm">面議（經常性薪資達4萬元）</td>
+ <td class="sm when">2025-09-05</td>
+</tr>
+<tr class="grp"><td colspan="5">其他（HR／法務／財會／IT）<span class="gcount">6</span></td></tr>
+<tr>
+ <td class="jt"><a href="https://www.yourator.co/companies/shopline/jobs/24396" target="_blank" rel="noopener">【SFIN0101I】財會實習生</a></td>
+ <td class="sm">臺北市</td>
+ <td class="sm">Yourator</td>
+ <td class="sm">NT$ 200 - 200 (時薪)</td>
+ <td class="sm when">一個月內更新</td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://www.cake.me/companies/shopline/jobs/shr0802-senior-recruitment-specialist-talent-acquisition-partner" target="_blank" rel="noopener">【SHR0802】（資深）招募專員 (Senior) Talent Acquisition Partner</a></td>
+ <td class="sm">松山區, 台北</td>
+ <td class="sm">Cake（原 CakeResume）＋Yourator</td>
+ <td class="sm">面議（經常性薪資達4萬元）</td>
+ <td class="sm when">2026-06-08</td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://www.cake.me/companies/shopline/jobs/cmkt0601iproduct-faq-intern-copywriting-intern" target="_blank" rel="noopener">【CMKT0601I】產品 FAQ 實習生/ Copywriting Intern</a></td>
+ <td class="sm">台北</td>
+ <td class="sm">Cake（原 CakeResume）＋Yourator</td>
+ <td class="sm">NT$200.00–200.00／年</td>
+ <td class="sm when">2026-05-26</td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://www.cake.me/companies/shopline/jobs/tds0701product-copywriter-intern-korean-english" target="_blank" rel="noopener">【TDS0701】Product Copywriter Intern (Korean/English)</a></td>
+ <td class="sm">松山區, 台北</td>
+ <td class="sm">Cake（原 CakeResume）＋Yourator</td>
+ <td class="sm">NT$200.00–200.00／年</td>
+ <td class="sm when">2026-05-22</td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://www.cake.me/companies/shopline/jobs/sadm0402administration-associate" target="_blank" rel="noopener">【SADM0402】行政專員 Administration Associate</a></td>
+ <td class="sm">台北</td>
+ <td class="sm">Cake（原 CakeResume）＋Yourator</td>
+ <td class="sm">面議（經常性薪資達4萬元）</td>
+ <td class="sm when">2026-05-18</td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://www.cake.me/companies/shopline/jobs/ed953d" target="_blank" rel="noopener">【SFIN0302】會計專員</a></td>
+ <td class="sm">松山區, 台北、台灣台北市</td>
+ <td class="sm">Cake（原 CakeResume）＋Yourator</td>
+ <td class="sm">面議（經常性薪資達4萬元）</td>
+ <td class="sm when">2026-04-02</td>
+</tr></tbody>
+  </table></div>
+
+  <h3>漸強實驗室 Crescendo Lab · 6 缺</h3>
+  <p class="sub" style="max-width:70ch">Yourator 刊登、投遞導向自架的 Teamdoor 系統。
+    本次唯一四個職缺都公開年薪帶的公司。</p>
+  <div class="tscroll"><table>
+    <thead><tr><th>職缺</th><th>地點</th><th>管道</th><th>薪資</th><th>更新</th></tr></thead>
+    <tbody><tr class="grp"><td colspan="5">軟體工程<span class="gcount">1</span></td></tr>
+<tr>
+ <td class="jt"><a href="https://www.yourator.co/companies/CrescendoLab/jobs/41093" target="_blank" rel="noopener">【TW】Senior/ Backend Engineer</a></td>
+ <td class="sm">臺北市</td>
+ <td class="sm">yourator（via trend-agent 2026-08-05）＋Yourator</td>
+ <td class="sm">NT$ 1,300,000 - 2,000,000 (年薪)</td>
+ <td class="sm when">一個月前更新</td>
+</tr>
+<tr class="grp"><td colspan="5">商務／行銷／客戶成功<span class="gcount">5</span></td></tr>
+<tr>
+ <td class="jt"><a href="https://www.yourator.co/companies/CrescendoLab/jobs/47857" target="_blank" rel="noopener">【TW】(Senior) Strategic Partnerships Manager 策略合作夥伴經理</a></td>
+ <td class="sm">臺北市</td>
+ <td class="sm">yourator（via trend-agent 2026-08-05）＋Yourator</td>
+ <td class="sm">面議（經常性薪資達4萬元）</td>
+ <td class="sm when">兩週內更新</td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://www.yourator.co/companies/CrescendoLab/jobs/30447" target="_blank" rel="noopener">【TW】(Sr.) Customer Success Manager (資深)客戶成功經理</a></td>
+ <td class="sm">臺北市</td>
+ <td class="sm">yourator（via trend-agent 2026-08-05）＋Yourator</td>
+ <td class="sm">NT$ 800,000 - 1,400,000 (年薪)</td>
+ <td class="sm when">兩週內更新</td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://www.yourator.co/companies/CrescendoLab/jobs/46883" target="_blank" rel="noopener">【TW】(資深) 業務開發經理 / (Senior) Business Development Manager</a></td>
+ <td class="sm">臺北市</td>
+ <td class="sm">yourator（via trend-agent 2026-08-05）＋Yourator</td>
+ <td class="sm">NT$ 940,000 - 1,500,000 (年薪)</td>
+ <td class="sm when">一個月前更新</td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://www.yourator.co/companies/CrescendoLab/jobs/47558" target="_blank" rel="noopener">【TW】Senior Enterprise Solution Sales Manager</a></td>
+ <td class="sm">臺北市</td>
+ <td class="sm">yourator（via trend-agent 2026-08-05）＋Yourator</td>
+ <td class="sm">面議（經常性薪資達4萬元）</td>
+ <td class="sm when">一個月前更新</td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://www.yourator.co/companies/CrescendoLab/jobs/36314" target="_blank" rel="noopener">【JP】(シニア)営業担当 (Senior) Business Development Representative</a></td>
+ <td class="sm">海外</td>
+ <td class="sm">yourator（via trend-agent 2026-08-05）＋Yourator</td>
+ <td class="sm">NT$ 0 - 20,000,000 (年薪)</td>
+ <td class="sm when">一個月前更新</td>
+</tr></tbody>
+  </table></div>
+
+  <h3>Omnichat 全通路科技 · 7 缺</h3>
+  <div class="tscroll"><table>
+    <thead><tr><th>職缺</th><th>地點</th><th>管道</th><th>薪資</th><th>更新</th></tr></thead>
+    <tbody><tr class="grp"><td colspan="5">產品／設計<span class="gcount">1</span></td></tr>
+<tr>
+ <td class="jt"><a href="https://www.cake.me/companies/omnichat.ai/jobs/senior-product-manager-9be" target="_blank" rel="noopener">資深產品經理 | Senior Product Manager</a></td>
+ <td class="sm">中山區, 台北、台北</td>
+ <td class="sm">Cake（原 CakeResume）</td>
+ <td class="sm">NT$1000000.00–1500000.00／年</td>
+ <td class="sm when">2026-06-24</td>
+</tr>
+<tr class="grp"><td colspan="5">軟體工程<span class="gcount">2</span></td></tr>
+<tr>
+ <td class="jt"><a href="https://www.cake.me/companies/omnichat.ai/jobs/devops-engineer-339dd8" target="_blank" rel="noopener">DevOps Engineer</a></td>
+ <td class="sm">台北</td>
+ <td class="sm">Cake（原 CakeResume）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2026-06-25</td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://www.cake.me/companies/omnichat.ai/jobs/senior-front-end-engineer-senior-front-end-software-engineer" target="_blank" rel="noopener">資深前端工程師｜Senior Frontend Engineer</a></td>
+ <td class="sm">台北</td>
+ <td class="sm">Cake（原 CakeResume）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2026-06-22</td>
+</tr>
+<tr class="grp"><td colspan="5">商務／行銷／客戶成功<span class="gcount">4</span></td></tr>
+<tr>
+ <td class="jt"><a href="https://www.cake.me/companies/omnichat.ai/jobs/customer-success-manager-hong-kong-market" target="_blank" rel="noopener">香港市場（HK）客戶成功經理｜Customer Success Manager</a></td>
+ <td class="sm">台北</td>
+ <td class="sm">Cake（原 CakeResume）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2026-06-22</td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://www.cake.me/companies/omnichat.ai/jobs/agency-partnership-manager" target="_blank" rel="noopener">夥伴關係經理｜Agency Partnership Manager</a></td>
+ <td class="sm">台北</td>
+ <td class="sm">Cake（原 CakeResume）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2026-06-22</td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://www.cake.me/companies/omnichat.ai/jobs/customer-sales-representative-sales-rep" target="_blank" rel="noopener">商業拓展經理 | Business Development  Manager</a></td>
+ <td class="sm">100台灣台北市中正區、中山區, 台北</td>
+ <td class="sm">Cake（原 CakeResume）</td>
+ <td class="sm">NT$650000.00–1300000.00／年</td>
+ <td class="sm when">2026-06-22</td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://www.cake.me/companies/omnichat.ai/jobs/dda554" target="_blank" rel="noopener">資深商業拓展經理｜Senior Business Development Manager</a></td>
+ <td class="sm">104台灣台北市中山區</td>
+ <td class="sm">Cake（原 CakeResume）</td>
+ <td class="sm">NT$1000000.00–None／年</td>
+ <td class="sm when">2026-06-22</td>
+</tr></tbody>
+  </table></div>
+
+  <h3>awoo 阿物科技 · 5 缺</h3>
+  <p class="sub" style="max-width:70ch">嘉義／台北／高雄三地皆可，是清單中唯一非雙北為重心的 MarTech。</p>
+  <div class="tscroll"><table>
+    <thead><tr><th>職缺</th><th>地點</th><th>管道</th><th>薪資</th><th>更新</th></tr></thead>
+    <tbody><tr class="grp"><td colspan="5">軟體工程<span class="gcount">2</span></td></tr>
+<tr>
+ <td class="jt"><a href="https://www.cake.me/companies/awoo/jobs/junior-site-reliability-engineer-sre" target="_blank" rel="noopener">Junior Site Reliability Engineer (SRE)</a></td>
+ <td class="sm">嘉義市、高雄市、台北</td>
+ <td class="sm">Cake（原 CakeResume）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2026-06-30</td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://www.cake.me/companies/awoo/jobs/backend-engineer-af4" target="_blank" rel="noopener">Backend Engineer</a></td>
+ <td class="sm">鹽埕區, 高雄市、嘉義市、台北</td>
+ <td class="sm">Cake（原 CakeResume）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2026-04-17</td>
+</tr>
+<tr class="grp"><td colspan="5">商務／行銷／客戶成功<span class="gcount">1</span></td></tr>
+<tr>
+ <td class="jt"><a href="https://www.cake.me/companies/awoo/jobs/brand-community-reputation-marketing-manager" target="_blank" rel="noopener">品牌社群/口碑行銷主管</a></td>
+ <td class="sm">嘉義市、高雄市、台北</td>
+ <td class="sm">Cake（原 CakeResume）</td>
+ <td class="sm"><span class="sub">未公開</span></td>
+ <td class="sm when">2026-08-05</td>
+</tr>
+<tr class="grp"><td colspan="5">其他（HR／法務／財會／IT）<span class="gcount">2</span></td></tr>
+<tr>
+ <td class="jt"><a href="https://www.cake.me/companies/awoo/jobs/c53892" target="_blank" rel="noopener">SEO 內容文案 SEO Content Writer（嘉義）</a></td>
+ <td class="sm">嘉義市</td>
+ <td class="sm">Cake（原 CakeResume）</td>
+ <td class="sm">NT$35000.00–37000.00／月</td>
+ <td class="sm when">2026-04-17</td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://www.cake.me/companies/awoo/jobs/accounting-specialist-64291b" target="_blank" rel="noopener">資深會計專員</a></td>
+ <td class="sm">松山區, 台北、台灣臺北</td>
+ <td class="sm">Cake（原 CakeResume）</td>
+ <td class="sm">NT$40000.00–45000.00／月</td>
+ <td class="sm when">2026-04-17</td>
+</tr></tbody>
+  </table></div>
+
+  <h3>adGeek／Atelli 艾得利 · 5 缺</h3>
+  <div class="tscroll"><table>
+    <thead><tr><th>職缺</th><th>地點</th><th>管道</th><th>薪資</th><th>更新</th></tr></thead>
+    <tbody><tr class="grp"><td colspan="5">軟體工程<span class="gcount">2</span></td></tr>
+<tr>
+ <td class="jt"><a href="https://www.yourator.co/companies/adGeek/jobs/29872" target="_blank" rel="noopener">【實習工讀】後端工程師（可配合學校進行實習簽約，表現優良有機會轉正職）</a></td>
+ <td class="sm">臺北市</td>
+ <td class="sm">Yourator</td>
+ <td class="sm">NT$ 200 -  (時薪)</td>
+ <td class="sm when">一個月內更新</td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://www.yourator.co/companies/adGeek/jobs/46357" target="_blank" rel="noopener">【產品研發】Junior Frontend Engineer</a></td>
+ <td class="sm">臺北市</td>
+ <td class="sm">Yourator</td>
+ <td class="sm">面議（經常性薪資達4萬元）</td>
+ <td class="sm when">一個月內更新</td>
+</tr>
+<tr class="grp"><td colspan="5">商務／行銷／客戶成功<span class="gcount">4</span></td></tr>
+<tr>
+ <td class="jt"><a href="https://www.yourator.co/companies/adGeek/jobs/11956" target="_blank" rel="noopener">【客戶成功】資深客戶成功顧問｜數位廣告優化｜接觸AI工具｜績效獎金福利佳｜可申請遠端｜彈性上下班</a></td>
+ <td class="sm">臺北市</td>
+ <td class="sm">Yourator</td>
+ <td class="sm">面議（經常性薪資達4萬元）</td>
+ <td class="sm when">一個月內更新</td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://www.yourator.co/companies/adGeek/jobs/12402" target="_blank" rel="noopener">【商務開發】商務發展副理 / 經理（可遠端 / 完整培訓 / 保障高底薪 / 外加業績獎金）</a></td>
+ <td class="sm">臺北市</td>
+ <td class="sm">Yourator</td>
+ <td class="sm">面議（經常性薪資達4萬元）</td>
+ <td class="sm when">一個月內更新</td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://www.yourator.co/companies/adGeek/jobs/24943" target="_blank" rel="noopener">【商務開發】商務發展副理／經理</a></td>
+ <td class="sm">臺北市</td>
+ <td class="sm">Yourator</td>
+ <td class="sm">面議（經常性薪資達4萬元）</td>
+ <td class="sm when">一個月內更新</td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://www.yourator.co/companies/adGeek/jobs/24943" target="_blank" rel="noopener">【商務開發】商務發展副理／經理</a></td>
+ <td class="sm">臺北市</td>
+ <td class="sm">yourator（via trend-agent 2026-08-05）</td>
+ <td class="sm">面議（經常性薪資達4萬元）</td>
+ <td class="sm when">—</td>
+</tr><tr class="grp"><td colspan="5">軟體工程<span class="gcount">2</span></td></tr>
+<tr>
+ <td class="jt"><a href="https://www.yourator.co/companies/adGeek/jobs/29872" target="_blank" rel="noopener">【實習工讀】後端工程師（可配合學校進行實習簽約，表現優良有機會轉正職）</a></td>
+ <td class="sm">臺北市</td>
+ <td class="sm">Yourator</td>
+ <td class="sm">NT$ 200 -  (時薪)</td>
+ <td class="sm when">一個月內更新</td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://www.yourator.co/companies/adGeek/jobs/46357" target="_blank" rel="noopener">【產品研發】Junior Frontend Engineer</a></td>
+ <td class="sm">臺北市</td>
+ <td class="sm">Yourator</td>
+ <td class="sm">面議（經常性薪資達4萬元）</td>
+ <td class="sm when">一個月內更新</td>
+</tr>
+<tr class="grp"><td colspan="5">商務／行銷／客戶成功<span class="gcount">4</span></td></tr>
+<tr>
+ <td class="jt"><a href="https://www.yourator.co/companies/adGeek/jobs/11956" target="_blank" rel="noopener">【客戶成功】資深客戶成功顧問｜數位廣告優化｜接觸AI工具｜績效獎金福利佳｜可申請遠端｜彈性上下班</a></td>
+ <td class="sm">臺北市</td>
+ <td class="sm">Yourator</td>
+ <td class="sm">面議（經常性薪資達4萬元）</td>
+ <td class="sm when">一個月內更新</td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://www.yourator.co/companies/adGeek/jobs/12402" target="_blank" rel="noopener">【商務開發】商務發展副理 / 經理（可遠端 / 完整培訓 / 保障高底薪 / 外加業績獎金）</a></td>
+ <td class="sm">臺北市</td>
+ <td class="sm">Yourator</td>
+ <td class="sm">面議（經常性薪資達4萬元）</td>
+ <td class="sm when">一個月內更新</td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://www.yourator.co/companies/adGeek/jobs/24943" target="_blank" rel="noopener">【商務開發】商務發展副理／經理</a></td>
+ <td class="sm">臺北市</td>
+ <td class="sm">Yourator</td>
+ <td class="sm">面議（經常性薪資達4萬元）</td>
+ <td class="sm when">一個月內更新</td>
+</tr>
+<tr>
+ <td class="jt"><a href="https://www.yourator.co/companies/adGeek/jobs/24943" target="_blank" rel="noopener">【商務開發】商務發展副理／經理</a></td>
+ <td class="sm">臺北市</td>
+ <td class="sm">yourator（via trend-agent 2026-08-05）</td>
+ <td class="sm">面議（經常性薪資達4萬元）</td>
+ <td class="sm when">—</td>
+</tr></tbody>
+  </table></div>
+
+  <h3>91APP、Ocard、The Trade Desk 台北</h3>
+  <div class="tscroll"><table>
+    <thead><tr><th>職缺</th><th>地點</th><th>管道</th><th>薪資</th><th>更新</th></tr></thead>
+    <tbody><tr class="grp"><td colspan="5">產品／設計<span class="gcount">1</span></td></tr>
+<tr>
+ <td class="jt"><a href="https://www.yourator.co/companies/91APP/jobs/47853" target="_blank" rel="noopener">【Open】[UPD] DSD 產品經理 Product Owner (餐飲 OMO)</a></td>
+ <td class="sm">臺北市</td>
+ <td class="sm">yourator（via trend-agent 2026-08-05）＋Yourator</td>
+ <td class="sm">面議（經常性薪資達4萬元）</td>
+ <td class="sm when">兩週內更新</td>
+</tr><tr class="grp"><td colspan="5">商務／行銷／客戶成功<span class="gcount">1</span></td></tr>
+<tr>
+ <td class="jt"><a href="https://www.cake.me/companies/ocard/jobs/e7e675" target="_blank" rel="noopener">【Ocard顧客經營管家】商業拓展顧問 Business Consultant 〔北部〕（底薪+業績獎金優渥）</a></td>
+ <td class="sm">104台灣台北市中山區、台北</td>
+ <td class="sm">Cake（原 CakeResume）</td>
+ <td class="sm">NT$500000.00–1000000.00／年</td>
+ <td class="sm when">2026-04-30</td>
+</tr></tbody>
+  </table></div>
+
+  <div class="callout caution">
+    <span class="lbl">「去官網看」這條路已查證，走不通</span>
+    <p>我原本建議抓不到職缺的公司去官網徵才頁看。實際把四家的官網拆開之後
+      （它們都是 WordPress，<code>wp-json</code> 官方 REST API 開著，直接讀得到頁面真正的內容），
+      結論是<strong>官網徵才頁裡根本沒有職缺清單</strong>，它們只是導流頁：</p>
+    <ul>
+      <li><strong>iKala</strong>——「人才招募」頁唯一的職缺出口是
+        <a href="https://www.104.com.tw/company/oi6pygw" target="_blank" rel="noopener">104 公司頁</a>。
+        這家<strong>確定只能手動看 104</strong>。</li>
+      <li><strong>TenMax</strong>——官網唯一導向 Yourator，而 Yourator 該公司頁實測
+        <code>totalPages = 0</code>。所以它「沒有公開在刊職缺」是<strong>查證結果，不是覆蓋缺口</strong>。</li>
+      <li><strong>CYBERBIZ</strong>——careers 底下只有一份通用履歷表單（48 個下拉選項全是學歷、兵役、年月），
+        沒有任何職缺欄位。</li>
+      <li><strong>Vpon</strong>——careers 頁最後更新停在 2025-02-17，無職缺清單。</li>
+    </ul>
+    <p>這是負面結果，但它把四列從「未知」變成「已查證」，也省掉未來為官網寫爬蟲的力氣——
+      <strong>沒有東西可爬</strong>。要補這幾家只有一條路：你自己開 104 看。</p>
+  </div>
+</section>
+
+<section id="analysis">
+  <div class="shead"><span class="n">04</span><h2>職缺與公司分析</h2></div>
+
+  <div class="stat">
+    <div><div class="v">196</div><div class="k">四管道實抓在刊職缺（去重，台灣 163）</div></div>
+    <div><div class="v">54</div><div class="k">Appier 台北缺，佔台灣實抓量 33%</div></div>
+    <div><div class="v">6</div><div class="k">SHOPLINE 資料相關職缺，全台最多</div></div>
+    <div><div class="v">0</div><div class="k">Appier 84 筆中公開薪資的筆數</div></div>
+    <div><div class="v">10</div><div class="k">Appier 台北刊登於 2024 年前的常駐缺</div></div>
+    <div><div class="v">5</div><div class="k">職缺只在 104、本期未取得的公司</div></div>
+  </div>
+
+  <h3>一、職能結構：MarTech 在台灣是「賣得動」的生意，不是「做得出」的生意</h3>
+  <p>把 196 筆去重職缺按職能分，商務／行銷／客戶成功是最大群，軟體工程次之，
+    產品與資料職明顯偏少。這個結構有它的道理：台灣 MarTech 公司的產品多半已經做出來了，
+    現階段的瓶頸在<strong>導入與續約</strong>——Omnichat 7 個缺裡 3 個是 BD 與夥伴關係、
+    漸強 6 個缺裡 4 個是商務或客戶成功、SHOPLINE 有整整一個 Merchant Success 家族。</p>
+  <p>對想進這個產業的人，這代表兩件事：<strong>（1）</strong>純資料職的入口很窄，
+    等一個「Data Analyst」職缺開出來的期望值很低；<strong>（2）</strong>
+    幾乎所有商務端 JD 都要求看數據、談成效、做報表——
+    帶著能算出金額的分析作品去投客戶成功或 AM，比投 DA 更容易被看見。</p>
+
+  <h3>二、研發端的重心已經從「資料」移到「AI」</h3>
+  <p>Appier 台北 2026 年新開的研發缺清一色帶 AI：
+    <code>AI Engineer, Playable Ads</code>（8/02）、
+    <code>Research Scientist (Generative &amp; Agentic AI)</code>（7/20）、
+    <code>Generative AI Research Intern</code>（7/21）、
+    <code>Machine Learning Scientist (LLM &amp; Agents)</code>（5/08）。
+    同時期沒有任何一個新的分析職。漸強的後端 JD 直接寫「我們正處於一場 AI-First 的組織轉型中……
+    直接參與設計 AI 回覆品質的調校流程」；awoo 的 Backend Engineer 要求
+    「LLM API 串接、Prompt Engineering、RAG 或 AI Agent」與「n8n workflow」。</p>
+  <p><strong>解讀</strong>：MarTech 公司要的不再是「會建模的人」，而是
+    <strong>「會把模型接進產品流程的人」</strong>。這對非研究背景的人反而是好消息——
+    n8n、RAG、Prompt、API 串接這些是工程實作能力，不是論文能力。</p>
+
+  <h3>三、公司分群：四種很不一樣的處境</h3>
+  <div class="grid2">
+    <div>
+      <h4>擴張中且開放（Appier、SHOPLINE、漸強）</h4>
+      <p>職缺量大、管道公開、JD 寫得具體。共同點是都在做「從單一產品往平台走」的轉型：
+        Appier 往 Agentic AI、漸強往 AI Communication Cloud、SHOPLINE 往資料產品。
+        這群的資訊最透明，也最好準備。</p>
+    </div>
+    <div>
+      <h4>成長但精實（CYBERBIZ、iKala）</h4>
+      <p>財務數字漂亮但開缺極少。CYBERBIZ 營收 +37% 而人力只 +10%，
+        iKala 剛與 Google Cloud 合推 Agent Economy 方案卻在三個平台掛零。
+        這群不是不招，是<strong>招得精準且不公開招</strong>——內推與官網直投的權重高。</p>
+    </div>
+    <div>
+      <h4>通路擴張型（Omnichat、adGeek、Ocard）</h4>
+      <p>缺口集中在 BD、夥伴關係、客戶成功，研發缺零星。
+        代表產品進入「靠代理商與夥伴放大」的階段。
+        對想進 MarTech 又非技術背景的人，這群的門檻最低、學習曲線最實際。</p>
+    </div>
+    <div>
+      <h4>資訊不透明（TenMax、Vpon、AccuHit、Rosetta.ai、Tagtoo、域動）</h4>
+      <p>本次在開放平台全部掛零。它們有官網徵才頁、有 104 頁面，但沒有可程式化取得的職缺資料。
+        這群的判斷只能靠人脈、產業活動與直接聯繫，<strong>本報告對它們的評分證據強度一律標「低」</strong>。</p>
+    </div>
+  </div>
+
+  <h3>四、薪資：能查到的樣本很少，但方向一致</h3>
+  <p>公開薪資的職缺集中在漸強與 Omnichat。有意義的樣本：
+    後端工程師年薪 <strong>130–200 萬</strong>（漸強）、
+    資深產品經理 <strong>100–150 萬</strong>（Omnichat）、
+    客戶成功經理 <strong>80–140 萬</strong>（漸強）、
+    業務開發經理 <strong>94–150 萬</strong>（漸強）、
+    商業拓展 <strong>65–130 萬</strong>（Omnichat）。
+    入門職（SEO 內容文案 3.5–3.7 萬／月、實習時薪 200 元）與資深職之間的落差非常大。</p>
+  <p class="sub" style="max-width:70ch">警告：樣本數不到 15 筆，且公開薪資的公司本身就偏透明文化，
+    存在自我選擇偏誤。這些數字適合當「談判時的參考帶」，不適合當「市場中位數」。</p>
+
+  <h4>用面試趣的年薪中位補上缺口（樣本大得多）</h4>
+  <p>職缺公開薪資只有十幾筆，但面試趣的年薪中位是幾百篇心得累積的，樣本量差一個數量級。
+    把九家排出來：<strong>Appier 96 萬</strong>、iKala 76 萬、Omnichat 72 萬、
+    SHOPLINE 71 萬、91APP 69 萬、awoo 64 萬、CYBERBIZ 60 萬、TenMax 51 萬。</p>
+  <p><strong>這條線很陡</strong>——最高與最低差 45 萬，接近兩倍。而且排序跟「公司規模」不完全一致：
+    Omnichat（56 篇心得的小公司）年薪中位高過 SHOPLINE 與 91APP。
+    對照口碑欄會發現另一件事：<strong>年薪最高的兩家（Appier、iKala）公司評價也最高</strong>，
+    而年薪最低的 TenMax 公司評價也最低。在這個產業，薪資與滿意度是同向的，
+    不存在「錢少但爽」的選項。</p>
+  <p class="sub" style="max-width:70ch">口徑差異須注意：面試趣的「年薪中位」涵蓋全公司所有職級與職能，
+    含工程與業務獎金；職缺公開薪資是特定職缺的談判帶。兩者不可直接相減，只能各自看趨勢。</p>
+</section>
+
+<section id="trend">
+  <div class="shead"><span class="n">05</span><h2>產業與招募趨勢觀察</h2></div>
+
+  <div class="callout">
+    <span class="lbl">本節不自己算，引用姊妹專案的當期結論</span>
+    <p>產業趨勢由 <code>martech-trend-agent</code> 產生，本報告直接引用其
+      <strong>2026-08-05（第 4 期）</strong>的分析，不重複計算——這樣兩份報告不會互相打架。
+      <strong>該期收回了上一期的一個判斷</strong>：原本說「廣告投放／歸因連兩期上升＝真趨勢」，
+      本期 14 → 9 掉回去，且兩期的數字都被同一批舊文墊高，所以判斷收回。
+      本節下方的產業觀察已按該結論調整。</p>
+  </div>
+
+  <h3>產業：MarTech 工具數已經見頂，成長改由 AI 重新啟動舊類別</h3>
+  <p>ChiefMartec 的 2026 年度地圖顯示全球 MarTech 產品數 <strong>15,505 個</strong>，
+    比 2025 年只增加 0.79%（+121 個）。更值得看的是換手率：
+    新進 1,488 個（比去年少 40%）、退場 1,367 個（比去年多 13%），
+    退場者有 51.7% 來自 2010–2019 那波 SaaS 潮的小公司。
+    成長最快的類別是 CMS／網站體驗（+21.4%）、電商平台（+19.9%）、
+    行動與網站分析（+11.3%）、資料整合 iPaaS（+8.0%）、治理與合規（+7.1%）。</p>
+  <p><strong>這串數字說的是</strong>：新工具不再冒出來了，
+    AI 是在<strong>重新啟動既有類別</strong>——因為企業要部署 AI agent，
+    就得先把資料整合、權限與治理補起來。所以成長的是「地基類」而不是「應用類」。</p>
+
+  <h3>台灣：三個同時發生的轉向</h3>
+  <ul>
+    <li><strong>從 SEO 到 GEO／LLMO。</strong> awoo 已經把整條產品線改口徑，
+      新開的「品牌社群／口碑行銷主管」直接寫明目標是
+      「改善品牌在 AI 搜尋回答中的能見度、可信度、引用率」。
+      當搜尋入口變成 AI，被引用取代了被點擊——這是本次資料裡最具體的產業語言變化。</li>
+    <li><strong>從工具商到基礎建設商。</strong> CYBERBIZ 對外定位已改成
+      「AI 商務基礎建設服務商」，iKala 推 Agent Economy 藍圖，
+      漸強稱自己是「AI Communication Cloud」。三家不同領域的公司用同一種說法，
+      代表這是產業共識而非單一行銷話術。</li>
+    <li><strong>從 dashboard 到 agent。</strong> 分析介面正在從「看報表」變成「跟系統對話」，
+      Appier 的 Agentic AI 產品線與研發缺結構已經完全反映這件事。</li>
+  </ul>
+
+  <h3>招募趨勢：三個可驗證的觀察</h3>
+  <div class="judge">
+    <div class="jcard warn">
+      <span class="tag">觀察 A · 已按收回的判斷調整</span>
+      <h4>職缺敘述裡的 AI 已經從加分變成基本要求</h4>
+      <p>adGeek 的客戶成功顧問 JD 寫「運用多元 AI 和市場洞察工具，加速工作效率」，
+        awoo 的後端要求 LLM／RAG／n8n，漸強的後端要求參與 AI 回覆品質調校。
+        <strong>連非技術職都開始要求會用 AI 工具</strong>，這是 2026 年最明顯的 JD 語言變化。</p>
+    </div>
+    <div class="jcard">
+      <span class="tag">觀察 B</span>
+      <h4>實習與初階職正在往「AI 研究」與「行銷操作」兩端分裂</h4>
+      <p>Appier 台北現有的實習缺是 GenAI Research Intern、Campaign Management Intern、
+        Backend Intern、QA Intern、TSE Intern——<strong>沒有資料分析實習</strong>。
+        中間地帶（純分析實習）被兩端擠掉了。</p>
+    </div>
+    <div class="jcard">
+      <span class="tag">觀察 C</span>
+      <h4>國際 MarTech 在台灣只設商務，不設研發</h4>
+      <p>The Trade Desk 全球 196 缺、台北 2 個，都是總監級商務職；
+        Braze、Klaviyo、Bloomreach 的亞太缺全部集中在新加坡。
+        <strong>想進國際 MarTech 做技術，人在台灣的路徑基本不存在</strong>；
+        走商務線則需要總監級資歷。</p>
+    </div>
+  </div>
+</section>
+
+<section id="needs">
+  <div class="shead"><span class="n">06</span><h2>招募與公司發展需求要點</h2></div>
+
+  <h3>公司端在補什麼——三個缺口，對應三種公司處境</h3>
+  <ol>
+    <li><strong>把 AI 接進既有產品的工程能力。</strong>
+      這是最普遍也最急的缺口。要的不是研究能力，是整合能力：
+      LLM API 串接、Prompt 設計、RAG、workflow 自動化（n8n）、
+      以及讓 AI 輸出品質可控可調的工程流程。
+      Appier 的 GenAI 缺、漸強的 AI-First 後端、awoo 的 Backend 都指向同一件事。</li>
+    <li><strong>把產品導入企業客戶的顧問能力。</strong>
+      客戶成功、解決方案顧問、技術支援、夥伴關係——這類職缺在本次資料中數量最多。
+      共同要求是：懂產業場景、看得懂數據、能跟客戶 IT 對話。
+      漸強的 Enterprise Solution Sales 明說要開拓金融、製造等新產業並面對 C-Level 決策鏈。</li>
+    <li><strong>把資料變成產品的能力（少數公司才有）。</strong>
+      只有 SHOPLINE 同時開出 Data Analyst、Data Engineer、Data Product Manager，
+      形成完整的資料職梯。其他公司要嘛沒有這條線，要嘛併進工程或商務團隊。</li>
+  </ol>
+
+  <h3>求職者要準備什麼——按投遞優先序</h3>
+  <div class="tscroll"><table>
+    <thead><tr><th>優先序</th><th>標的</th><th>理由（本次資料支持）</th><th>該準備的東西</th></tr></thead>
+    <tbody>
+      <tr><td class="num">1</td><td><strong>SHOPLINE 資料職</strong><br><span class="sub">Data Analyst ×2、Data Product Manager</span></td>
+        <td class="sm">全台唯一有完整資料職梯的 MarTech，且兩個管道都在刊、更新日期新。</td>
+        <td class="sm">SQL、電商指標（GMV／轉換／留存）、能講一個「分析結論接到金額決策」的案例。</td></tr>
+      <tr><td class="num">2</td><td><strong>漸強／Omnichat 客戶成功、解決方案</strong></td>
+        <td class="sm">缺口最多、薪資帶公開、JD 明確要求資料判讀能力，入行門檻相對合理。</td>
+        <td class="sm">LINE／對話式行銷的實際操作理解、能讀懂 CRM 成效報表、B2B 溝通能力。</td></tr>
+      <tr><td class="num">3</td><td><strong>Appier TSE 技術顧問線</strong><br><span class="sub">3 個開口，皆近期更新</span></td>
+        <td class="sm">Appier 台北唯一對非研究背景友善、且持續更新的技術端入口。</td>
+        <td class="sm">API／資料串接概念、SQL、能把技術問題翻譯成客戶語言。</td></tr>
+      <tr><td class="num">4</td><td><strong>awoo GEO／內容線</strong></td>
+        <td class="sm">GEO／LLMO 是本次資料中最新的產業語彙，早期進入者議價空間大。</td>
+        <td class="sm">SEO 基本功＋理解 AI 搜尋如何選擇引用來源。</td></tr>
+      <tr><td class="num">5</td><td><strong>Appier 分析職</strong><br><span class="sub">Campaign Analyst、Data Scientist, Analytics</span></td>
+        <td class="sm">2019 年掛到現在的常駐缺，一個已 8 個月未更新——期望值低，但投遞成本也低。</td>
+        <td class="sm">可以投，但<strong>不要當主要計畫</strong>。</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>投遞前一定要做的三件事</h3>
+  <ul>
+    <li><strong>自己去 104 補一次。</strong>本報告系統性缺 104 資料。
+      91APP、iKala、CYBERBIZ、cacaFly、域動這幾家，只看本報告會嚴重低估其開缺量。</li>
+    <li><strong>看更新日期再投。</strong>Cake 有確切更新日、Yourator 有相對時間、
+      Greenhouse 有刊登日與更新日。三個月沒動過的缺，優先序往後放。</li>
+    <li><strong>把「四維排序」換成自己的權重。</strong>
+      本頁的總分是四個維度等權相加，這個權重是我設的、不是你的。
+      在意穩定就加權成長力，在意環境就加權文化開放，名單會完全不同。</li>
+  </ul>
+</section>
+
+<section id="method">
+  <div class="shead"><span class="n">07</span><h2>資料方法與覆蓋限制</h2></div>
+  <p>本期起由 <code>martech-job-radar</code> 這個 repo 產生，
+    每個數字都能用 <code>.venv/bin/python run.py</code> 重跑。
+    公司主檔（含面試趣代碼）在 <code>companies.yaml</code>，報告版面在 <code>report/template.html</code>，
+    兩者分離——改資料不動版面，改版面不動資料。</p>
+
+  <h4>抓了什麼</h4>
+  <ul>
+    <li><strong>Greenhouse 官方公開 API</strong>（經上游快照取得）：Appier 全球 84 筆（含台北 54）。
+      唯一給得出 <code>first_published</code>（刊登日）的來源。</li>
+    <li><strong>Yourator 前端公開 JSON</strong>：以公司 slug 逐一查詢，本期漸強 6、SHOPLINE 29、
+      adGeek 5、91APP 1。<strong>這支是本期新增的</strong>——原本想「讀上游就好」，
+      但上游的追蹤名單沒有 SHOPLINE，只會從產業關鍵詞順帶撈到零星幾筆，
+      實測會漏掉 Yourator 那 29 筆（含兩個 Data Analyst）。
+      歸屬判準是<strong>逐家公司</strong>成立的，不是逐個平台。</li>
+    <li><strong>Cake（原 CakeResume）頁面內嵌 JSON</strong>：本期 Omnichat 7、SHOPLINE 23、awoo 5、Ocard 1。
+      三個管道中唯一給結構化薪資與確切更新日期的來源。</li>
+    <li><strong>面試趣 interview.tw</strong>：9 家公司的 <code>/c/&lt;code&gt;/info</code> 頁，
+      取公司評價、面試評價、難度、心得數、年薪中位、工時。無 bot 防護，可直接抓。</li>
+    <li><strong>公司官網徵才頁</strong>：逐一驗證連結可開啟（iKala、TenMax、Vpon、CYBERBIZ、漸強 Teamdoor 等），
+      但未解析頁內職缺。</li>
+    <li><strong>上游快照</strong>：<code>martech-trend-agent</code> 2026-08-05 的 147 筆
+      （Greenhouse ＋ Yourator），唯讀取用、六欄契約。</li>
+    <li><strong>產業資料</strong>：ChiefMartec 2026 Landscape、Appier 2026 Q1 財報與 Q2 指引、
+      CYBERBIZ 2025 營收報導。</li>
+  </ul>
+  <h4>沒抓什麼，為什麼</h4>
+  <ul>
+    <li><strong>104 人力銀行</strong>：有 Cloudflare 防護，實測回 HTTP 403。
+      不使用任何規避手段，因此整段放棄——這是本報告最大的單一缺口。</li>
+    <li><strong>LinkedIn</strong>：需登入，未取得。</li>
+    <li><strong>Meet.jobs</strong>：本次嘗試的端點皆回 404，未取得資料。</li>
+  </ul>
+  <h4>已知偏誤</h4>
+  <ul>
+    <li><strong>雇主規模偏誤</strong>：新創偏好 Yourator／Cake，中大型企業偏好 104。
+      本報告因此偏向新創視角。</li>
+    <li><strong>單一公司主導</strong>：Appier 一家佔實抓量的 45%，
+      任何「全產業比例」的推論都會被它拉偏，文中已盡量分開陳述。</li>
+    <li><strong>時間點快照</strong>：所有數字為 2026-08-05 的當下狀態，職缺會下架與新增。</li>
+    <li><strong>本期無跨期比較</strong>：pipeline 第一期，沒有上一期可 diff。
+      下一期起才會有「新增／消失職缺」。</li>
+    <li><strong>公司職缺表只涵蓋 9 家</strong>：其餘 196 − 118 筆來自上游的產業關鍵詞掃描
+      （奧美、仁寶等非 MarTech 本業公司），計入總數但不單獨列表。</li>
+    <li><strong>評分主觀性</strong>：口碑已有 9 家實抓（見 §02 原始數據表），熱門與成長力仍含判斷成分，
+      證據強度已於表格標示。</li>
+  </ul>
+</section>
+
+<section id="refresh">
+  <div class="shead"><span class="n">08</span><h2>這份報告要怎麼定期更新</h2></div>
+  <p>本報告的七節<strong>全部可以保留</strong>，但不是一鍵全自動——它跟趨勢週報一樣是兩層。
+    下表逐節列出「由誰產生、什麼頻率、不更新會退化成什麼」。
+    重點是：<strong>沒跑的那一節要明確標示日期，不能讓舊判斷偽裝成新的</strong>。</p>
+
+  <div class="tscroll"><table>
+    <thead><tr><th>本頁章節</th><th>由誰產生</th><th>建議頻率</th><th>不更新會怎樣</th></tr></thead>
+    <tbody>
+      <tr><td><strong>01 情報判斷</strong></td><td>模型（需讀本期＋上期資料）</td><td>每次</td>
+        <td class="sm">整節失效。判斷本身就是「本期 vs 上期」的差，沒有新資料就沒有判斷。</td></tr>
+      <tr><td><strong>02 公司排序</strong></td><td class="sm">實抓缺數＝機械<br>口碑＝機械（面試趣）<br>文化開放＝機械（行為推算）<br>熱門／成長力＝主檔手動</td>
+        <td class="sm">機械欄每次<br>主檔每季</td>
+        <td class="sm">四欄裡三欄自動更新，成長力會過期——但財報本來就是季頻，過期一季無妨。</td></tr>
+      <tr><td><strong>03 職缺明細</strong></td><td>機械</td><td>每次</td>
+        <td class="sm">最容易壞的一節。職缺會下架，兩週不更新就會有失效連結。</td></tr>
+      <tr><td><strong>04 職缺與公司分析</strong></td><td class="sm">統計數字＝機械<br>敘事與分群＝模型</td><td>每次</td>
+        <td class="sm">數字自動更新但敘事不動，會出現「數字說 A、文字說 B」的矛盾。這是最危險的退化。</td></tr>
+      <tr><td><strong>05 產業與招募趨勢</strong></td><td class="sm">直接引用趨勢週報的當期結論</td><td>跟著週報</td>
+        <td class="sm">不會壞，但要標明引用的是哪一期，否則會引到已被收回的判斷。</td></tr>
+      <tr><td><strong>06 招募需求要點</strong></td><td>模型（要接你的個人進度）</td><td>投遞前</td>
+        <td class="sm">投遞優先序跟你的技能狀態綁在一起，你補完 SQL 之後這張表就該重排。</td></tr>
+      <tr><td><strong>07 方法與限制</strong></td><td class="sm">抓取結果＝機械<br>偏誤說明＝固定文本</td><td>每次</td>
+        <td class="sm">幾乎不會退化，各管道筆數自動帶入即可。</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>要動到趨勢週報的架構嗎？不用</h3>
+  <p>兩者共用資料、分離產出，<strong>介面是檔案不是程式</strong>：這份報告只讀趨勢週報產出的
+    <code>data/raw/&lt;最新日期&gt;/jobs.json</code>，不 import 它的模組、不改它的 <code>config.yaml</code>。
+    趨勢週報怎麼重構內部都不會弄壞這裡，只要那份 JSON 的欄位不變。
+    唯一需要碰它的地方是在它的 README 加一行「此檔為對外契約，欄位改動需通知下游」——
+    一行文件，不是架構改動。</p>
+  <div class="grid2">
+    <div>
+      <h4>趨勢週報負責的事</h4>
+      <p>產業風向往哪吹。抓 RSS＋Greenhouse＋Yourator，每 3 天一期，
+        產出主題聲量與趨勢判斷。<strong>結論的唯一來源。</strong></p>
+    </div>
+    <div>
+      <h4>這份報告負責的事</h4>
+      <p>我現在該投哪裡。補抓它沒有的 Cake、面試趣、官網徵才頁，
+        每兩週或投遞前跑，產出公司排序與職缺明細。
+        趨勢那一節<strong>直接引用</strong>週報結論，不自己重算——這樣兩份報告永遠不會互相打架。</p>
+    </div>
+  </div>
+
+  <h3>唯一補不起來的缺口</h3>
+  <p>104 的 Cloudflare 防護不會因為做成 pipeline 就消失。
+    所以 iKala、CYBERBIZ、TenMax、Vpon、cacaFly 這幾家的「實抓缺」欄位<strong>會永遠是「—」</strong>。
+    這不是工程問題，是資料取得問題，只能靠你投遞前手動去 104 補一次。
+    好消息是：<strong>口碑那一欄穿透了這個缺口</strong>——面試趣不管公司有沒有在刊職缺都有資料，
+    所以就算職缺抓不到，你對這幾家的判斷依據也不是零。</p>
+  <footer>
+    <p>資料抓取與整理：2026-08-05。職缺為當下快照，投遞前請至原始連結確認狀態。
+      本頁所有職缺連結皆指向原始刊登頁面。</p>
+  </footer>
+</section>
+
+</div>
+
+<script>
+(function(){
+  var table = document.getElementById('coTable');
+  var tbody = table.querySelector('tbody');
+  var rows = Array.prototype.slice.call(tbody.querySelectorAll('tr'));
+  var buttons = Array.prototype.slice.call(document.querySelectorAll('.sortbar button'));
+
+  function renumber(){
+    tbody.querySelectorAll('tr').forEach(function(tr, i){
+      tr.querySelector('.rank').textContent = i + 1;
+    });
+  }
+  function sortBy(key){
+    var sorted = rows.slice().sort(function(a, b){
+      var d = Number(b.dataset[key]) - Number(a.dataset[key]);
+      if (d !== 0) return d;
+      return Number(b.dataset.total) - Number(a.dataset.total);
+    });
+    sorted.forEach(function(tr){ tbody.appendChild(tr); });
+    renumber();
+  }
+  buttons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      buttons.forEach(function(b){ b.setAttribute('aria-pressed', String(b === btn)); });
+      sortBy(btn.dataset.sort);
+    });
+  });
+  sortBy('total');
+})();
+</script>
