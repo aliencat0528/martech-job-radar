@@ -2,8 +2,9 @@
 
 流程：
     companies.yaml
-      ├─ fetch/fetchCake.py   → Cake 職缺
-      ├─ fetch/fetchRep.py    → 面試趣口碑
+      ├─ fetch/fetchCake.py     → Cake 職缺
+      ├─ fetch/fetchYourator.py → Yourator（補上游沒追蹤的公司，如 SHOPLINE）
+      ├─ fetch/fetchRep.py      → 面試趣口碑
       └─ 讀 martech-trend-agent 最新快照（唯讀契約，找不到就降級，不硬相依）
                 ↓
         data/auto/<日期>/*.json
@@ -24,14 +25,20 @@ import sys
 import yaml
 
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
-from fetch import fetchCake, fetchRep  # noqa: E402
+from fetch import fetchCake, fetchRep, fetchYourator  # noqa: E402
 
 
-def readTrendSnapshot(config, logger=print):
+def readTrendSnapshot(config, runDate, logger=print):
     """讀 martech-trend-agent 最新一期的 jobs.json。
 
     契約只有六個欄位，缺哪個都不致命；找不到快照就回空清單並提醒，
     **不讓上游缺席變成本專案跑不動**（← D-018）。
+
+    ⚠️ 上游讀的是它的**工作區**，所以它停在哪個分支就決定我們拿到哪一版資料。
+    上游有未合併的 PR 時，最新快照可能不在工作區上——2026-08-05 實際踩到：
+    上游切到 `docs/contract-first`（自 main 開），8/05 的快照留在未合併的
+    `chore/data-refresh-sec`，本函式安靜地退回 7/31 的舊資料。
+    因此比照手動管道（JR-003）加新鮮度守門：**比執行日舊就出聲**。
     """
     base = pathlib.Path(config.get("trendAgentSnapshotDir", "")).expanduser()
     if not base.exists():
@@ -56,7 +63,14 @@ def readTrendSnapshot(config, logger=print):
             "seniority": "",
             "req": (r.get("description") or "")[:1800],
         } for r in raw]
-        logger(f"  上游快照 [{snapshot.name}] {len(rows)} 筆")
+        stale = snapshot.name < runDate
+        logger(f"  上游快照 [{snapshot.name}] {len(rows)} 筆"
+               + ("  ⚠️ 比執行日舊" if stale else ""))
+        if stale:
+            logger(f"  ⚠️  上游最新快照是 {snapshot.name}，但本次執行日為 {runDate}。")
+            logger("      常見原因：上游 repo 的工作區停在不含最新快照的分支"
+                   "（例如有未合併的資料刷新 PR）。")
+            logger("      → 先確認上游分支，或在報告中標明職缺資料的實際日期。")
         return rows, snapshot.name
 
     logger("  ⚠️  上游目錄存在但沒有任何 jobs.json——降級為只用本專案自抓的來源")
@@ -68,6 +82,7 @@ def main():
     ap.add_argument("--date", default=dt.date.today().isoformat())
     ap.add_argument("--config", default="companies.yaml")
     ap.add_argument("--no-cake", action="store_true", help="略過 Cake")
+    ap.add_argument("--no-yourator", action="store_true", help="略過 Yourator")
     ap.add_argument("--no-rep", action="store_true", help="略過面試趣")
     ap.add_argument("--no-upstream", action="store_true", help="不讀 trend-agent 快照")
     args = ap.parse_args()
@@ -79,7 +94,7 @@ def main():
 
     if not args.no_upstream:
         print("▶ 讀取 martech-trend-agent 快照…", flush=True)
-        rows, snapDate = readTrendSnapshot(config)
+        rows, snapDate = readTrendSnapshot(config, args.date)
         if rows:
             json.dump(rows, open(outDir / "upstream.json", "w", encoding="utf-8"),
                       ensure_ascii=False, indent=1)
@@ -89,6 +104,13 @@ def main():
         jobs, errs = fetchCake.fetchAll(config)
         errors += errs
         json.dump(jobs, open(outDir / "cake.json", "w", encoding="utf-8"),
+                  ensure_ascii=False, indent=1)
+
+    if not args.no_yourator:
+        print("▶ 抓取 Yourator 職缺（補上游沒追蹤的公司）…", flush=True)
+        jobs, errs = fetchYourator.fetchAll(config)
+        errors += errs
+        json.dump(jobs, open(outDir / "yourator.json", "w", encoding="utf-8"),
                   ensure_ascii=False, indent=1)
 
     if not args.no_rep:

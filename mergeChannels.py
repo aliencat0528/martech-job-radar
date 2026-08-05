@@ -55,9 +55,22 @@ def normTitle(title):
     return s.lower()
 
 
+PAT_JOBCODE = re.compile(r"【([A-Za-z0-9]{4,12})】")
+
+
 def dedupeKey(row):
-    """跨管道去重鍵。不用 url——同一個缺在不同平台的 url 本來就不同。"""
-    return f"{normCompany(row.get('company'))}|{normTitle(row.get('title'))}"
+    """跨管道去重鍵。不用 url——同一個缺在不同平台的 url 本來就不同。
+
+    有平台職缺編號（如 SHOPLINE 的【TPD0803】）時**優先用編號**：
+    2026-08-05 實測 19 筆 SHOPLINE 職缺在 Yourator 與 Cake 兩邊編號一致，
+    證明它是可靠識別碼。反過來，只靠職稱會把編號不同、職稱相同的兩個真實職缺
+    （`【SGMO0801】Data Analyst` 與 `【TPD0803】Data Analyst`，分屬不同團隊）誤併成一筆。
+    """
+    company = normCompany(row.get("company"))
+    code = PAT_JOBCODE.search(row.get("title") or "")
+    if code:
+        return f"{company}|#{code.group(1).lower()}"
+    return f"{company}|{normTitle(row.get('title'))}"
 
 
 def loadDir(path, label):
