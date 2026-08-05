@@ -133,5 +133,8 @@ MIT License
 
 ## 相關文件
 
+- **待驗證與待操作事項（8 筆）** → `prepare.md` 文末。
+  其中第 1 筆最重要：`import104.py` 從未對真實 104 頁面跑過
+- 決策記錄（`JR-` 系列）→ `prepare.md`
 - README 更新觸發條件、版本規則 → `../.claude/specs/docs.md`
 - 分析層流程 → `../.claude/commands/job-radar.md`
