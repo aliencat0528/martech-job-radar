@@ -1,0 +1,226 @@
+# martech-job-radar 公司主檔
+# 這是本專案唯一需要手動維護的檔案。要加公司、改權重，改這裡即可，不用動程式碼。
+#
+# ── 為什麼這份檔案值錢 ──
+# interviewCode 無法自動取得：面試趣的搜尋頁是前端渲染，抓不到公司代碼，
+# 每一個都是靠網路搜尋一家家挖出來的。挖到之後永久可用，所以務必保留。
+#
+# ── 四個維度怎麼來 ──
+#   hot     熱門   手動，季更。可查職缺量 ＋ 近 30 天媒體聲量 ＋ 面試趣心得數
+#   rep     口碑   自動，由 fetchRep.py 抓面試趣「公司評價」換算，本檔不填
+#   growth  成長力 手動，季更。已公開的營收／募資／上市狀態，證據寫在 growthNote
+#   open    文化開放 自動，由行為推算（是否用開放平台、是否公開薪資帶、
+#                    是否提供實習／遠端、JD 是否具體），本檔不填
+#
+# rep 換算規則（固定，可重跑）：>=4.0→5、3.5–3.9→4、3.0–3.4→3、2.5–2.9→2、<2.5→1
+# 心得數 < 50 視為樣本不足，rep 標「—」不給分，四維總分以已測公司中位數代入（← JR-001）
+repScoreBands: [[4.0, 5], [3.5, 4], [3.0, 3], [2.5, 2], [0.0, 1]]
+repMinReviews: 50
+
+# 手動來源新鮮度上限（天）。超過就在整併報表要求標為「可能已下架」（← JR-003）
+manualMaxAgeDays: 21
+
+# 上游快照：martech-trend-agent 產出的 jobs.json（唯讀契約，← D-018）
+# 找不到就降級成只用本專案自抓的來源，不硬相依
+trendAgentSnapshotDir: "../martech-trend-agent/data/raw"
+trendAgentContractFields: [company, title, area, link, appearDate, source]
+
+companies:
+  # ── 有實抓職缺的公司 ──
+  - name: Appier 沛星互動科技
+    category: Agentic AI／廣告＋CDP
+    hot: 5
+    growth: 5
+    growthNote: 東證上市 4180；2026 Q1 營收 121 億日圓 YoY +29.4%，Q2 指引 125–127 億
+    channels:
+      greenhouse: appier
+      cake: appier          # 實測 0 筆，保留供偵測改變
+      interviewCode: XTDv
+    careers: https://www.appier.com/en/careers.html
+    note: 台北 55 缺為全台最大單一雇主開口；85 筆全數未公開薪資
+
+  - name: SHOPLINE 商線科技
+    category: 電商 SaaS／OMO
+    hot: 4
+    growth: 4
+    growthNote: 港台跨區營運，資料職梯完整
+    channels:
+      yourator: SHOPLINE
+      cake: shopline
+      interviewCode: 4RSW
+    note: 全台唯一有完整資料職梯（DA ×2、DE、Sr.DE、Data PM、Data Ops）
+
+  - name: 漸強實驗室 Crescendo Lab
+    category: LINE／對話式 CRM
+    hot: 4
+    growth: 4
+    growthNote: JD 自述「AI-First 組織轉型」「目標成為第一的 AI Communication Cloud」
+    channels:
+      yourator: CrescendoLab
+      teamdoor: https://cresclab.teamdoor.io/
+      interviewCode: ckDyY   # 心得數不足，rep 會標「—」
+    note: 薪資帶公開度全台最高——後端 130–200 萬、CSM 80–140 萬、BD 94–150 萬
+
+  - name: Omnichat 全通路科技
+    category: 對話式商務／OMO
+    hot: 3
+    growth: 4
+    growthNote: 2017 創於香港，台／港／馬／新四地，客戶逾 5,000 家；2020 AppWorks 領投
+    channels:
+      cake: omnichat.ai
+      interviewCode: smDw
+    careers: https://www.omnichat.ai/
+    note: 7 缺中 3 個是 BD／夥伴關係——擴的是通路不是研發
+
+  - name: awoo 阿物科技
+    category: SEO／GEO／LLMO
+    hot: 3
+    growth: 4
+    growthNote: JD 自述服務全球逾 16,000 家企業，主打 GEO／LLMO
+    channels:
+      cake: awoo
+      interviewCode: NBvr
+    careers: https://www.awoo.ai/zh-hant/
+    note: 嘉義／台北／高雄三地皆可，清單中唯一非雙北為重心的 MarTech
+
+  - name: adGeek／Atelli 艾得利
+    category: AI 廣告投放自動化
+    hot: 3
+    growth: 3
+    growthNote: 主力產品 A.I. 廣告投手；未公開財務數字
+    channels:
+      yourator: adGeek
+    note: 唯一把「可申請遠端／彈性上下班」寫進職缺標題的公司
+
+  - name: The Trade Desk（台北）
+    category: 國際 DSP／獨立廣告平台
+    hot: 4
+    growth: 4
+    growthNote: 美國那斯達克上市；全球 196 缺中台北 2 個
+    channels:
+      greenhouse: thetradedesk
+    note: 台北兩缺皆總監級商務。國際 MarTech 在台通常只設商務端、不設研發
+
+  - name: 91APP
+    category: OMO 電商 SaaS（上櫃 6741）
+    hot: 4
+    growth: 3
+    growthNote: 台灣首家掛牌上櫃 SaaS，600+ 人
+    channels:
+      yourator: 91APP
+      cake: 91app          # 實測 0 筆
+      interviewCode: MsgN
+    manualOnly: false
+    note: 開放平台只露出 1 筆，主力刊登在 104——0～1 筆不等於沒在招
+
+  - name: Ocard 瑞乘數位
+    category: 會員經營／餐飲 CRM
+    hot: 2
+    growth: 3
+    growthNote: 2016 上線，OMO 顧客經營平台
+    channels:
+      cake: ocard
+
+  # ── 職缺只在 104 的公司（manualOnly: true）──
+  # 已於 2026-08-05 查證：官網徵才頁沒有職缺清單，只是導流頁。
+  # 未人工匯入 104 時，這些公司在報告中必須標「未取得」而非「無職缺」。
+  - name: iKala 愛卡拉
+    category: AI Cloud＋KOL 社群數據
+    hot: 4
+    growth: 4
+    growthNote: 8 國、15,000 家企業；2026-08-03 與 Google Cloud／Google Ads 合推 Agent Economy
+    channels:
+      interviewCode: l4wW
+      company104: oi6pygw
+    careers: https://ikala.ai/careers/
+    manualOnly: true
+    note: 官網人才招募頁的唯一職缺出口就是 104 公司頁（2026-08-05 查證）
+
+  - name: CYBERBIZ 順立智慧
+    category: 電商 SaaS＋倉儲物流
+    hot: 3
+    growth: 5
+    growthNote: 2025 營收 YoY +37%、連 6 年獲利、推進 IPO，但人力只成長約 10%
+    channels:
+      interviewCode: ePWO
+    careers: https://www.cyberbiz.co/careers
+    manualOnly: true
+    note: 官網 careers 底下只有一份通用履歷表單，無職缺欄位（2026-08-05 查證）
+
+  - name: Vpon 威朋大數據
+    category: 行動數據／跨境廣告
+    hot: 3
+    growth: 3
+    growthNote: 日本市場為主力；未公開近期財務
+    channels: {}
+    careers: https://www.vpon.com/en/careers/
+    manualOnly: true
+    note: careers 頁最後更新停在 2025-02-17，無職缺清單
+
+  - name: cacaFly 聖洋科技
+    category: 媒體代理＋自有 MarTech
+    hot: 3
+    growth: 3
+    channels: {}
+    careers: https://www.cacafly.com/
+    manualOnly: true
+
+  - name: 域動行銷 Clickforce
+    category: 程序化廣告／數據聯播網
+    hot: 2
+    growth: 2
+    growthNote: 中華電信集團體系
+    channels: {}
+    careers: https://www.clickforce.com.tw/
+    manualOnly: true
+
+  # ── 其餘追蹤中、目前無實抓職缺的公司 ──
+  - name: TenMax 騰學廣告科技
+    category: DSP／零售媒體（funP 集團）
+    hot: 3
+    growth: 3
+    growthNote: 2026 新加坡 MARKies「最具創意家外廣告」銅獎
+    channels:
+      yourator: TenMax     # 官網唯一導向此處，實測 totalPages=0
+      cake: tenmax
+      interviewCode: jAgf
+    careers: https://www.tenmax.io/hire
+    note: 官網唯一導向 Yourator 而該處 0 筆——「目前無公開在刊職缺」是查證結果，非覆蓋缺口
+
+  - name: AccuHit 愛酷智能
+    category: CDP／對話式商務
+    hot: 2
+    growth: 3
+    growthNote: 產品線 AccuCDP／Accu3DM／AccuNix
+    channels:
+      cake: accuhit-net
+      yourator: AccuHit
+
+  - name: Rosetta.ai
+    category: 電商個人化推薦
+    hot: 2
+    growth: 2
+    channels: {}
+    careers: https://www.rosetta.ai/
+
+  - name: Tagtoo 塔圖科技
+    category: 再行銷／電商廣告
+    hot: 2
+    growth: 2
+    channels: {}
+    careers: https://www.tagtoo.com/
+
+  - name: MoBagel 行動貝果
+    category: AutoML／決策分析
+    hot: 2
+    growth: 3
+    growthNote: Decanter AutoML；偏資料科學工具但職能高度重疊
+    channels:
+      cake: mobagel
+
+  - name: 電子豹 Newsleopard
+    category: EDM 行銷自動化
+    hot: 2
+    growth: 2
+    channels: {}
+    careers: https://www.newsleopard.com/about

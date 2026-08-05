@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+
+# 104 人工匯入的原始 HTML：來自使用者自己的瀏覽器，體積大且屬個人瀏覽記錄，不進版控
+# （解析後的 data/manual/104/<日期>/*.json 才進）
+data/manual/104/**/*.html
+
+.DS_Store
