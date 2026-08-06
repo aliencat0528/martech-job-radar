@@ -10,10 +10,28 @@
 #   rep     口碑   自動，由 fetchRep.py 抓面試趣「公司評價」換算，本檔不填
 #   growth  成長力 手動，季更。已公開的營收／募資／上市狀態，證據寫在 growthNote
 #   open    文化開放 自動，由行為推算（是否用開放平台、是否公開薪資帶、
-#                    是否提供實習／遠端、JD 是否具體），本檔不填
+#                    是否提供實習／遠端、JD 是否具體）
 #
 # rep 換算規則（固定，可重跑）：>=4.0→5、3.5–3.9→4、3.0–3.4→3、2.5–2.9→2、<2.5→1
 # 心得數 < 50 視為樣本不足，rep 標「—」不給分，四維總分以已測公司中位數代入（← JR-001）
+#
+# ── category／segment／purity（← JR-004）──
+# category  MarTech Landscape 六大類**固定值**，只能是 categories 清單裡的字串。
+#           改成固定值是為了讓「這一期是廣告端還是資料端在招人」算得出來——
+#           原本每家一種寫法（自由字串）無法彙總。
+# segment   原本的自由字串，降級成細分領域，只供顯示。
+# purity    三層全收（← JR-004），但**報告只排序 core**：
+#             core     自有 MarTech 產品／平台為主要營收來源
+#             service  代理商、顧問、系統整合商，賣的是人與專案
+#             adjacent 主業非行銷科技，但職能高度重疊
+#           service／adjacent 的熱門度與成長力和 SaaS 不同義，同榜等於把兩把尺相加。
+#
+# 六大類的歸屬有幾家本來就跨界（Appier 廣告＋CDP、awoo SEO＋GEO、iKala 雲端＋KOL），
+# 這裡取**主要營收來源**那一類，不是取最貼切的形容。要改請連 segment 一起改，
+# 不要只換 category 讓兩欄互相矛盾。
+categories: [廣告推廣, 內容體驗, 社群關係, 商務銷售, 資料, 管理]
+purityLevels: [core, service, adjacent]
+
 repScoreBands: [[4.0, 5], [3.5, 4], [3.0, 3], [2.5, 2], [0.0, 1]]
 repMinReviews: 50
 
@@ -28,7 +46,9 @@ trendAgentContractFields: [company, title, area, link, appearDate, source]
 companies:
   # ── 有實抓職缺的公司 ──
   - name: Appier 沛星互動科技
-    category: Agentic AI／廣告＋CDP
+    category: 廣告推廣
+    segment: Agentic AI／廣告＋CDP
+    purity: core
     hot: 5
     growth: 5
     growthNote: 東證上市 4180；2026 Q1 營收 121 億日圓 YoY +29.4%，Q2 指引 125–127 億
@@ -40,7 +60,9 @@ companies:
     note: 台北 55 缺為全台最大單一雇主開口；85 筆全數未公開薪資
 
   - name: SHOPLINE 商線科技
-    category: 電商 SaaS／OMO
+    category: 商務銷售
+    segment: 電商 SaaS／OMO
+    purity: core
     hot: 4
     growth: 4
     growthNote: 港台跨區營運，資料職梯完整
@@ -51,7 +73,9 @@ companies:
     note: 全台唯一有完整資料職梯（DA ×2、DE、Sr.DE、Data PM、Data Ops）
 
   - name: 漸強實驗室 Crescendo Lab
-    category: LINE／對話式 CRM
+    category: 社群關係
+    segment: LINE／對話式 CRM
+    purity: core
     hot: 4
     growth: 4
     growthNote: JD 自述「AI-First 組織轉型」「目標成為第一的 AI Communication Cloud」
@@ -62,7 +86,9 @@ companies:
     note: 薪資帶公開度全台最高——後端 130–200 萬、CSM 80–140 萬、BD 94–150 萬
 
   - name: Omnichat 全通路科技
-    category: 對話式商務／OMO
+    category: 社群關係
+    segment: 對話式商務／OMO
+    purity: core
     hot: 3
     growth: 4
     growthNote: 2017 創於香港，台／港／馬／新四地，客戶逾 5,000 家；2020 AppWorks 領投
@@ -73,7 +99,9 @@ companies:
     note: 7 缺中 3 個是 BD／夥伴關係——擴的是通路不是研發
 
   - name: awoo 阿物科技
-    category: SEO／GEO／LLMO
+    category: 內容體驗
+    segment: SEO／GEO／LLMO
+    purity: core
     hot: 3
     growth: 4
     growthNote: JD 自述服務全球逾 16,000 家企業，主打 GEO／LLMO
@@ -84,7 +112,9 @@ companies:
     note: 嘉義／台北／高雄三地皆可，清單中唯一非雙北為重心的 MarTech
 
   - name: adGeek／Atelli 艾得利
-    category: AI 廣告投放自動化
+    category: 廣告推廣
+    segment: AI 廣告投放自動化
+    purity: core
     hot: 3
     growth: 3
     growthNote: 主力產品 A.I. 廣告投手；未公開財務數字
@@ -93,7 +123,9 @@ companies:
     note: 唯一把「可申請遠端／彈性上下班」寫進職缺標題的公司
 
   - name: The Trade Desk（台北）
-    category: 國際 DSP／獨立廣告平台
+    category: 廣告推廣
+    segment: 國際 DSP／獨立廣告平台
+    purity: core
     hot: 4
     growth: 4
     growthNote: 美國那斯達克上市；全球 196 缺中台北 2 個
@@ -102,7 +134,9 @@ companies:
     note: 台北兩缺皆總監級商務。國際 MarTech 在台通常只設商務端、不設研發
 
   - name: 91APP
-    category: OMO 電商 SaaS（上櫃 6741）
+    category: 商務銷售
+    segment: OMO 電商 SaaS（上櫃 6741）
+    purity: core
     hot: 4
     growth: 3
     growthNote: 台灣首家掛牌上櫃 SaaS，600+ 人
@@ -114,7 +148,9 @@ companies:
     note: 開放平台只露出 1 筆，主力刊登在 104——0～1 筆不等於沒在招
 
   - name: Ocard 瑞乘數位
-    category: 會員經營／餐飲 CRM
+    category: 社群關係
+    segment: 會員經營／餐飲 CRM
+    purity: core
     hot: 2
     growth: 3
     growthNote: 2016 上線，OMO 顧客經營平台
@@ -125,7 +161,9 @@ companies:
   # 已於 2026-08-05 查證：官網徵才頁沒有職缺清單，只是導流頁。
   # 未人工匯入 104 時，這些公司在報告中必須標「未取得」而非「無職缺」。
   - name: iKala 愛卡拉
-    category: AI Cloud＋KOL 社群數據
+    category: 社群關係
+    segment: AI Cloud＋KOL 社群數據
+    purity: core
     hot: 4
     growth: 4
     growthNote: 8 國、15,000 家企業；2026-08-03 與 Google Cloud／Google Ads 合推 Agent Economy
@@ -137,7 +175,9 @@ companies:
     note: 官網人才招募頁的唯一職缺出口就是 104 公司頁（2026-08-05 查證）
 
   - name: CYBERBIZ 順立智慧
-    category: 電商 SaaS＋倉儲物流
+    category: 商務銷售
+    segment: 電商 SaaS＋倉儲物流
+    purity: core
     hot: 3
     growth: 5
     growthNote: 2025 營收 YoY +37%、連 6 年獲利、推進 IPO，但人力只成長約 10%
@@ -148,7 +188,9 @@ companies:
     note: 官網 careers 底下只有一份通用履歷表單，無職缺欄位（2026-08-05 查證）
 
   - name: Vpon 威朋大數據
-    category: 行動數據／跨境廣告
+    category: 廣告推廣
+    segment: 行動數據／跨境廣告
+    purity: core
     hot: 3
     growth: 3
     growthNote: 日本市場為主力；未公開近期財務
@@ -158,7 +200,9 @@ companies:
     note: careers 頁最後更新停在 2025-02-17，無職缺清單
 
   - name: cacaFly 聖洋科技
-    category: 媒體代理＋自有 MarTech
+    category: 廣告推廣
+    segment: 媒體代理＋自有 MarTech
+    purity: service
     hot: 3
     growth: 3
     channels: {}
@@ -166,7 +210,9 @@ companies:
     manualOnly: true
 
   - name: 域動行銷 Clickforce
-    category: 程序化廣告／數據聯播網
+    category: 廣告推廣
+    segment: 程序化廣告／數據聯播網
+    purity: core
     hot: 2
     growth: 2
     growthNote: 中華電信集團體系
@@ -176,7 +222,9 @@ companies:
 
   # ── 其餘追蹤中、目前無實抓職缺的公司 ──
   - name: TenMax 騰學廣告科技
-    category: DSP／零售媒體（funP 集團）
+    category: 廣告推廣
+    segment: DSP／零售媒體（funP 集團）
+    purity: core
     hot: 3
     growth: 3
     growthNote: 2026 新加坡 MARKies「最具創意家外廣告」銅獎
@@ -188,7 +236,9 @@ companies:
     note: 官網唯一導向 Yourator 而該處 0 筆——「目前無公開在刊職缺」是查證結果，非覆蓋缺口
 
   - name: AccuHit 愛酷智能
-    category: CDP／對話式商務
+    category: 資料
+    segment: CDP／對話式商務
+    purity: core
     hot: 2
     growth: 3
     growthNote: 產品線 AccuCDP／Accu3DM／AccuNix
@@ -197,21 +247,27 @@ companies:
       yourator: AccuHit
 
   - name: Rosetta.ai
-    category: 電商個人化推薦
+    category: 商務銷售
+    segment: 電商個人化推薦
+    purity: core
     hot: 2
     growth: 2
     channels: {}
     careers: https://www.rosetta.ai/
 
   - name: Tagtoo 塔圖科技
-    category: 再行銷／電商廣告
+    category: 廣告推廣
+    segment: 再行銷／電商廣告
+    purity: core
     hot: 2
     growth: 2
     channels: {}
     careers: https://www.tagtoo.com/
 
   - name: MoBagel 行動貝果
-    category: AutoML／決策分析
+    category: 資料
+    segment: AutoML／決策分析
+    purity: adjacent
     hot: 2
     growth: 3
     growthNote: Decanter AutoML；偏資料科學工具但職能高度重疊
@@ -219,8 +275,136 @@ companies:
       cake: mobagel
 
   - name: 電子豹 Newsleopard
-    category: EDM 行銷自動化
+    category: 廣告推廣
+    segment: EDM 行銷自動化
+    purity: core
     hot: 2
     growth: 2
     channels: {}
     careers: https://www.newsleopard.com/about
+
+  # ── 2026-08-06 依 JR-004 補收（原名單無收錄準則，這批是補回來的缺口）──
+  # 這批**刻意不填 hot／growth**：查不到證據就留空，不硬填（← JR-001 主觀判斷被實測推翻過三家）。
+  # 未評分者不進四維排名，報告的 # 欄顯示「—」，但照樣列出來——
+  # 「不排名」和「不存在」是兩回事，美庫爾就是因為後者而整家消失。
+  - name: 美庫爾 Merkle Taiwan
+    category: 廣告推廣
+    segment: 資料商務／顧客體驗管理（CXM）顧問
+    purity: service
+    channels:
+      company104: 1a2x6bicuq
+    careers: https://www.dentsu.com/tw/zh/who-we-are/our-agencies/merkle-taiwan
+    manualOnly: true
+    note: dentsu 旗下全球 CXM 品牌，2021-12 在台成立。職缺出口是 104 公司頁
+
+  - name: 達摩媒體
+    category: 廣告推廣
+    segment: 程序化廣告／DMP
+    purity: core
+    channels:
+      company104: cyrv33k
+    manualOnly: true
+    note: 104 公司頁顯示徵才中（2026-08-06 查證），開放平台無露出
+
+  - name: Accucrazy 肖準行銷
+    category: 廣告推廣
+    segment: 數位廣告代理／廣告科技
+    purity: service
+    channels:
+      yourator: ACCUCRAZY
+
+  - name: OakMega 大橡科技
+    category: 社群關係
+    segment: Social CRM／LINE 行銷自動化
+    purity: core
+    growthNote: 2019 創立，服務逾 150 家品牌，獲日本顧問企業投資並進軍日本市場
+    channels:
+      yourator: OakMega
+    careers: https://oakmega.com/
+    note: 與漸強、AccuHit、Omnichat 同一條對話式 CRM 賽道，原名單漏收
+
+  - name: 意藍資訊 eLand
+    category: 社群關係
+    segment: 社群口碑資料庫 OpView（上櫃 6925）
+    purity: core
+    growthNote: 2025 上櫃；自述雲端訂閱佔營收 >90%、續約率 >85%、毛利率 >80%
+    channels: {}
+    careers: https://www.eland.com.tw/
+    note: 台灣最大社群輿情分析平台；招募管道待查，可能只在 104
+
+  - name: CreatorDB
+    category: 社群關係
+    segment: KOL／創作者數據
+    purity: core
+    channels:
+      yourator: CreatorDB
+    note: 對標 iKala KOL Radar
+
+  - name: AlleyPin 翔評互動
+    category: 社群關係
+    segment: 評論口碑管理／診所 CRM
+    purity: core
+    channels:
+      yourator: AlleyPin
+
+  - name: LnData 麟數據科技
+    category: 資料
+    segment: DMP＋CDP 雙引擎／資料治理
+    purity: core
+    growthNote: 自述台灣第一家第三方數據監測公司；未公開財務
+    channels: {}
+    careers: https://www.lndata.com/
+    note: 招募管道待查
+
+  - name: WebComm 偉康科技
+    category: 資料
+    segment: CDP／身分驗證系統整合
+    purity: adjacent
+    channels:
+      yourator: WebComm
+    note: 身分驗證起家，CDP 是延伸產品線——職能重疊但主業不是行銷科技
+
+  - name: meepShop
+    category: 商務銷售
+    segment: 開店 SaaS
+    purity: core
+    channels:
+      yourator: meepShop
+    note: 與 SHOPLINE／91APP 同類，原名單漏收
+
+  - name: inline
+    category: 商務銷售
+    segment: 餐飲訂位／會員經營
+    purity: core
+    channels:
+      yourator: inLine
+    note: 與 Ocard 同類
+
+  - name: 12CM 睿鼎數位
+    category: 商務銷售
+    segment: O2O 支付／會員
+    purity: adjacent
+    channels:
+      yourator: 12cm
+
+  - name: 樂播科技 Jambo Live
+    category: 商務銷售
+    segment: 直播電商工具
+    purity: adjacent
+    channels:
+      yourator: jambolive
+
+  - name: 玩美移動 Perfect Corp
+    category: 內容體驗
+    segment: AI／AR 虛擬試妝（NYSE 上市）
+    purity: core
+    growthNote: 紐交所上市；產品賣給美妝與時尚品牌
+    channels:
+      yourator: PERFECTcorp
+
+  - name: 簡訊設計 SimpleInfo
+    category: 內容體驗
+    segment: 內容／視覺設計代理
+    purity: service
+    channels:
+      yourator: simpleinfo

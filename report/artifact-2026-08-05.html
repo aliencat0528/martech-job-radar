@@ -113,6 +113,11 @@ tr.grp:hover td{background:var(--band)}
   text-align:right;font-size:12px}
 .cname{font-weight:650;font-size:14px}
 .ccat{color:var(--ink-3);font-size:11.5px}
+.ptag{display:inline-block;margin-left:6px;padding:1px 6px;border-radius:9px;
+  border:1px solid var(--line);color:var(--ink-3);font-size:10.5px;font-weight:500;
+  vertical-align:middle;letter-spacing:.02em}
+#coTable tr.unranked td.rank{color:var(--line)}
+#coTable tr.unranked .cname{font-weight:550}
 .cnote{font-size:12.4px;color:var(--ink-2);min-width:300px;line-height:1.6}
 .chan{font-size:12px;min-width:150px}
 .tot{font-weight:700;color:var(--accent)}
@@ -154,7 +159,7 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
   <div class="top-in">
     <span class="eyebrow">求職情報簡報 · 2026-08-05 · martech-job-radar 第 1 期</span>
     <h1>台灣 MarTech 公司與職缺情報</h1>
-    <p class="lede">20 家台灣行銷科技公司、四個管道實抓的 <strong>196 筆</strong>在刊職缺
+    <p class="lede">35 家台灣行銷科技公司、四個管道實抓的 <strong>196 筆</strong>在刊職缺
       （台灣 163 筆）、9 家的面試趣口碑原始數據，加上一份誠實標示
       「哪些查得到、哪些查不到」的判讀。排序依熱門、口碑、成長力、文化開放四個維度，
       每個維度的評分規則都寫在頁面裡，可以自己重排。<br>
@@ -162,7 +167,7 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
       但也因此<strong>沒有可比的上一期</strong>，「哪些缺消失了」要下一期才算得出來。</p>
     <div class="meta">
       <span><b>實抓職缺</b> 196 筆（去重後，台灣 163）</span>
-      <span><b>覆蓋公司</b> 20 家</span>
+      <span><b>覆蓋公司</b> 35 家（自有產品 27、代理／顧問 4、相近非純 4）</span>
       <span><b>抓取管道</b> Greenhouse／Yourator／Cake／面試趣</span>
       <span><b>未覆蓋</b> 104（Cloudflare 403）、LinkedIn（需登入）</span>
     </div>
@@ -322,10 +327,12 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
       <th>文化開放</th><th>總分</th><th>證據</th><th>招募管道</th><th>本次查到的重點</th>
     </tr></thead>
     <tbody><tr data-hot="5" data-rep="4"
- data-growth="5" data-open="4" data-total="18"
+ data-growth="5" data-open="4"
+ data-total="18" data-purity="core"
+ data-ranked="1"
  data-jobs="54">
  <td class="rank"></td>
- <td><div class="cname">Appier 沛星互動科技</div><div class="ccat">Agentic AI／廣告＋CDP</div></td>
+ <td><div class="cname">Appier 沛星互動科技</div><div class="ccat">廣告推廣｜Agentic AI／廣告＋CDP</div></td>
  <td class="num">54<span class="sub"> 台灣</span></td>
  <td><span class="meter" aria-label="5 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="mon"></span></span></td><td><span class="meter" aria-label="4 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span></span></td>
  <td><span class="meter" aria-label="5 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="mon"></span></span></td><td><span class="meter" aria-label="4 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span></span></td>
@@ -335,10 +342,12 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
  <td class="cnote">台北 55 缺為全台最大單一雇主開口；85 筆全數未公開薪資　面試趣：公司評價 3.7／5（497 篇）、年薪約 96.0 萬。</td>
 </tr>
 <tr data-hot="4" data-rep="3"
- data-growth="4" data-open="5" data-total="16"
+ data-growth="4" data-open="5"
+ data-total="16" data-purity="core"
+ data-ranked="1"
  data-jobs="31">
  <td class="rank"></td>
- <td><div class="cname">SHOPLINE 商線科技</div><div class="ccat">電商 SaaS／OMO</div></td>
+ <td><div class="cname">SHOPLINE 商線科技</div><div class="ccat">商務銷售｜電商 SaaS／OMO</div></td>
  <td class="num">31<span class="sub"> 台灣</span></td>
  <td><span class="meter" aria-label="4 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span></span></td><td><span class="meter" aria-label="3 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span></span></td>
  <td><span class="meter" aria-label="4 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span></span></td><td><span class="meter" aria-label="5 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="mon"></span></span></td>
@@ -348,10 +357,12 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
  <td class="cnote">全台唯一有完整資料職梯（DA ×2、DE、Sr.DE、Data PM、Data Ops）　面試趣：公司評價 3.1／5（535 篇）、年薪約 71.0 萬。</td>
 </tr>
 <tr data-hot="4" data-rep="-1"
- data-growth="4" data-open="3" data-total="14"
+ data-growth="4" data-open="3"
+ data-total="14" data-purity="core"
+ data-ranked="1"
  data-jobs="6">
  <td class="rank"></td>
- <td><div class="cname">漸強實驗室 Crescendo Lab</div><div class="ccat">LINE／對話式 CRM</div></td>
+ <td><div class="cname">漸強實驗室 Crescendo Lab</div><div class="ccat">社群關係｜LINE／對話式 CRM</div></td>
  <td class="num">6<span class="sub"> 台灣</span></td>
  <td><span class="meter" aria-label="4 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span></span></td><td><span class="sub" style="display:inline">—</span></td>
  <td><span class="meter" aria-label="4 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span></span></td><td><span class="meter" aria-label="3 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span></span></td>
@@ -361,10 +372,12 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
  <td class="cnote">薪資帶公開度全台最高——後端 130–200 萬、CSM 80–140 萬、BD 94–150 萬</td>
 </tr>
 <tr data-hot="3" data-rep="2"
- data-growth="4" data-open="4" data-total="13"
+ data-growth="4" data-open="4"
+ data-total="13" data-purity="core"
+ data-ranked="1"
  data-jobs="7">
  <td class="rank"></td>
- <td><div class="cname">Omnichat 全通路科技</div><div class="ccat">對話式商務／OMO</div></td>
+ <td><div class="cname">Omnichat 全通路科技</div><div class="ccat">社群關係｜對話式商務／OMO</div></td>
  <td class="num">7<span class="sub"> 台灣</span></td>
  <td><span class="meter" aria-label="3 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="meter" aria-label="2 / 5"><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td>
  <td><span class="meter" aria-label="4 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span></span></td><td><span class="meter" aria-label="4 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span></span></td>
@@ -374,10 +387,12 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
  <td class="cnote">7 缺中 3 個是 BD／夥伴關係——擴的是通路不是研發　面試趣：公司評價 2.7／5（56 篇）、年薪約 72.0 萬。</td>
 </tr>
 <tr data-hot="3" data-rep="2"
- data-growth="4" data-open="4" data-total="13"
+ data-growth="4" data-open="4"
+ data-total="13" data-purity="core"
+ data-ranked="1"
  data-jobs="5">
  <td class="rank"></td>
- <td><div class="cname">awoo 阿物科技</div><div class="ccat">SEO／GEO／LLMO</div></td>
+ <td><div class="cname">awoo 阿物科技</div><div class="ccat">內容體驗｜SEO／GEO／LLMO</div></td>
  <td class="num">5<span class="sub"> 台灣</span></td>
  <td><span class="meter" aria-label="3 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="meter" aria-label="2 / 5"><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td>
  <td><span class="meter" aria-label="4 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span></span></td><td><span class="meter" aria-label="4 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span></span></td>
@@ -387,10 +402,12 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
  <td class="cnote">嘉義／台北／高雄三地皆可，清單中唯一非雙北為重心的 MarTech　面試趣：公司評價 2.7／5（154 篇）、年薪約 64.0 萬。</td>
 </tr>
 <tr data-hot="3" data-rep="-1"
- data-growth="3" data-open="4" data-total="13"
+ data-growth="3" data-open="4"
+ data-total="13" data-purity="core"
+ data-ranked="1"
  data-jobs="6">
  <td class="rank"></td>
- <td><div class="cname">adGeek／Atelli 艾得利</div><div class="ccat">AI 廣告投放自動化</div></td>
+ <td><div class="cname">adGeek／Atelli 艾得利</div><div class="ccat">廣告推廣｜AI 廣告投放自動化</div></td>
  <td class="num">6<span class="sub"> 台灣</span></td>
  <td><span class="meter" aria-label="3 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="sub" style="display:inline">—</span></td>
  <td><span class="meter" aria-label="3 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="meter" aria-label="4 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span></span></td>
@@ -400,10 +417,12 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
  <td class="cnote">唯一把「可申請遠端／彈性上下班」寫進職缺標題的公司</td>
 </tr>
 <tr data-hot="4" data-rep="-1"
- data-growth="4" data-open="1" data-total="12"
+ data-growth="4" data-open="1"
+ data-total="12" data-purity="core"
+ data-ranked="1"
  data-jobs="-1">
  <td class="rank"></td>
- <td><div class="cname">The Trade Desk（台北）</div><div class="ccat">國際 DSP／獨立廣告平台</div></td>
+ <td><div class="cname">The Trade Desk（台北）</div><div class="ccat">廣告推廣｜國際 DSP／獨立廣告平台</div></td>
  <td class="num"><span class="sub" style="display:inline">未取得</span></td>
  <td><span class="meter" aria-label="4 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span></span></td><td><span class="sub" style="display:inline">—</span></td>
  <td><span class="meter" aria-label="4 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span></span></td><td><span class="meter" aria-label="1 / 5"><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td>
@@ -413,10 +432,12 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
  <td class="cnote">台北兩缺皆總監級商務。國際 MarTech 在台通常只設商務端、不設研發</td>
 </tr>
 <tr data-hot="4" data-rep="3"
- data-growth="3" data-open="3" data-total="13"
+ data-growth="3" data-open="3"
+ data-total="13" data-purity="core"
+ data-ranked="1"
  data-jobs="1">
  <td class="rank"></td>
- <td><div class="cname">91APP</div><div class="ccat">OMO 電商 SaaS（上櫃 6741）</div></td>
+ <td><div class="cname">91APP</div><div class="ccat">商務銷售｜OMO 電商 SaaS（上櫃 6741）</div></td>
  <td class="num">1<span class="sub"> 台灣</span></td>
  <td><span class="meter" aria-label="4 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span></span></td><td><span class="meter" aria-label="3 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span></span></td>
  <td><span class="meter" aria-label="3 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="meter" aria-label="3 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span></span></td>
@@ -426,10 +447,12 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
  <td class="cnote">開放平台只露出 1 筆，主力刊登在 104——0～1 筆不等於沒在招　面試趣：公司評價 3.0／5（807 篇）、年薪約 69.0 萬。</td>
 </tr>
 <tr data-hot="2" data-rep="-1"
- data-growth="3" data-open="4" data-total="12"
+ data-growth="3" data-open="4"
+ data-total="12" data-purity="core"
+ data-ranked="1"
  data-jobs="1">
  <td class="rank"></td>
- <td><div class="cname">Ocard 瑞乘數位</div><div class="ccat">會員經營／餐飲 CRM</div></td>
+ <td><div class="cname">Ocard 瑞乘數位</div><div class="ccat">社群關係｜會員經營／餐飲 CRM</div></td>
  <td class="num">1<span class="sub"> 台灣</span></td>
  <td><span class="meter" aria-label="2 / 5"><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="sub" style="display:inline">—</span></td>
  <td><span class="meter" aria-label="3 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="meter" aria-label="4 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span></span></td>
@@ -439,10 +462,12 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
  <td class="cnote"></td>
 </tr>
 <tr data-hot="4" data-rep="3"
- data-growth="4" data-open="1" data-total="12"
+ data-growth="4" data-open="1"
+ data-total="12" data-purity="core"
+ data-ranked="1"
  data-jobs="-1">
  <td class="rank"></td>
- <td><div class="cname">iKala 愛卡拉</div><div class="ccat">AI Cloud＋KOL 社群數據</div></td>
+ <td><div class="cname">iKala 愛卡拉</div><div class="ccat">社群關係｜AI Cloud＋KOL 社群數據</div></td>
  <td class="num"><span class="sub" style="display:inline">未取得</span></td>
  <td><span class="meter" aria-label="4 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span></span></td><td><span class="meter" aria-label="3 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span></span></td>
  <td><span class="meter" aria-label="4 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span></span></td><td><span class="meter" aria-label="1 / 5"><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td>
@@ -452,10 +477,12 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
  <td class="cnote">官網人才招募頁的唯一職缺出口就是 104 公司頁（2026-08-05 查證）　面試趣：公司評價 3.1／5（287 篇）、年薪約 76.0 萬。</td>
 </tr>
 <tr data-hot="3" data-rep="2"
- data-growth="5" data-open="1" data-total="11"
+ data-growth="5" data-open="1"
+ data-total="11" data-purity="core"
+ data-ranked="1"
  data-jobs="-1">
  <td class="rank"></td>
- <td><div class="cname">CYBERBIZ 順立智慧</div><div class="ccat">電商 SaaS＋倉儲物流</div></td>
+ <td><div class="cname">CYBERBIZ 順立智慧</div><div class="ccat">商務銷售｜電商 SaaS＋倉儲物流</div></td>
  <td class="num"><span class="sub" style="display:inline">未取得</span></td>
  <td><span class="meter" aria-label="3 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="meter" aria-label="2 / 5"><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td>
  <td><span class="meter" aria-label="5 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="mon"></span></span></td><td><span class="meter" aria-label="1 / 5"><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td>
@@ -465,10 +492,12 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
  <td class="cnote">官網 careers 底下只有一份通用履歷表單，無職缺欄位（2026-08-05 查證）　面試趣：公司評價 2.8／5（341 篇）、年薪約 60.0 萬。</td>
 </tr>
 <tr data-hot="3" data-rep="-1"
- data-growth="3" data-open="1" data-total="10"
+ data-growth="3" data-open="1"
+ data-total="10" data-purity="core"
+ data-ranked="1"
  data-jobs="-1">
  <td class="rank"></td>
- <td><div class="cname">Vpon 威朋大數據</div><div class="ccat">行動數據／跨境廣告</div></td>
+ <td><div class="cname">Vpon 威朋大數據</div><div class="ccat">廣告推廣｜行動數據／跨境廣告</div></td>
  <td class="num"><span class="sub" style="display:inline">未取得</span></td>
  <td><span class="meter" aria-label="3 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="sub" style="display:inline">—</span></td>
  <td><span class="meter" aria-label="3 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="meter" aria-label="1 / 5"><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td>
@@ -478,10 +507,12 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
  <td class="cnote">careers 頁最後更新停在 2025-02-17，無職缺清單</td>
 </tr>
 <tr data-hot="3" data-rep="-1"
- data-growth="3" data-open="1" data-total="10"
+ data-growth="3" data-open="1"
+ data-total="10" data-purity="service"
+ data-ranked="0"
  data-jobs="-1">
  <td class="rank"></td>
- <td><div class="cname">cacaFly 聖洋科技</div><div class="ccat">媒體代理＋自有 MarTech</div></td>
+ <td><div class="cname">cacaFly 聖洋科技<span class="ptag p-service">代理／顧問</span></div><div class="ccat">廣告推廣｜媒體代理＋自有 MarTech</div></td>
  <td class="num"><span class="sub" style="display:inline">未取得</span></td>
  <td><span class="meter" aria-label="3 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="sub" style="display:inline">—</span></td>
  <td><span class="meter" aria-label="3 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="meter" aria-label="1 / 5"><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td>
@@ -491,10 +522,12 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
  <td class="cnote"></td>
 </tr>
 <tr data-hot="2" data-rep="-1"
- data-growth="2" data-open="1" data-total="8"
+ data-growth="2" data-open="1"
+ data-total="8" data-purity="core"
+ data-ranked="1"
  data-jobs="-1">
  <td class="rank"></td>
- <td><div class="cname">域動行銷 Clickforce</div><div class="ccat">程序化廣告／數據聯播網</div></td>
+ <td><div class="cname">域動行銷 Clickforce</div><div class="ccat">廣告推廣｜程序化廣告／數據聯播網</div></td>
  <td class="num"><span class="sub" style="display:inline">未取得</span></td>
  <td><span class="meter" aria-label="2 / 5"><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="sub" style="display:inline">—</span></td>
  <td><span class="meter" aria-label="2 / 5"><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="meter" aria-label="1 / 5"><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td>
@@ -504,10 +537,12 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
  <td class="cnote"></td>
 </tr>
 <tr data-hot="3" data-rep="1"
- data-growth="3" data-open="1" data-total="8"
+ data-growth="3" data-open="1"
+ data-total="8" data-purity="core"
+ data-ranked="1"
  data-jobs="-1">
  <td class="rank"></td>
- <td><div class="cname">TenMax 騰學廣告科技</div><div class="ccat">DSP／零售媒體（funP 集團）</div></td>
+ <td><div class="cname">TenMax 騰學廣告科技</div><div class="ccat">廣告推廣｜DSP／零售媒體（funP 集團）</div></td>
  <td class="num"><span class="sub" style="display:inline">未取得</span></td>
  <td><span class="meter" aria-label="3 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="meter" aria-label="1 / 5"><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td>
  <td><span class="meter" aria-label="3 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="meter" aria-label="1 / 5"><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td>
@@ -517,10 +552,12 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
  <td class="cnote">官網唯一導向 Yourator 而該處 0 筆——「目前無公開在刊職缺」是查證結果，非覆蓋缺口　面試趣：公司評價 2.2／5（51 篇）、年薪約 51.0 萬。</td>
 </tr>
 <tr data-hot="2" data-rep="-1"
- data-growth="3" data-open="1" data-total="9"
+ data-growth="3" data-open="1"
+ data-total="9" data-purity="core"
+ data-ranked="1"
  data-jobs="-1">
  <td class="rank"></td>
- <td><div class="cname">AccuHit 愛酷智能</div><div class="ccat">CDP／對話式商務</div></td>
+ <td><div class="cname">AccuHit 愛酷智能</div><div class="ccat">資料｜CDP／對話式商務</div></td>
  <td class="num"><span class="sub" style="display:inline">未取得</span></td>
  <td><span class="meter" aria-label="2 / 5"><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="sub" style="display:inline">—</span></td>
  <td><span class="meter" aria-label="3 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="meter" aria-label="1 / 5"><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td>
@@ -530,10 +567,12 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
  <td class="cnote"></td>
 </tr>
 <tr data-hot="2" data-rep="-1"
- data-growth="2" data-open="1" data-total="8"
+ data-growth="2" data-open="1"
+ data-total="8" data-purity="core"
+ data-ranked="1"
  data-jobs="-1">
  <td class="rank"></td>
- <td><div class="cname">Rosetta.ai</div><div class="ccat">電商個人化推薦</div></td>
+ <td><div class="cname">Rosetta.ai</div><div class="ccat">商務銷售｜電商個人化推薦</div></td>
  <td class="num"><span class="sub" style="display:inline">未取得</span></td>
  <td><span class="meter" aria-label="2 / 5"><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="sub" style="display:inline">—</span></td>
  <td><span class="meter" aria-label="2 / 5"><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="meter" aria-label="1 / 5"><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td>
@@ -543,10 +582,12 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
  <td class="cnote"></td>
 </tr>
 <tr data-hot="2" data-rep="-1"
- data-growth="2" data-open="1" data-total="8"
+ data-growth="2" data-open="1"
+ data-total="8" data-purity="core"
+ data-ranked="1"
  data-jobs="-1">
  <td class="rank"></td>
- <td><div class="cname">Tagtoo 塔圖科技</div><div class="ccat">再行銷／電商廣告</div></td>
+ <td><div class="cname">Tagtoo 塔圖科技</div><div class="ccat">廣告推廣｜再行銷／電商廣告</div></td>
  <td class="num"><span class="sub" style="display:inline">未取得</span></td>
  <td><span class="meter" aria-label="2 / 5"><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="sub" style="display:inline">—</span></td>
  <td><span class="meter" aria-label="2 / 5"><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="meter" aria-label="1 / 5"><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td>
@@ -556,10 +597,12 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
  <td class="cnote"></td>
 </tr>
 <tr data-hot="2" data-rep="-1"
- data-growth="3" data-open="1" data-total="9"
+ data-growth="3" data-open="1"
+ data-total="9" data-purity="adjacent"
+ data-ranked="0"
  data-jobs="-1">
  <td class="rank"></td>
- <td><div class="cname">MoBagel 行動貝果</div><div class="ccat">AutoML／決策分析</div></td>
+ <td><div class="cname">MoBagel 行動貝果<span class="ptag p-adjacent">相近非純</span></div><div class="ccat">資料｜AutoML／決策分析</div></td>
  <td class="num"><span class="sub" style="display:inline">未取得</span></td>
  <td><span class="meter" aria-label="2 / 5"><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="sub" style="display:inline">—</span></td>
  <td><span class="meter" aria-label="3 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="meter" aria-label="1 / 5"><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td>
@@ -569,10 +612,12 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
  <td class="cnote"></td>
 </tr>
 <tr data-hot="2" data-rep="-1"
- data-growth="2" data-open="1" data-total="8"
+ data-growth="2" data-open="1"
+ data-total="8" data-purity="core"
+ data-ranked="1"
  data-jobs="-1">
  <td class="rank"></td>
- <td><div class="cname">電子豹 Newsleopard</div><div class="ccat">EDM 行銷自動化</div></td>
+ <td><div class="cname">電子豹 Newsleopard</div><div class="ccat">廣告推廣｜EDM 行銷自動化</div></td>
  <td class="num"><span class="sub" style="display:inline">未取得</span></td>
  <td><span class="meter" aria-label="2 / 5"><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="sub" style="display:inline">—</span></td>
  <td><span class="meter" aria-label="2 / 5"><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td><td><span class="meter" aria-label="1 / 5"><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td>
@@ -580,8 +625,239 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
  <td class="conf c-lo">低</td>
  <td class="chan"><a href="https://www.newsleopard.com/about" target="_blank" rel="noopener">官網徵才</a></td>
  <td class="cnote"></td>
+</tr>
+<tr data-hot="-1" data-rep="-1"
+ data-growth="-1" data-open="1"
+ data-total="-1" data-purity="service"
+ data-ranked="0"
+ data-jobs="-1">
+ <td class="rank"></td>
+ <td><div class="cname">美庫爾 Merkle Taiwan<span class="ptag p-service">代理／顧問</span></div><div class="ccat">廣告推廣｜資料商務／顧客體驗管理（CXM）顧問</div></td>
+ <td class="num"><span class="sub" style="display:inline">未取得</span></td>
+ <td><span class="sub" style="display:inline">—</span></td><td><span class="sub" style="display:inline">—</span></td>
+ <td><span class="sub" style="display:inline">—</span></td><td><span class="meter" aria-label="1 / 5"><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td>
+ <td class="num tot"><span class="sub" style="display:inline">—</span></td>
+ <td class="conf c-lo">低</td>
+ <td class="chan"><a href="https://www.dentsu.com/tw/zh/who-we-are/our-agencies/merkle-taiwan" target="_blank" rel="noopener">官網徵才</a>、<span class="sub" style="display:inline">104（未取得）</span></td>
+ <td class="cnote">dentsu 旗下全球 CXM 品牌，2021-12 在台成立。職缺出口是 104 公司頁</td>
+</tr>
+<tr data-hot="-1" data-rep="-1"
+ data-growth="-1" data-open="1"
+ data-total="-1" data-purity="core"
+ data-ranked="0"
+ data-jobs="-1">
+ <td class="rank"></td>
+ <td><div class="cname">達摩媒體</div><div class="ccat">廣告推廣｜程序化廣告／DMP</div></td>
+ <td class="num"><span class="sub" style="display:inline">未取得</span></td>
+ <td><span class="sub" style="display:inline">—</span></td><td><span class="sub" style="display:inline">—</span></td>
+ <td><span class="sub" style="display:inline">—</span></td><td><span class="meter" aria-label="1 / 5"><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td>
+ <td class="num tot"><span class="sub" style="display:inline">—</span></td>
+ <td class="conf c-lo">低</td>
+ <td class="chan"><span class="sub" style="display:inline">104（未取得）</span></td>
+ <td class="cnote">104 公司頁顯示徵才中（2026-08-06 查證），開放平台無露出</td>
+</tr>
+<tr data-hot="-1" data-rep="-1"
+ data-growth="-1" data-open="4"
+ data-total="-1" data-purity="service"
+ data-ranked="0"
+ data-jobs="4">
+ <td class="rank"></td>
+ <td><div class="cname">Accucrazy 肖準行銷<span class="ptag p-service">代理／顧問</span></div><div class="ccat">廣告推廣｜數位廣告代理／廣告科技</div></td>
+ <td class="num">4<span class="sub"> 台灣</span></td>
+ <td><span class="sub" style="display:inline">—</span></td><td><span class="sub" style="display:inline">—</span></td>
+ <td><span class="sub" style="display:inline">—</span></td><td><span class="meter" aria-label="4 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span></span></td>
+ <td class="num tot"><span class="sub" style="display:inline">—</span></td>
+ <td class="conf c-mid">中</td>
+ <td class="chan"><a href="https://www.yourator.co/companies/ACCUCRAZY" target="_blank" rel="noopener">Yourator</a></td>
+ <td class="cnote"></td>
+</tr>
+<tr data-hot="-1" data-rep="-1"
+ data-growth="-1" data-open="1"
+ data-total="-1" data-purity="core"
+ data-ranked="0"
+ data-jobs="-1">
+ <td class="rank"></td>
+ <td><div class="cname">OakMega 大橡科技</div><div class="ccat">社群關係｜Social CRM／LINE 行銷自動化</div></td>
+ <td class="num"><span class="sub" style="display:inline">未取得</span></td>
+ <td><span class="sub" style="display:inline">—</span></td><td><span class="sub" style="display:inline">—</span></td>
+ <td><span class="sub" style="display:inline">—</span></td><td><span class="meter" aria-label="1 / 5"><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td>
+ <td class="num tot"><span class="sub" style="display:inline">—</span></td>
+ <td class="conf c-lo">低</td>
+ <td class="chan"><a href="https://www.yourator.co/companies/OakMega" target="_blank" rel="noopener">Yourator</a>、<a href="https://oakmega.com/" target="_blank" rel="noopener">官網徵才</a></td>
+ <td class="cnote">與漸強、AccuHit、Omnichat 同一條對話式 CRM 賽道，原名單漏收</td>
+</tr>
+<tr data-hot="-1" data-rep="-1"
+ data-growth="-1" data-open="1"
+ data-total="-1" data-purity="core"
+ data-ranked="0"
+ data-jobs="-1">
+ <td class="rank"></td>
+ <td><div class="cname">意藍資訊 eLand</div><div class="ccat">社群關係｜社群口碑資料庫 OpView（上櫃 6925）</div></td>
+ <td class="num"><span class="sub" style="display:inline">未取得</span></td>
+ <td><span class="sub" style="display:inline">—</span></td><td><span class="sub" style="display:inline">—</span></td>
+ <td><span class="sub" style="display:inline">—</span></td><td><span class="meter" aria-label="1 / 5"><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td>
+ <td class="num tot"><span class="sub" style="display:inline">—</span></td>
+ <td class="conf c-lo">低</td>
+ <td class="chan"><a href="https://www.eland.com.tw/" target="_blank" rel="noopener">官網徵才</a></td>
+ <td class="cnote">台灣最大社群輿情分析平台；招募管道待查，可能只在 104</td>
+</tr>
+<tr data-hot="-1" data-rep="-1"
+ data-growth="-1" data-open="1"
+ data-total="-1" data-purity="core"
+ data-ranked="0"
+ data-jobs="-1">
+ <td class="rank"></td>
+ <td><div class="cname">CreatorDB</div><div class="ccat">社群關係｜KOL／創作者數據</div></td>
+ <td class="num"><span class="sub" style="display:inline">未取得</span></td>
+ <td><span class="sub" style="display:inline">—</span></td><td><span class="sub" style="display:inline">—</span></td>
+ <td><span class="sub" style="display:inline">—</span></td><td><span class="meter" aria-label="1 / 5"><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td>
+ <td class="num tot"><span class="sub" style="display:inline">—</span></td>
+ <td class="conf c-lo">低</td>
+ <td class="chan"><a href="https://www.yourator.co/companies/CreatorDB" target="_blank" rel="noopener">Yourator</a></td>
+ <td class="cnote">對標 iKala KOL Radar</td>
+</tr>
+<tr data-hot="-1" data-rep="-1"
+ data-growth="-1" data-open="3"
+ data-total="-1" data-purity="core"
+ data-ranked="0"
+ data-jobs="3">
+ <td class="rank"></td>
+ <td><div class="cname">AlleyPin 翔評互動</div><div class="ccat">社群關係｜評論口碑管理／診所 CRM</div></td>
+ <td class="num">3<span class="sub"> 台灣</span></td>
+ <td><span class="sub" style="display:inline">—</span></td><td><span class="sub" style="display:inline">—</span></td>
+ <td><span class="sub" style="display:inline">—</span></td><td><span class="meter" aria-label="3 / 5"><span class="mon"></span><span class="mon"></span><span class="mon"></span><span class="moff"></span><span class="moff"></span></span></td>
+ <td class="num tot"><span class="sub" style="display:inline">—</span></td>
+ <td class="conf c-mid">中</td>
+ <td class="chan"><a href="https://www.yourator.co/companies/AlleyPin" target="_blank" rel="noopener">Yourator</a></td>
+ <td class="cnote"></td>
+</tr>
+<tr data-hot="-1" data-rep="-1"
+ data-growth="-1" data-open="1"
+ data-total="-1" data-purity="core"
+ data-ranked="0"
+ data-jobs="-1">
+ <td class="rank"></td>
+ <td><div class="cname">LnData 麟數據科技</div><div class="ccat">資料｜DMP＋CDP 雙引擎／資料治理</div></td>
+ <td class="num"><span class="sub" style="display:inline">未取得</span></td>
+ <td><span class="sub" style="display:inline">—</span></td><td><span class="sub" style="display:inline">—</span></td>
+ <td><span class="sub" style="display:inline">—</span></td><td><span class="meter" aria-label="1 / 5"><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td>
+ <td class="num tot"><span class="sub" style="display:inline">—</span></td>
+ <td class="conf c-lo">低</td>
+ <td class="chan"><a href="https://www.lndata.com/" target="_blank" rel="noopener">官網徵才</a></td>
+ <td class="cnote">招募管道待查</td>
+</tr>
+<tr data-hot="-1" data-rep="-1"
+ data-growth="-1" data-open="1"
+ data-total="-1" data-purity="adjacent"
+ data-ranked="0"
+ data-jobs="-1">
+ <td class="rank"></td>
+ <td><div class="cname">WebComm 偉康科技<span class="ptag p-adjacent">相近非純</span></div><div class="ccat">資料｜CDP／身分驗證系統整合</div></td>
+ <td class="num"><span class="sub" style="display:inline">未取得</span></td>
+ <td><span class="sub" style="display:inline">—</span></td><td><span class="sub" style="display:inline">—</span></td>
+ <td><span class="sub" style="display:inline">—</span></td><td><span class="meter" aria-label="1 / 5"><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td>
+ <td class="num tot"><span class="sub" style="display:inline">—</span></td>
+ <td class="conf c-lo">低</td>
+ <td class="chan"><a href="https://www.yourator.co/companies/WebComm" target="_blank" rel="noopener">Yourator</a></td>
+ <td class="cnote">身分驗證起家，CDP 是延伸產品線——職能重疊但主業不是行銷科技</td>
+</tr>
+<tr data-hot="-1" data-rep="-1"
+ data-growth="-1" data-open="1"
+ data-total="-1" data-purity="core"
+ data-ranked="0"
+ data-jobs="-1">
+ <td class="rank"></td>
+ <td><div class="cname">meepShop</div><div class="ccat">商務銷售｜開店 SaaS</div></td>
+ <td class="num"><span class="sub" style="display:inline">未取得</span></td>
+ <td><span class="sub" style="display:inline">—</span></td><td><span class="sub" style="display:inline">—</span></td>
+ <td><span class="sub" style="display:inline">—</span></td><td><span class="meter" aria-label="1 / 5"><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td>
+ <td class="num tot"><span class="sub" style="display:inline">—</span></td>
+ <td class="conf c-lo">低</td>
+ <td class="chan"><a href="https://www.yourator.co/companies/meepShop" target="_blank" rel="noopener">Yourator</a></td>
+ <td class="cnote">與 SHOPLINE／91APP 同類，原名單漏收</td>
+</tr>
+<tr data-hot="-1" data-rep="-1"
+ data-growth="-1" data-open="1"
+ data-total="-1" data-purity="core"
+ data-ranked="0"
+ data-jobs="-1">
+ <td class="rank"></td>
+ <td><div class="cname">inline</div><div class="ccat">商務銷售｜餐飲訂位／會員經營</div></td>
+ <td class="num"><span class="sub" style="display:inline">未取得</span></td>
+ <td><span class="sub" style="display:inline">—</span></td><td><span class="sub" style="display:inline">—</span></td>
+ <td><span class="sub" style="display:inline">—</span></td><td><span class="meter" aria-label="1 / 5"><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td>
+ <td class="num tot"><span class="sub" style="display:inline">—</span></td>
+ <td class="conf c-lo">低</td>
+ <td class="chan"><a href="https://www.yourator.co/companies/inLine" target="_blank" rel="noopener">Yourator</a></td>
+ <td class="cnote">與 Ocard 同類</td>
+</tr>
+<tr data-hot="-1" data-rep="-1"
+ data-growth="-1" data-open="1"
+ data-total="-1" data-purity="adjacent"
+ data-ranked="0"
+ data-jobs="-1">
+ <td class="rank"></td>
+ <td><div class="cname">12CM 睿鼎數位<span class="ptag p-adjacent">相近非純</span></div><div class="ccat">商務銷售｜O2O 支付／會員</div></td>
+ <td class="num"><span class="sub" style="display:inline">未取得</span></td>
+ <td><span class="sub" style="display:inline">—</span></td><td><span class="sub" style="display:inline">—</span></td>
+ <td><span class="sub" style="display:inline">—</span></td><td><span class="meter" aria-label="1 / 5"><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td>
+ <td class="num tot"><span class="sub" style="display:inline">—</span></td>
+ <td class="conf c-lo">低</td>
+ <td class="chan"><a href="https://www.yourator.co/companies/12cm" target="_blank" rel="noopener">Yourator</a></td>
+ <td class="cnote"></td>
+</tr>
+<tr data-hot="-1" data-rep="-1"
+ data-growth="-1" data-open="1"
+ data-total="-1" data-purity="adjacent"
+ data-ranked="0"
+ data-jobs="-1">
+ <td class="rank"></td>
+ <td><div class="cname">樂播科技 Jambo Live<span class="ptag p-adjacent">相近非純</span></div><div class="ccat">商務銷售｜直播電商工具</div></td>
+ <td class="num"><span class="sub" style="display:inline">未取得</span></td>
+ <td><span class="sub" style="display:inline">—</span></td><td><span class="sub" style="display:inline">—</span></td>
+ <td><span class="sub" style="display:inline">—</span></td><td><span class="meter" aria-label="1 / 5"><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td>
+ <td class="num tot"><span class="sub" style="display:inline">—</span></td>
+ <td class="conf c-lo">低</td>
+ <td class="chan"><a href="https://www.yourator.co/companies/jambolive" target="_blank" rel="noopener">Yourator</a></td>
+ <td class="cnote"></td>
+</tr>
+<tr data-hot="-1" data-rep="-1"
+ data-growth="-1" data-open="1"
+ data-total="-1" data-purity="core"
+ data-ranked="0"
+ data-jobs="-1">
+ <td class="rank"></td>
+ <td><div class="cname">玩美移動 Perfect Corp</div><div class="ccat">內容體驗｜AI／AR 虛擬試妝（NYSE 上市）</div></td>
+ <td class="num"><span class="sub" style="display:inline">未取得</span></td>
+ <td><span class="sub" style="display:inline">—</span></td><td><span class="sub" style="display:inline">—</span></td>
+ <td><span class="sub" style="display:inline">—</span></td><td><span class="meter" aria-label="1 / 5"><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td>
+ <td class="num tot"><span class="sub" style="display:inline">—</span></td>
+ <td class="conf c-lo">低</td>
+ <td class="chan"><a href="https://www.yourator.co/companies/PERFECTcorp" target="_blank" rel="noopener">Yourator</a></td>
+ <td class="cnote"></td>
+</tr>
+<tr data-hot="-1" data-rep="-1"
+ data-growth="-1" data-open="1"
+ data-total="-1" data-purity="service"
+ data-ranked="0"
+ data-jobs="-1">
+ <td class="rank"></td>
+ <td><div class="cname">簡訊設計 SimpleInfo<span class="ptag p-service">代理／顧問</span></div><div class="ccat">內容體驗｜內容／視覺設計代理</div></td>
+ <td class="num"><span class="sub" style="display:inline">未取得</span></td>
+ <td><span class="sub" style="display:inline">—</span></td><td><span class="sub" style="display:inline">—</span></td>
+ <td><span class="sub" style="display:inline">—</span></td><td><span class="meter" aria-label="1 / 5"><span class="mon"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span><span class="moff"></span></span></td>
+ <td class="num tot"><span class="sub" style="display:inline">—</span></td>
+ <td class="conf c-lo">低</td>
+ <td class="chan"><a href="https://www.yourator.co/companies/simpleinfo" target="_blank" rel="noopener">Yourator</a></td>
+ <td class="cnote"></td>
 </tr></tbody>
   </table></div>
+  <p class="sub" style="max-width:70ch"><strong>「#」欄是「—」的公司沒有被排名，但它們不是陪襯。</strong>
+    名單三層全收：<em>自有產品</em>（無標籤）、<em>代理／顧問</em>、<em>相近非純</em>；
+    後兩者的熱門度與成長力口徑和 SaaS 不同義，放同一張榜等於把兩把尺相加，所以照列不排名。
+    另外，<em>熱門</em>與<em>成長力</em>是人工查證的維度——查不到公開證據的公司這兩欄留「—」，
+    也不進排名，<strong>不用預設值把它們湊進榜裡</strong>。這兩種「—」都代表「還沒查」，
+    不代表「這家不值得投」。</p>
   <p class="sub" style="max-width:70ch">「實抓缺」＝本次於 Greenhouse／Yourator／Cake 取得的台灣在刊職缺數，
     去重後計算；「—」代表該公司在這三個管道抓到 0 筆，主力管道為 104 或官網，需手動確認。
     口碑欄的「—」（漸強實驗室）＝面試趣心得數不足、無法評分；
@@ -1905,18 +2181,25 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
   var rows = Array.prototype.slice.call(tbody.querySelectorAll('tr'));
   var buttons = Array.prototype.slice.call(document.querySelectorAll('.sortbar button'));
 
+  // 只有 core 且四維齊備的公司進排名（← JR-004）。其餘照列在後面、# 欄標「—」，
+  // 因為「不排名」和「不存在」是兩回事——代理商與未評分公司仍然是實際會投的雇主。
   function renumber(){
-    tbody.querySelectorAll('tr').forEach(function(tr, i){
-      tr.querySelector('.rank').textContent = i + 1;
+    var n = 0;
+    tbody.querySelectorAll('tr').forEach(function(tr){
+      var ranked = tr.dataset.ranked === '1';
+      tr.querySelector('.rank').textContent = ranked ? String(++n) : '—';
+      tr.classList.toggle('unranked', !ranked);
     });
   }
   function sortBy(key){
-    var sorted = rows.slice().sort(function(a, b){
+    function cmp(a, b){
       var d = Number(b.dataset[key]) - Number(a.dataset[key]);
       if (d !== 0) return d;
       return Number(b.dataset.total) - Number(a.dataset.total);
-    });
-    sorted.forEach(function(tr){ tbody.appendChild(tr); });
+    }
+    var ranked = rows.filter(function(tr){ return tr.dataset.ranked === '1'; }).sort(cmp);
+    var rest = rows.filter(function(tr){ return tr.dataset.ranked !== '1'; }).sort(cmp);
+    ranked.concat(rest).forEach(function(tr){ tbody.appendChild(tr); });
     renumber();
   }
   buttons.forEach(function(btn){

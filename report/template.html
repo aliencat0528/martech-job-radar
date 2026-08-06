@@ -113,6 +113,11 @@ tr.grp:hover td{background:var(--band)}
   text-align:right;font-size:12px}
 .cname{font-weight:650;font-size:14px}
 .ccat{color:var(--ink-3);font-size:11.5px}
+.ptag{display:inline-block;margin-left:6px;padding:1px 6px;border-radius:9px;
+  border:1px solid var(--line);color:var(--ink-3);font-size:10.5px;font-weight:500;
+  vertical-align:middle;letter-spacing:.02em}
+#coTable tr.unranked td.rank{color:var(--line)}
+#coTable tr.unranked .cname{font-weight:550}
 .cnote{font-size:12.4px;color:var(--ink-2);min-width:300px;line-height:1.6}
 .chan{font-size:12px;min-width:150px}
 .tot{font-weight:700;color:var(--accent)}
@@ -154,7 +159,7 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
   <div class="top-in">
     <span class="eyebrow">求職情報簡報 · 2026-08-05 · martech-job-radar 第 1 期</span>
     <h1>台灣 MarTech 公司與職缺情報</h1>
-    <p class="lede">20 家台灣行銷科技公司、四個管道實抓的 <strong>196 筆</strong>在刊職缺
+    <p class="lede"><!--CO_COUNT--> 家台灣行銷科技公司、四個管道實抓的 <strong>196 筆</strong>在刊職缺
       （台灣 163 筆）、9 家的面試趣口碑原始數據，加上一份誠實標示
       「哪些查得到、哪些查不到」的判讀。排序依熱門、口碑、成長力、文化開放四個維度，
       每個維度的評分規則都寫在頁面裡，可以自己重排。<br>
@@ -162,7 +167,7 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
       但也因此<strong>沒有可比的上一期</strong>，「哪些缺消失了」要下一期才算得出來。</p>
     <div class="meta">
       <span><b>實抓職缺</b> 196 筆（去重後，台灣 163）</span>
-      <span><b>覆蓋公司</b> 20 家</span>
+      <span><b>覆蓋公司</b> <!--CO_BREAKDOWN--></span>
       <span><b>抓取管道</b> Greenhouse／Yourator／Cake／面試趣</span>
       <span><b>未覆蓋</b> 104（Cloudflare 403）、LinkedIn（需登入）</span>
     </div>
@@ -323,6 +328,12 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
     </tr></thead>
     <tbody><!--COMPANY_ROWS--></tbody>
   </table></div>
+  <p class="sub" style="max-width:70ch"><strong>「#」欄是「—」的公司沒有被排名，但它們不是陪襯。</strong>
+    名單三層全收：<em>自有產品</em>（無標籤）、<em>代理／顧問</em>、<em>相近非純</em>；
+    後兩者的熱門度與成長力口徑和 SaaS 不同義，放同一張榜等於把兩把尺相加，所以照列不排名。
+    另外，<em>熱門</em>與<em>成長力</em>是人工查證的維度——查不到公開證據的公司這兩欄留「—」，
+    也不進排名，<strong>不用預設值把它們湊進榜裡</strong>。這兩種「—」都代表「還沒查」，
+    不代表「這家不值得投」。</p>
   <p class="sub" style="max-width:70ch">「實抓缺」＝本次於 Greenhouse／Yourator／Cake 取得的台灣在刊職缺數，
     去重後計算；「—」代表該公司在這三個管道抓到 0 筆，主力管道為 104 或官網，需手動確認。
     口碑欄的「—」（漸強實驗室）＝面試趣心得數不足、無法評分；
@@ -746,18 +757,25 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
   var rows = Array.prototype.slice.call(tbody.querySelectorAll('tr'));
   var buttons = Array.prototype.slice.call(document.querySelectorAll('.sortbar button'));
 
+  // 只有 core 且四維齊備的公司進排名（← JR-004）。其餘照列在後面、# 欄標「—」，
+  // 因為「不排名」和「不存在」是兩回事——代理商與未評分公司仍然是實際會投的雇主。
   function renumber(){
-    tbody.querySelectorAll('tr').forEach(function(tr, i){
-      tr.querySelector('.rank').textContent = i + 1;
+    var n = 0;
+    tbody.querySelectorAll('tr').forEach(function(tr){
+      var ranked = tr.dataset.ranked === '1';
+      tr.querySelector('.rank').textContent = ranked ? String(++n) : '—';
+      tr.classList.toggle('unranked', !ranked);
     });
   }
   function sortBy(key){
-    var sorted = rows.slice().sort(function(a, b){
+    function cmp(a, b){
       var d = Number(b.dataset[key]) - Number(a.dataset[key]);
       if (d !== 0) return d;
       return Number(b.dataset.total) - Number(a.dataset.total);
-    });
-    sorted.forEach(function(tr){ tbody.appendChild(tr); });
+    }
+    var ranked = rows.filter(function(tr){ return tr.dataset.ranked === '1'; }).sort(cmp);
+    var rest = rows.filter(function(tr){ return tr.dataset.ranked !== '1'; }).sort(cmp);
+    ranked.concat(rest).forEach(function(tr){ tbody.appendChild(tr); });
     renumber();
   }
   buttons.forEach(function(btn){

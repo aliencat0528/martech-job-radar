@@ -1,11 +1,22 @@
 # Prepare — martech-job-radar 決策記錄
 
-> **版本**：JR-004 · 2026-08-06（待操作事項 9 筆，見文末；**第 9 筆為下次開發起點**）
+> **版本**：JR-005 · 2026-08-06（待操作事項 10 筆，見文末）
 > **編號前綴**：`JR-`，全域遞增、永不重用
 > **記錄規則繼承根 `prepare.md`**，本檔只記本專案內部決策；
 > 主線決策不複製理由，只記落地細節 + `← D-00X` 指標。
 
 ---
+
+### JR-005 · 2026-08-06 · report
+- **決策**：`hot`／`growth` 查不到證據就**留空**，且未評分的公司**不進四維排名**——
+  與 `purity != core` 同一個處理：照列在榜後、`#` 欄顯示「—」，不隱藏
+- **理由**：JR-004 補收 15 家時發現 `buildArtifact.py` 寫的是 `c.get("hot", 2)`——
+  沒研究過的公司會帶著憑空的 2 分進榜。這正是 JR-001 推翻過三家的那種「有分但無依據」，
+  而且比主觀給分更難察覺（沒有人寫過那個 2）
+- **棄選**：沿用預設值 2（榜單看起來完整，但前段班會被灌水的新公司擠掉）；
+  比照 rep 用中位數代入（rep 是實抓失敗的補位，hot／growth 是根本還沒查，性質不同）
+- **落地**：`buildArtifact.py` 的 `scored`／`ranked` 兩個旗標與 `data-ranked`；
+  排序 JS 分兩段接起來；頁面加一段說明「—」是「還沒查」不是「不值得投」
 
 ### JR-004 · 2026-08-06 · scope
 - **決策**：`companies.yaml` 收錄範圍**三層全收**，新增 `purity` 欄位（`core` 自有產品／
@@ -65,4 +76,5 @@
 | 6 | `--no-yourator` 旗標未單獨測過 | 其餘三個（`--no-cake`／`--no-rep`／`--no-upstream`）實跑中都用過，這個是新增後沒機會用到 | 2026-08-05 |
 | 7 | Meet.jobs 尚未接入 | 嘗試的端點（`/zh-TW/jobs`、`/zh-TW/companies`、`/api/v1/jobs`）全回 404，入口待重找 | 2026-08-05 |
 | 8 | Lever／Ashby 已探測可用但未接 | `api.lever.co/v0/postings/<token>` 與 `api.ashbyhq.com/posting-api/job-board/<token>` 都有回應（實測 Pinkoi 4 筆、Iterable 28 筆），但台灣 MarTech 目前無人使用。等擴到新加坡／日本職缺時再接 | 2026-08-05 |
-| 9 | **（優先·下次開發起點）** 把 JR-004 落到 `companies.yaml`：加 `purity` 三層、`category` 改六大類、`buildArtifact.py` 排序只取 `core`，並把候選名單建檔進主檔 | 不卡任何事，純執行。素材備妥於 `docs/candidates.md`（已查證 12 家，含美庫爾 104 `1a2x6bicuq`、OakMega、意藍 6925、LnData、meepShop、達摩媒體 `cyrv33k`）。人工成本在 `interviewCode` 要逐家搜、`hot`／`growth` 查不到證據**一律留空不硬填**（← JR-001 的教訓）。建完該檔應清空 | 2026-08-06 |
+| 9 | 新收的 15 家全部沒有 `hot`／`growth`／`interviewCode` | 依 JR-005 留空，所以這 15 家目前**一律不進排名**——名單覆蓋補上了，排名覆蓋還沒。要進榜需逐家查營收／募資／上市狀態（`growthNote` 要寫得出證據）＋ 人工搜面試趣代碼。建議一次只補 3～5 家，每補一批重跑 `buildArtifact.py` 看榜有沒有被灌歪 | 2026-08-06 |
+| 10 | `docs/candidates.md` 還剩 10 家待查證 | 安布思沛、iCHEF、三竹資訊、創市際、精誠 Etu、QSearch、TAmedia、Criteo／Taboola／AppsFlyer 台灣，以及**業務範圍未確認**的就是廣告科技（`just-adtech`）與數字廣告（`digitm`）——後兩家有 Yourator slug 但查不出主業，`purity` 判不出來就不進主檔 | 2026-08-06 |

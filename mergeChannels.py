@@ -27,9 +27,29 @@ SCHEMA = {"channel", "company", "title", "location", "posted", "updated",
 DEFAULT_MANUAL_MAX_AGE_DAYS = 21
 
 
+def validateTaxonomy(cfg, logger=print):
+    """守住 `category`／`purity` 的固定值（← JR-004）。
+
+    這兩欄改成固定值的**唯一理由**是要能彙總（哪一類在招人、只排序哪一層）。
+    一旦有人手滑寫了自由字串，彙總會安靜地少算一家而不是報錯——
+    所以在單一入口這裡擋，跟欄位契約同一個位置、同一種脾氣。
+    """
+    cats, levels = set(cfg.get("categories") or []), set(cfg.get("purityLevels") or [])
+    bad = []
+    for c in cfg["companies"]:
+        if cats and c.get("category") not in cats:
+            bad.append(f"{c['name']}：category「{c.get('category')}」不在 {sorted(cats)}")
+        if levels and c.get("purity") not in levels:
+            bad.append(f"{c['name']}：purity「{c.get('purity')}」不在 {sorted(levels)}")
+    for msg in bad:
+        logger(f"   ⚠️  {msg}")
+    return bad
+
+
 def loadConfig(path="companies.yaml"):
     """新鮮度上限與「只在 104」的公司清單都來自主檔，不寫死在程式裡。"""
     cfg = yaml.safe_load(open(path, encoding="utf-8"))
+    validateTaxonomy(cfg)
     return (cfg,
             int(cfg.get("manualMaxAgeDays", DEFAULT_MANUAL_MAX_AGE_DAYS)),
             [c["name"] for c in cfg["companies"] if c.get("manualOnly")])

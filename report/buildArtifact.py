@@ -87,6 +87,9 @@ def openScore(rows, company):
     return min(score, 5)
 
 
+PURITY_LABEL = {"service": "代理／顧問", "adjacent": "相近非純"}
+
+
 def repScoreOf(repEntry):
     return repEntry.get("repScore") if repEntry else None
 
@@ -113,8 +116,18 @@ def companyRows(config, jobs, rep):
         repVal = repScoreOf(repEntry)
         repUnknown = repVal is None
         openVal = openScore(mine, c)
-        hot, growth = int(c.get("hot", 2)), int(c.get("growth", 2))
-        total = hot + (median if repUnknown else repVal) + growth + openVal
+
+        # hot／growth 沒查到證據就留空（← JR-004）。這裡**刻意不給預設值**——
+        # 舊版 `c.get("hot", 2)` 會讓沒研究過的公司帶著憑空的 2 分進榜，
+        # 那正是 JR-001 推翻過三家的那種「看起來有分、其實沒有依據」。
+        hot = c.get("hot")
+        growth = c.get("growth")
+        scored = hot is not None and growth is not None
+        purity = c.get("purity", "core")
+        # 只排序 core（← JR-004）；未評分者也不排。兩者都照列，只是 # 欄顯示「—」
+        ranked = scored and purity == "core"
+        total = (int(hot) + (median if repUnknown else repVal) + int(growth) + openVal
+                 if scored else None)
 
         if repEntry and repEntry.get("reviewCount"):
             conf = "高" if repEntry["reviewCount"] >= 50 else "中"
@@ -149,15 +162,22 @@ def companyRows(config, jobs, rep):
                      f"（{repEntry['reviewCount']} 篇）、年薪約 "
                      f"{repEntry.get('annualSalaryWan')} 萬。")
 
-        out.append(f"""<tr data-hot="{hot}" data-rep="{-1 if repUnknown else repVal}"
- data-growth="{growth}" data-open="{openVal}" data-total="{total}"
+        dash = '<span class="sub" style="display:inline">—</span>'
+        badge = ("" if purity == "core"
+                 else f'<span class="ptag p-{purity}">{PURITY_LABEL[purity]}</span>')
+        cat = "｜".join(x for x in [c.get("category"), c.get("segment")] if x)
+
+        out.append(f"""<tr data-hot="{hot if scored else -1}" data-rep="{-1 if repUnknown else repVal}"
+ data-growth="{growth if scored else -1}" data-open="{openVal}"
+ data-total="{total if scored else -1}" data-purity="{purity}"
+ data-ranked="{1 if ranked else 0}"
  data-jobs="{len(twOnly) if mine else -1}">
  <td class="rank"></td>
- <td><div class="cname">{e(c['name'])}</div><div class="ccat">{e(c.get('category', ''))}</div></td>
+ <td><div class="cname">{e(c['name'])}{badge}</div><div class="ccat">{e(cat)}</div></td>
  <td class="num">{jobsCell}</td>
- <td>{meter(hot)}</td><td>{repCell}</td>
- <td>{meter(growth)}</td><td>{meter(openVal)}</td>
- <td class="num tot">{total}</td>
+ <td>{meter(hot) if scored else dash}</td><td>{repCell}</td>
+ <td>{meter(growth) if scored else dash}</td><td>{meter(openVal)}</td>
+ <td class="num tot">{total if scored else dash}</td>
  <td class="conf c-{ {'高': 'hi', '中': 'mid', '低': 'lo'}[conf] }">{conf}</td>
  <td class="chan">{'、'.join(chan) or '<span class="sub" style="display:inline">無公開管道</span>'}</td>
  <td class="cnote">{e(note)}</td>
@@ -219,6 +239,17 @@ def jobTable(jobs, companyName, onlyTW=False, showPosted=False):
     return "\n".join(out)
 
 
+def coBreakdown(config):
+    """頁首的覆蓋家數。三層拆開寫，不只給一個總數——
+    「35 家」看起來比「20 家」漂亮，但其中 4 家是代理商、4 家職能只是相近，
+    合成一個數字會讓覆蓋看起來比實際好（← JR-004）。"""
+    cs = config["companies"]
+    n = {k: sum(1 for c in cs if c.get("purity", "core") == k)
+         for k in ("core", "service", "adjacent")}
+    return (f"{len(cs)} 家（自有產品 {n['core']}、代理／顧問 {n['service']}、"
+            f"相近非純 {n['adjacent']}）")
+
+
 def main():
     ap = argparse.ArgumentParser(description="產生求職情報 artifact HTML")
     ap.add_argument("--date", required=True)
@@ -232,6 +263,8 @@ def main():
 
     tpl = open(ROOT / "report" / "template.html", encoding="utf-8").read()
     out = (tpl
+           .replace("<!--CO_COUNT-->", str(len(config["companies"])))
+           .replace("<!--CO_BREAKDOWN-->", coBreakdown(config))
            .replace("<!--COMPANY_ROWS-->", companyRows(config, jobs, rep))
            .replace("<!--REP_TABLE-->", repTable(config, rep))
            .replace("<!--APPIER_TW-->", jobTable(jobs, "Appier", onlyTW=True, showPosted=True))
