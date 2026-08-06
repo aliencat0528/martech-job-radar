@@ -1,11 +1,21 @@
 # Prepare — martech-job-radar 決策記錄
 
-> **版本**：JR-003 · 2026-08-05（待驗證事項 8 筆，見文末）
+> **版本**：JR-004 · 2026-08-06（待操作事項 9 筆，見文末；**第 9 筆為下次開發起點**）
 > **編號前綴**：`JR-`，全域遞增、永不重用
 > **記錄規則繼承根 `prepare.md`**，本檔只記本專案內部決策；
 > 主線決策不複製理由，只記落地細節 + `← D-00X` 指標。
 
 ---
+
+### JR-004 · 2026-08-06 · scope
+- **決策**：`companies.yaml` 收錄範圍**三層全收**，新增 `purity` 欄位（`core` 自有產品／
+  `service` 代理顧問 SI／`adjacent` 主業非行銷科技但職能重疊），**報告預設只排序 `core`**，
+  另兩層照列不進四維排名；`category` 同時改為 MarTech Landscape 六大類固定值
+- **理由**：主檔從來沒有收錄準則，20 家是「開放平台抓得到的」長出來的——結果 cacaFly
+  （媒體代理）、域動在內，同性質的美庫爾 Merkle、安布思沛卻整家不存在，連盲區都沒被記錄
+- **棄選**：只收 core（漏掉 dentsu／WPP 系在台的資料職，那是求職者實際會投的）；
+  三層一起排名（顧問公司與 SaaS 的熱門度不同義，同榜等於把兩把尺相加）
+- **落地**：候選名單已查證 12 家存於 `docs/candidates.md`，主檔改動列待操作第 9 筆
 
 ### JR-003 · 2026-08-05 · data
 - **決策**：手動來源（104）設 **21 天新鮮度上限**；超過就在整併報表要求把該來源的職缺
@@ -55,3 +65,4 @@
 | 6 | `--no-yourator` 旗標未單獨測過 | 其餘三個（`--no-cake`／`--no-rep`／`--no-upstream`）實跑中都用過，這個是新增後沒機會用到 | 2026-08-05 |
 | 7 | Meet.jobs 尚未接入 | 嘗試的端點（`/zh-TW/jobs`、`/zh-TW/companies`、`/api/v1/jobs`）全回 404，入口待重找 | 2026-08-05 |
 | 8 | Lever／Ashby 已探測可用但未接 | `api.lever.co/v0/postings/<token>` 與 `api.ashbyhq.com/posting-api/job-board/<token>` 都有回應（實測 Pinkoi 4 筆、Iterable 28 筆），但台灣 MarTech 目前無人使用。等擴到新加坡／日本職缺時再接 | 2026-08-05 |
+| 9 | **（優先·下次開發起點）** 把 JR-004 落到 `companies.yaml`：加 `purity` 三層、`category` 改六大類、`buildArtifact.py` 排序只取 `core`，並把候選名單建檔進主檔 | 不卡任何事，純執行。素材備妥於 `docs/candidates.md`（已查證 12 家，含美庫爾 104 `1a2x6bicuq`、OakMega、意藍 6925、LnData、meepShop、達摩媒體 `cyrv33k`）。人工成本在 `interviewCode` 要逐家搜、`hot`／`growth` 查不到證據**一律留空不硬填**（← JR-001 的教訓）。建完該檔應清空 | 2026-08-06 |
