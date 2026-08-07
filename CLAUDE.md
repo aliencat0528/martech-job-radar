@@ -18,6 +18,10 @@
   **禁止加入任何繞過防護的依賴**（cloudscraper、curl_impersonate、undetected-chromedriver 等）
 - **104 只走人工匯入**：`import104.py` 解析**使用者自己瀏覽器另存**的本機檔案，
   不連網、不打 104。這條線需要人在場，因此**永遠不得放進任何排程**（← D-018）
+- **主檔的三個欄位不准用猜的**（← JR-004／JR-005）：`category` 只能是六大類固定值、
+  `purity` 只能是 `core`／`service`／`adjacent`（`mergeChannels.py` 會擋），
+  而 `hot`／`growth` **查不到公開證據就留空**——留空者照列但不進排名，**不得給預設值**。
+  要加公司但分不出 `purity`，先放 `docs/candidates.md`，不進主檔
 - **不重算產業趨勢**：報告 §05 直接引用 `martech-trend-agent` 當期
   `reports/analysis-<日期>.md` 的結論。趨勢結論只有一個來源，避免兩份報告互相打架
 

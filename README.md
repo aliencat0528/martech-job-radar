@@ -3,7 +3,7 @@
 把散在四個招募管道的台灣 MarTech 職缺與公司口碑收攏成一份可重複產生的求職報告，
 回答三個問題：**現在有哪些缺、這些公司值不值得投、我該先投哪一個**。
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
+![Version](https://img.shields.io/badge/version-1.1.0-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
 姊妹專案 [`martech-trend-agent`](https://github.com/aliencat0528/martech-trend-agent)
@@ -73,7 +73,7 @@ python3 -m venv .venv
 
 ```
 martech-job-radar/
-├── companies.yaml       # 公司主檔：四維基準、各平台 slug、面試趣 code（唯一需手動維護的檔）
+├── companies.yaml       # 公司主檔：四維基準、purity 三層、各平台 slug、面試趣 code（唯一需手動維護的檔）
 ├── run.py               # 主程式：抓取 → 整併
 ├── fetch/
 │   ├── fetchCake.py     # Cake 頁面內嵌 __NEXT_DATA__（結構化薪資＋確切更新日）
@@ -89,6 +89,7 @@ martech-job-radar/
     ├── manual/104/<日期>/ # 你匯入的 104 資料
     ├── reputation/<日期>.json # 面試趣口碑（非職缺，不進整併流）
     └── <日期>/jobs_final.json # 合併去重後的基準（進 git）
+└── docs/candidates.md   # 查過但還沒建檔的候選公司，建檔一家就從那裡移除
 ```
 
 ## 與 martech-trend-agent 的關係
@@ -111,6 +112,17 @@ martech-job-radar/
 ```
 
 ## 版本歷史
+
+### v1.1.0 (2026-08-06)
+
+- **公司名單有收錄準則了**（← JR-004）——`companies.yaml` 新增 `purity` 三層
+  （`core` 自有產品／`service` 代理顧問／`adjacent` 相近非純）與 MarTech Landscape
+  六大類固定 `category`，三層全收但**報告只排序 `core`**
+- **補收 15 家**（20 → 35 家），包含原本整家不存在於名單的美庫爾 Merkle、OakMega、
+  意藍資訊、LnData、meepShop 等
+- **未評分的公司不再拿預設分進榜**（← JR-005）——`hot`／`growth` 留空者照列但不排名，
+  `#` 欄標「—」。舊行為是 `c.get("hot", 2)`，會讓沒研究過的公司帶著憑空的 2 分擠掉前段班
+- `mergeChannels.py` 新增 taxonomy 守門：`category`／`purity` 寫錯值會在單一入口出聲
 
 ### v1.0.0 (2026-08-05)
 
@@ -135,11 +147,17 @@ MIT License
   50 篇以下只當參考；漸強實驗室心得數不足，口碑欄標「—」而非給分
 - **年薪中位的口徑**：面試趣的數字涵蓋全公司所有職級與職能，與職缺公開薪資
   （特定職缺的談判帶）**不可直接相減**
+- **「沒被排名」不等於「不值得投」**：報告只排序 `purity: core` 且四維齊備的公司
+  （← JR-004／JR-005）。代理／顧問型（如美庫爾 Merkle）、相近非純型，以及 2026-08-06
+  補收但 `hot`／`growth` 尚未查證的 15 家，都會照列在榜後、`#` 欄標「—」。
+  名單覆蓋已補上、**排名覆蓋還沒**；還沒查完的候選見 `docs/candidates.md`
 
 ## 相關文件
 
-- **待驗證與待操作事項（8 筆）** → `prepare.md` 文末。
-  其中第 1 筆最重要：`import104.py` 從未對真實 104 頁面跑過
+- **待驗證與待操作事項（10 筆）** → `prepare.md` 文末。
+  第 9 筆是新收 15 家的四維補分；第 1 筆最重要：`import104.py` 從未對真實 104 頁面跑過
 - 決策記錄（`JR-` 系列）→ `prepare.md`
+- **候選公司名單（查過但還沒建檔，10 家）** → `docs/candidates.md`。
+  三層 `purity` 與六大類 `category` 的定義也在該檔
 - README 更新觸發條件、版本規則 → `../.claude/specs/docs.md`
 - 分析層流程 → `../.claude/commands/job-radar.md`
