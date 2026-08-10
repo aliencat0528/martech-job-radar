@@ -3,7 +3,7 @@
 把散在四個招募管道的台灣 MarTech 職缺與公司口碑收攏成一份可重複產生的求職報告，
 回答三個問題：**現在有哪些缺、這些公司值不值得投、我該先投哪一個**。
 
-![Version](https://img.shields.io/badge/version-1.1.0-blue.svg)
+![Version](https://img.shields.io/badge/version-1.1.1-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
 姊妹專案 [`martech-trend-agent`](https://github.com/aliencat0528/martech-trend-agent)
@@ -16,8 +16,9 @@
   104（人工匯入），加上讀取 `martech-trend-agent` 已抓好的 Greenhouse／Yourator 快照
 - **單一入口守門**：所有來源都必須通過 `mergeChannels.py`——欄位契約、跨管道去重、
   新鮮度檢查；缺席或過期會**出聲**而不是安靜略過
-- **跨期比較**：`data/<日期>/jobs_final.json` 進 git，下一期能算出「哪些缺消失了、
-  哪些是新開的、誰的口碑掉了」
+- **跨期比較**：`data/<日期>/jobs_final.json` 進 git，能算出「哪些缺消失了、哪些是新開的」。
+  判讀前要先扣兩種假訊號：**非追蹤公司**（上游搜尋輪替）與**名單本身的變動**
+  （主檔擴充那期只能在共同子集內比），見 `docs/ARCHITECTURE.md`
 - **公司四維排序**：熱門／口碑／成長力／文化開放，其中口碑與文化開放完全由資料算出，
   換算規則寫在 `companies.yaml`，可自行改權重重排
 
@@ -84,13 +85,17 @@ martech-job-radar/
 ├── report/
 │   ├── buildArtifact.py # 由資料產生報告 HTML（無手抄數字）
 │   └── template.html    # 版面與正文（與資料分離）
-└── data/
-    ├── auto/<日期>/     # 機械層抓的原始快照
-    ├── manual/104/<日期>/ # 你匯入的 104 資料
-    ├── reputation/<日期>.json # 面試趣口碑（非職缺，不進整併流）
-    └── <日期>/jobs_final.json # 合併去重後的基準（進 git）
-└── docs/candidates.md   # 查過但還沒建檔的候選公司，建檔一家就從那裡移除
+├── data/
+│   ├── auto/<日期>/     # 機械層抓的原始快照
+│   ├── manual/104/<日期>/ # 你匯入的 104 資料
+│   ├── reputation/<日期>.json # 面試趣口碑（非職缺，不進整併流）
+│   └── <日期>/jobs_final.json # 合併去重後的基準（進 git）
+└── docs/
+    ├── ARCHITECTURE.md  # 漏斗架構圖、模組職責、去重鍵、跨期比較的前提
+    └── candidates.md    # 查過但還沒建檔的候選公司，建檔一家就從那裡移除
 ```
+
+模組職責與資料流見 `docs/ARCHITECTURE.md`。
 
 ## 與 martech-trend-agent 的關係
 
@@ -112,6 +117,14 @@ martech-job-radar/
 ```
 
 ## 版本歷史
+
+### v1.1.1 (2026-08-10)
+
+- **修掉 artifact 的重複輸出**——`<!--ADGEEK-->` 呼叫 `jobTable()` 兩次，
+  但 `matchCompany()` 是前綴比對，第一次就已經吃到兩種公司名，同一批職缺被列了兩遍
+- 新增 `docs/ARCHITECTURE.md` 與 `CHANGELOG.md`
+- 報告更新到第 2 期（265 筆、35 家）。**這是第一次有可比的上一期**，
+  但主檔剛擴充過，跨期判讀限定在共同子集（196 → 190）
 
 ### v1.1.0 (2026-08-06)
 
@@ -139,8 +152,9 @@ MIT License
 ## 資料來源限制（判讀前必讀）
 
 - **104 不自動抓**（Cloudflare bot 防護，本工具不做規避）：iKala、CYBERBIZ、Vpon、
-  cacaFly、域動行銷五家的職缺**只存在於 104**，未人工匯入時它們在報告中應標為
-  **「未取得」而不是「無職缺」**——這兩者在求職判斷上差很多
+  cacaFly、域動行銷、美庫爾 Merkle、達摩媒體**七家**的職缺只存在於 104，
+  未人工匯入時它們在報告中應標為**「未取得」而不是「無職缺」**——這兩者在求職判斷上差很多。
+  家數會隨主檔變動，**以 `mergeChannels.py` 每次印出的清單為準**，不要背這裡的名字
 - **官網徵才頁沒有東西可爬**（2026-08-05 查證）：iKala 官網唯一出口是 104 公司頁、
   TenMax 導向 Yourator、CYBERBIZ 只有通用履歷表單、Vpon 的 careers 停更在 2025-02
 - **口碑資料的樣本差異很大**：面試趣心得數從 51 篇（TenMax）到 807 篇（91APP）不等，
@@ -156,6 +170,8 @@ MIT License
 
 - **待驗證與待操作事項（10 筆）** → `prepare.md` 文末。
   第 9 筆是新收 15 家的四維補分；第 1 筆最重要：`import104.py` 從未對真實 104 頁面跑過
+- 架構圖、模組職責、跨期比較的前提 → `docs/ARCHITECTURE.md`
+- 版本變更明細 → `CHANGELOG.md`
 - 決策記錄（`JR-` 系列）→ `prepare.md`
 - **候選公司名單（查過但還沒建檔，10 家）** → `docs/candidates.md`。
   三層 `purity` 與六大類 `category` 的定義也在該檔

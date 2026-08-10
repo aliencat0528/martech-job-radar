@@ -272,8 +272,9 @@ def main():
            .replace("<!--CRESC-->", jobTable(jobs, "漸強實驗室 Crescendo Lab"))
            .replace("<!--OMNI-->", jobTable(jobs, "Omnichat 全通路科技"))
            .replace("<!--AWOO-->", jobTable(jobs, "awoo 阿物科技"))
-           .replace("<!--ADGEEK-->", jobTable(jobs, "adGeek／Atelli 艾得利")
-                    + jobTable(jobs, "adGeek"))
+           # 只呼叫一次：matchCompany 用前綴比對，「adGeek／Atelli 艾得利」已經同時吃到
+           # company 欄寫「adGeek」的那批。呼叫兩次會讓同一筆職缺在頁面上出現兩列。
+           .replace("<!--ADGEEK-->", jobTable(jobs, "adGeek／Atelli 艾得利"))
            .replace("<!--MISC-->", jobTable(jobs, "91APP") + jobTable(jobs, "Ocard 瑞乘數位")
                     + jobTable(jobs, "The Trade Desk（台北）")))
 
