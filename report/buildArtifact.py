@@ -9,6 +9,8 @@
     .venv/bin/python report/buildArtifact.py --date 2026-08-05
 """
 import argparse
+import collections
+import datetime as dt
 import html
 import json
 import pathlib
@@ -239,6 +241,113 @@ def jobTable(jobs, companyName, onlyTW=False, showPosted=False):
     return "\n".join(out)
 
 
+# ── 推薦職缺（§00）────────────────────────────────────
+REC_CATS = ("數據分析", "數據科學／工程")
+REC_MIN_GROWTH = 4      # companies.yaml 的成長力，查不到證據者為 None，不進推薦
+REC_MIN_REP = 3         # 面試趣 repScore
+REC_MIN_REVIEWS = 50    # 心得數門檻，與 §02「樣本量 <50 只當參考」同一條線
+STALE_DAYS = 365        # 刊登日超過一年 → 常駐缺，不是新開的缺
+FRESH_DAYS = 30
+
+TW_KEYS = ["Taiwan", "Taipei", "台北", "臺北", "新北", "台中", "臺中", "高雄",
+           "嘉義", "桃園", "新竹", "台灣"]
+
+
+def parseDate(s):
+    """只認 YYYY-MM-DD。Yourator 的『一個月內更新』這種相對描述回 None——
+    **不猜日期**，猜出來的新鮮度會直接誤導投遞順序。"""
+    m = re.match(r"(\d{4})-(\d{2})-(\d{2})", (s or "").strip())
+    return dt.date(*map(int, m.groups())) if m else None
+
+
+def isTW(row):
+    return any(k in (row.get("location") or "") for k in TW_KEYS)
+
+
+def recommendRows(config, jobs, rep, runDate):
+    """三個門檻全過才進推薦：口碑有實測且達標、成長力達標、職缺本身是數據／AI 方向。
+
+    刻意不做加權總分排名——四維總分是**公司**的分數，不是**職缺**的分數，
+    拿它排職缺會讓 Appier 那批 2019 年掛到現在的常駐缺排在新開的缺前面。
+    排序改為：先看刊登新鮮度，同級再看公司四維總分。
+    """
+    today = parseDate(runDate) or dt.date.today()
+    measured = [repScoreOf(rep.get(c["name"])) for c in config["companies"]]
+    measured = [m for m in measured if m is not None]
+    median = sorted(measured)[len(measured) // 2] if measured else 3
+
+    picks, excluded = [], []
+    for c in config["companies"]:
+        r = rep.get(c["name"]) or {}
+        repVal, reviews = r.get("repScore"), r.get("reviewCount") or 0
+        growth, hot = c.get("growth"), c.get("hot")
+        mine = [j for j in jobs if matchCompany(j.get("company"), c["name"])]
+
+        if repVal is None or reviews < REC_MIN_REVIEWS:
+            if growth is not None and growth >= REC_MIN_GROWTH:
+                excluded.append((c["name"], "口碑樣本不足，未達 50 篇門檻——"
+                                             "這是<strong>沒有資料</strong>，不是口碑差"))
+            continue
+        if growth is None or growth < REC_MIN_GROWTH:
+            continue
+        if repVal < REC_MIN_REP:
+            excluded.append((c["name"], f"成長力達標，但面試趣 repScore {repVal} 未達 "
+                                        f"{REC_MIN_REP} 分門檻"))
+            continue
+        if not mine:
+            excluded.append((c["name"], "四維達標，但本期<strong>職缺未取得</strong>"
+                                        "（只有 104 覆蓋）——不等於沒在招"))
+            continue
+
+        total = (int(hot) + repVal + int(growth) + openScore(mine, c)
+                 if hot is not None else None)
+        for j in mine:
+            if cat(j.get("title")) not in REC_CATS or not isTW(j):
+                continue
+            posted = parseDate(j.get("posted"))
+            updated = parseDate(j.get("updated"))
+            age = (today - posted).days if posted else None
+            stale = age is not None and age > STALE_DAYS
+            fresh = any(d is not None and (today - d).days <= FRESH_DAYS
+                        for d in (posted, updated))
+            picks.append({"job": j, "co": c, "rep": r, "repVal": repVal,
+                          "total": total, "stale": stale, "fresh": fresh,
+                          "sort": (0 if stale else (2 if fresh else 1), total or 0,
+                                   (posted or updated or dt.date(1970, 1, 1)).isoformat())})
+
+    picks.sort(key=lambda p: p["sort"], reverse=True)
+
+    out = []
+    for p in picks:
+        j, c = p["job"], p["co"]
+        tag = ('<span class="rtag stale">常駐缺</span>' if p["stale"]
+               else '<span class="rtag fresh">近期新開</span>' if p["fresh"] else "")
+        when = e(j.get("posted") or j.get("updated") or "—")
+        # Yourator 給的是「一個月內更新」這類相對描述，本身已含「更新」二字，
+        # 再補一次標籤會印成「一個月內更新更新」。只有值是真日期時才加標籤。
+        whenLbl = ("刊登" if j.get("posted")
+                   else "更新" if parseDate(j.get("updated")) else "")
+        sal = j.get("salary") or '<span class="sub" style="display:inline">未公開</span>'
+        loc = (j.get("location") or "").replace("台北市, 台灣", "台北").replace(", 台灣", "")
+        out.append(f"""<tr>
+ <td class="jt"><a href="{j.get('url')}" target="_blank" rel="noopener">{e((j.get('title') or '').strip())}</a>{tag}
+   <div class="sub">{e(cat(j.get('title')))}・{e(loc[:34])}</div></td>
+ <td><div class="cname">{e(c['name'])}</div>
+   <div class="ccat">{e(c.get('category') or '')}</div></td>
+ <td class="num sm">{meter(p['repVal'])}<span class="sub">{p['rep'].get('companyScore')}／5・{p['rep'].get('reviewCount')} 篇</span></td>
+ <td class="num sm">{meter(int(c['growth']))}<span class="sub">四維 {p['total'] if p['total'] is not None else '—'}</span></td>
+ <td class="sm">{sal}</td>
+ <td class="sm when">{when}<span class="sub">{whenLbl}</span></td>
+</tr>""")
+
+    seen, exLines = set(), []
+    for name, why in excluded:
+        if name not in seen:
+            seen.add(name)
+            exLines.append(f"<li><strong>{e(name)}</strong>——{why}</li>")
+    return "\n".join(out), "\n".join(exLines), picks
+
+
 def coBreakdown(config):
     """頁首的覆蓋家數。三層拆開寫，不只給一個總數——
     「35 家」看起來比「20 家」漂亮，但其中 4 家是代理商、4 家職能只是相近，
@@ -261,8 +370,20 @@ def main():
     repPath = ROOT / "data" / "reputation" / f"{args.date}.json"
     rep = json.load(open(repPath, encoding="utf-8")) if repPath.exists() else {}
 
+    recRows, recExcluded, picks = recommendRows(config, jobs, rep, args.date)
+    byCo = collections.Counter(p["co"]["name"] for p in picks)
+    topCo, topN = byCo.most_common(1)[0] if byCo else ("—", 0)
+
     tpl = open(ROOT / "report" / "template.html", encoding="utf-8").read()
     out = (tpl
+           .replace("<!--REC_ROWS-->", recRows)
+           .replace("<!--REC_EXCLUDED-->", recExcluded)
+           .replace("<!--REC_COUNT-->", str(len(picks)))
+           .replace("<!--REC_CO_COUNT-->", str(len({p["co"]["name"] for p in picks})))
+           .replace("<!--REC_FRESH-->", str(sum(1 for p in picks if p["fresh"])))
+           .replace("<!--REC_STALE-->", str(sum(1 for p in picks if p["stale"])))
+           .replace("<!--REC_TOP_CO-->", e(topCo))
+           .replace("<!--REC_TOP_N-->", str(topN))
            .replace("<!--CO_COUNT-->", str(len(config["companies"])))
            .replace("<!--CO_BREAKDOWN-->", coBreakdown(config))
            .replace("<!--COMPANY_ROWS-->", companyRows(config, jobs, rep))
@@ -284,6 +405,9 @@ def main():
     leftover = re.findall(r"<!--[A-Z_]+-->", out)
     print(f"✅ 已產生 {outPath}（{len(out)} 字元）")
     print(f"   職缺 {len(jobs)} 筆、口碑 {len(rep)} 家、公司 {len(config['companies'])} 家")
+    print(f"   推薦 {len(picks)} 筆／{len({p['co']['name'] for p in picks})} 家"
+          f"（近期新開 {sum(1 for p in picks if p['fresh'])}、"
+          f"常駐缺 {sum(1 for p in picks if p['stale'])}）")
     if leftover:
         print(f"⚠️  仍有未填的佔位符：{leftover}", file=sys.stderr)
         return 1
