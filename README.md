@@ -3,7 +3,7 @@
 把散在四個招募管道的台灣 MarTech 職缺與公司口碑收攏成一份可重複產生的求職報告，
 回答三個問題：**現在有哪些缺、這些公司值不值得投、我該先投哪一個**。
 
-![Version](https://img.shields.io/badge/version-1.2.0-blue.svg)
+![Version](https://img.shields.io/badge/version-1.2.1-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
 姊妹專案 [`martech-trend-agent`](https://github.com/aliencat0528/martech-trend-agent)
@@ -121,6 +121,14 @@ martech-job-radar/
 ```
 
 ## 版本歷史
+
+### v1.2.1 (2026-08-13)
+
+- **修掉整併鍵的兩個相反錯誤**（← JR-007）：只讀標題編號會**漏併**（Cake 與 Yourator 上的
+  同一個缺，標題編號各自過期）；沒有編號時退回職稱會**誤併**（Appier 台北與東京的同名缺）。
+  改為「任一識別碼相同即同一個缺」的分群，三期資料重算為 196／266／266
+- §00 改三層（A 主推薦／B 次選／觀察名單）並新增**管道欄**，職缺範圍加入 TSE 與帶資料的產品職
+- **收回** v1.2.0 的「同一個缺換城市會被算成一增一減」——那是整併假影，不是真實現象
 
 ### v1.2.0 (2026-08-13)
 

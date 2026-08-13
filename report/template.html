@@ -169,16 +169,16 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
   <div class="top-in">
     <span class="eyebrow">求職情報簡報 · 2026-08-13 · martech-job-radar 第 3 期</span>
     <h1>台灣 MarTech 公司與職缺情報</h1>
-    <p class="lede"><!--CO_COUNT--> 家台灣行銷科技公司、四個管道實抓的 <strong>265 筆</strong>在刊職缺、
+    <p class="lede"><!--CO_COUNT--> 家台灣行銷科技公司、四個管道實抓的 <strong>266 筆</strong>在刊職缺、
       9 家的面試趣口碑原始數據，加上一份誠實標示
       「哪些查得到、哪些查不到」的判讀。開頭的 <a href="#pick">§00 推薦職缺</a>
       用三個寫死的門檻（口碑實測達標、成長力達標、職缺本身是數據／AI 方向）
-      從 265 筆裡篩出 <strong><!--REC_COUNT--> 筆</strong>，篩選規則公開在頁面上。<br>
+      從 266 筆裡篩出 <strong><!--REC_COUNT--> 筆</strong>，篩選規則公開在頁面上。<br>
       <strong>本期是第一次真正可比的一期</strong>：公司名單自 08/06 擴編後<strong>沒有再變動</strong>，
-      所以 265 → 265 是同一批公司的直接比較，不再需要可比子集。
+      所以 266 → 266 是同一批公司的直接比較，不再需要可比子集。
       淨變化為零，但底下換了 14 進 14 出。</p>
     <div class="meta">
-      <span><b>實抓職缺</b> 265 筆（去重後；上期亦 265，名單未變）</span>
+      <span><b>實抓職缺</b> 266 筆（去重後；上期亦 266，名單未變）</span>
       <span><b>推薦職缺</b> <!--REC_COUNT--> 筆／<!--REC_CO_COUNT--> 家</span>
       <span><b>覆蓋公司</b> <!--CO_BREAKDOWN--></span>
       <span><b>抓取管道</b> Greenhouse／Yourator／Cake／面試趣</span>
@@ -203,83 +203,121 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
 
 <section id="pick">
   <div class="shead"><span class="n">00</span><h2>推薦我投的職缺</h2></div>
-  <p>從本期 265 筆裡篩出 <strong><!--REC_COUNT--> 筆</strong>，來自 <!--REC_CO_COUNT--> 家公司。
-    篩選<strong>不是我的主觀偏好</strong>，是三個寫死在程式裡的門檻同時成立——
-    門檻列在下面，資料變了名單就跟著變。</p>
+  <p>從本期 266 筆裡篩出 <strong><!--REC_COUNT--> 筆</strong>職缺，
+    加上觀察名單共涉及 <strong><!--REC_CO_TOTAL--> 家公司</strong>。
+    篩選<strong>不是我的主觀偏好</strong>，是寫死在程式裡的門檻——資料變了名單就跟著變。</p>
 
   <div class="stat">
-    <div><div class="v"><!--REC_COUNT--></div><div class="k">通過三門檻的職缺</div></div>
-    <div><div class="v"><!--REC_CO_COUNT--></div><div class="k">推薦公司數</div></div>
+    <div><div class="v"><!--REC_COUNT_A--></div><div class="k">A 主推薦<br>公司三項證據齊備</div></div>
+    <div><div class="v"><!--REC_COUNT_B--></div><div class="k">B 次選<br>少一項證據，已標明</div></div>
+    <div><div class="v"><!--REC_WATCH_COUNT--></div><div class="k">觀察名單<br>公司夠格但本期無資料職缺</div></div>
     <div><div class="v"><!--REC_FRESH--></div><div class="k">30 天內新開或更新<br>優先投這批</div></div>
     <div><div class="v"><!--REC_STALE--></div><div class="k">刊登超過一年的常駐缺<br>不代表現在真的在收</div></div>
   </div>
 
   <div class="callout">
-    <span class="lbl">篩選門檻 · 三條全過才進榜</span>
+    <span class="lbl">篩選門檻與分層規則</span>
     <p><strong>① 口碑</strong>：面試趣 repScore ≥ 3／5，且心得數 ≥ 50 篇。
-      <strong>② 成長性</strong>：`companies.yaml` 的成長力 ≥ 4／5，且該分數必須有公開證據
-      （查不到證據的公司欄位留空，不給預設分，因此不會進榜）。
-      <strong>③ 發展方向</strong>：職缺本身歸類為「數據分析」或「數據科學／工程」，
-      且工作地在台灣。</p>
+      <strong>② 成長性</strong>：<code>companies.yaml</code> 的成長力 ≥ 4／5，且該分數必須有公開證據
+      （查不到證據的欄位留空、不給預設分）。
+      <strong>③ 發展方向</strong>：職缺屬「數據分析」「數據科學／工程」「技術顧問 TSE」，
+      或職稱帶 data／數據的產品職，且工作地在台灣。</p>
+    <p><strong>①②③ 全過 → A 主推薦；③ 過但 ① 或 ② 缺一項 → B 次選，並在公司欄標出缺的是哪一項。</strong>
+      分兩層是因為單層門檻會把「查不到」與「不夠好」混成同一件事——
+      35 家裡只有 9 家抓得到面試趣資料，用單層門檻會讓整張表只剩 2 家，
+      看起來像市場只有兩家值得投，實際上是<strong>證據不存在</strong>。</p>
     <p>排序刻意<strong>不用四維總分</strong>：四維是<em>公司</em>的分數，拿它排<em>職缺</em>，
       會把 Appier 那批 2019 年掛到現在的常駐缺排到新開的缺前面。
       實際排序是<strong>新鮮度優先</strong>，同級才比公司四維總分。</p>
   </div>
 
+  <h4>A · 主推薦（<!--REC_COUNT_A--> 筆）</h4>
   <div class="tscroll">
     <table>
       <thead><tr>
-        <th>職缺</th><th>公司</th><th>口碑</th><th>成長力</th><th>薪資</th><th>刊登／更新</th>
+        <th>職缺</th><th>公司</th><th>管道</th><th>口碑</th><th>成長力</th><th>薪資</th><th>刊登／更新</th>
       </tr></thead>
-      <tbody><!--REC_ROWS--></tbody>
+      <tbody><!--REC_ROWS_A--></tbody>
     </table>
   </div>
 
-  <h4>誰沒進榜，以及為什麼</h4>
-  <p>這一段跟名單本身一樣重要——<strong>沒進榜的原因多半是「查不到」，不是「不好」</strong>。</p>
-  <ul><!--REC_EXCLUDED--></ul>
+  <h4>B · 次選（<!--REC_COUNT_B--> 筆）</h4>
+  <p>職缺方向對，但公司少一項證據。<strong>「少一項」多半代表還沒查到，不是查到了不好</strong>，
+    公司欄下方標的就是缺的那一項。</p>
+  <div class="tscroll">
+    <table>
+      <thead><tr>
+        <th>職缺</th><th>公司</th><th>管道</th><th>口碑</th><th>成長力</th><th>薪資</th><th>刊登／更新</th>
+      </tr></thead>
+      <tbody><!--REC_ROWS_B--></tbody>
+    </table>
+  </div>
+
+  <div class="callout">
+    <span class="lbl">管道欄怎麼讀 · 本版新增</span>
+    <p>同一個缺可能同時刊在 Cake 與 Yourator，整併後<strong>只留一列</strong>，管道欄會寫
+      「Cake＋Yourator」。看到兩個管道代表這筆是<strong>兩個來源交叉確認過的</strong>，
+      不是重複列出。<br>
+      加這一欄的直接原因是上一版真的漏了一組重複：SHOPLINE 的 <code>Data Analyst</code>
+      在 Cake 標題寫【SGMO0801】、在 Yourator 寫【TPD0803】，兩筆 JD 一字不差卻各算一筆。
+      本版把整併鍵改成「<strong>標題編號與網址編號任一相同即同一個缺</strong>」後已合併
+      （見 §07）。</p>
+  </div>
+
+  <h4>觀察名單（<!--REC_WATCH_COUNT--> 家）</h4>
+  <p>這幾家<strong>公司條件夠格，但本期沒有範圍內的職缺</strong>。列出來是因為
+    「沒有推薦職缺」與「不值得追」是兩回事——原因逐家標在後面。</p>
+  <ul><!--REC_WATCH--></ul>
+
   <div class="callout caution">
     <span class="lbl">這份推薦看不到什麼</span>
     <p>本期<strong>沒有 104 資料</strong>，所以 iKala、CYBERBIZ、Vpon、cacaFly、域動行銷、
       美庫爾 Merkle、達摩媒體這 7 家的職缺完全不在候選池裡——它們是<strong>未取得</strong>，
       不是沒有缺。<strong>其中只有 iKala 一家</strong>（成長力 4、口碑 3.1／286 篇）
-      公司條件本來就過得了三個門檻，缺的純粹是職缺資料；
+      公司條件本來就過得了 A 層的門檻，缺的純粹是職缺資料；
       要把它納入推薦，得先做 104 人工匯入（見 §08）。
       CYBERBIZ 雖然成長力 5 分最高，但面試趣 repScore 只有 2（2.8／343 篇），
-      <strong>就算補了 104 也不會進榜</strong>——它卡的是口碑門檻，不是資料缺口。
-      其餘 5 家連面試趣資料都沒有，兩道門檻都無從判斷。</p>
+      補了 104 也只會進 B 層。其餘 5 家連面試趣資料都沒有，兩道門檻都無從判斷。</p>
+    <p><strong>另一個更硬的限制</strong>：35 家中<strong>只有 3 家在本期有資料／AI 方向的在台職缺</strong>。
+      推薦名單短不是門檻設太嚴——把門檻整個拿掉，候選池也只會多這 3 家以外的 0 家。
+      真正的瓶頸是台灣 MarTech 的純資料職開口本來就窄（§04 的 266 筆裡只有 5 個純分析職）。</p>
   </div>
 </section>
 
 <section id="judge">
   <div class="shead"><span class="n">01</span><h2>我的資訊判斷與整理報告</h2></div>
-  <p>先講結論，再看資料。以下幾條是我讀完 265 筆職缺、與上一期（2026-08-10）的差集、
+  <p>先講結論，再看資料。以下幾條是我讀完 266 筆職缺、與上一期（2026-08-10）的差集、
     四個管道的覆蓋落差，以及公司財務與媒體資料後的判斷。<strong>每條都標了證據強度</strong>——
     「實抓」代表數字來自本次抓取，「查證」代表來自公開報導或財報，「推測」代表我沒有直接證據。</p>
 
   <div class="judge">
     <div class="jcard key">
       <span class="tag">本期限定 · 必須先講</span>
-      <h4>265 → 265，淨變化第一次真的是零——而且這次數字可以直接比</h4>
+      <h4>266 → 266，淨變化第一次真的是零——而且這次數字可以直接比</h4>
       <p>公司名單自 08/06 擴編到 35 家後<strong>本期沒有再變動</strong>，
-        上期那個「196 → 265 是名單造成的、只能看可比子集」的限制<strong>到本期解除</strong>。
-        兩期都是同一批 35 家、同樣四個管道，265 對 265 是可以直接相減的。<br>
-        但淨零不等於沒事發生：底下是 <strong>14 筆新增、14 筆消失</strong>。
-        判讀要看的是這 28 筆的組成，不是那個 0。</p>
+        上期那個「196 → 266 是名單造成的、只能看可比子集」的限制<strong>到本期解除</strong>。
+        兩期都是同一批 35 家、同樣四個管道，266 對 266 是可以直接相減的。<br>
+        但淨零不等於沒事發生：底下是 <strong>13 筆新增、13 筆消失</strong>。
+        判讀要看的是這 26 筆的組成，不是那個 0。</p>
     </div>
     <div class="jcard key">
-      <span class="tag">實抓 · 本期最重要的方法修正</span>
-      <h4>「新增 14 筆」有三筆是假的——同一個缺換了城市就會被算成一增一減</h4>
-      <p>去重鍵是平台職缺編號（等同 URL）。Appier 的
+      <span class="tag">實抓 · 本期最重要的修正（已改程式）</span>
+      <h4>整併鍵同時犯了兩個相反的錯：該併的沒併、不該併的併掉了</h4>
+      <p>用戶指出推薦區有重複職缺，追下去發現<strong>不是顯示問題，是整併鍵本身有兩個錯</strong>，
+        而且方向相反：<br>
+        <strong>①漏併</strong>：SHOPLINE 的 <code>Data Analyst</code> 在 Cake 標題寫
+        【SGMO0801】、在 Yourator 寫【TPD0803】，<strong>兩筆 JD 內文一字不差</strong>，
+        是同一個缺卻各算一筆。原因是舊鍵只讀標題編號，而 Cake 那筆自己的網址
+        就寫著 <code>/jobs/tpd0803data-analyst</code>——<strong>證據一直都在網址裡</strong>。<br>
+        <strong>②誤併</strong>：Appier 的
         <code>Staff/Senior Machine Learning Scientist (Ad Cloud)</code>
-        上期掛在 <strong>Tokyo</strong>、本期掛在 <strong>Taipei</strong>，
-        刊登日兩期都是 2025-05-19——<strong>是同一個缺換了城市</strong>，
-        但因為換了頁面而被同時計入「消失」與「新增」。
-        另外兩筆 <code>Account Operations Intern</code>（刊登日 2021-05-07 與 2025-10-31）
-        也是舊缺重新上架，不是新開的編制。<br>
-        <strong>判讀規則（下期沿用）</strong>：看「新增」時<strong>先查刊登日</strong>——
-        刊登日遠早於本期的，是重新上架或換頁，不能當成新開缺。
-        本期扣掉這三筆後，Appier 真正的新開缺只有 2 個。</p>
+        台北（<code>gh-6897205</code>）與東京（<code>gh-7092458</code>）標題一模一樣，
+        沒有職缺編號可用時舊鍵退回比職稱，於是<strong>兩個真實職缺被併成一筆</strong>，
+        而且哪一筆勝出取決於迭代順序——跨期比較因此看到它在台北與東京之間跳動，
+        看起來像職缺異動，其實是整併的假影。<br>
+        <strong>已修</strong>：改成「標題編號與網址編號<strong>任一相同</strong>即同一個缺」，
+        沒有編號時用平台識別碼、不退回職稱（← JR-007）。三期資料全部重算，
+        196／266／266。上期報的「換城市造成一增一減」<strong>是這個 bug 的症狀，不是真實現象</strong>，本期收回。</p>
     </div>
     <div class="jcard warn">
       <span class="tag">實抓 · 對你最直接的一條</span>
@@ -324,15 +362,17 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
         <code>martech-trend-agent</code> 的快照，第 1 期時那個 repo 的工作區停在不含最新快照的分支上，
         於是本工具安靜地用了 5 天前的資料。已補新鮮度守門。
         通則是：跨 repo 讀檔讀到的是對方的<em>工作區</em>，不是 main。<br>
-        <strong>②去重鍵會吃掉真資料</strong>：原本用「公司＋職稱」當鍵，
-        SHOPLINE 兩個分屬不同團隊、職稱一模一樣的 <code>Data Analyst</code> 被併成一筆。
-        改用平台職缺編號後兩個都回來了（本期它們仍然都在，見 §03）。</p>
+        <strong>②去重鍵兩度出錯，方向相反</strong>：第 1 期原本用「公司＋職稱」當鍵，
+        SHOPLINE 職稱相同的兩個 <code>Data Analyst</code> 被併成一筆，於是改用平台職缺編號。
+        <strong>但那次修法本身又埋了兩個新錯</strong>——只讀標題編號（漏併 Cake／Yourator 上的同一個缺）、
+        沒有編號時退回職稱（誤併 Appier 台北與東京的同名缺）。兩者本期才一次修掉。
+        通則是：<strong>識別碼要收齊所有來源，而且缺識別碼時寧可不併</strong>。</p>
     </div>
     <div class="jcard key">
       <span class="tag">實抓 · 最重要的一條</span>
       <h4>台灣 MarTech 的職缺不在同一個地方，這才是求職者最大的障礙</h4>
       <p>Appier 只用 Greenhouse、漸強用 Yourator＋自架 Teamdoor、Omnichat 與 awoo 只在 Cake、
-        91APP 與 iKala 幾乎全部在 104。本次四個管道抓到 265 筆，
+        91APP 與 iKala 幾乎全部在 104。本次四個管道抓到 266 筆，
         但 35 家裡有 <strong>17 家在開放平台是 0 筆</strong>（上期 16，多的一家是 adGeek）——
         其中 7 家（iKala、CYBERBIZ、Vpon、cacaFly、域動、美庫爾 Merkle、達摩媒體）
         <strong>只能靠 104</strong>，本期未人工匯入，在 §02 一律標「未取得」而非「無職缺」；
@@ -357,21 +397,22 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
     <div class="jcard key">
       <span class="tag">實抓</span>
       <h4>台灣 MarTech 現在最大的資料職開口不是 Appier，是 SHOPLINE</h4>
-      <p>SHOPLINE 去重後 32 個缺裡有 <strong>6 個資料相關</strong>：Data Analyst ×2、
+      <p>SHOPLINE 去重後 31 個缺裡有 <strong>5 個資料相關</strong>：Data Analyst、
         Data Engineer、Senior Data Engineer、Data Product Manager、
-        Merchant Success Data Operations——<strong>連續三期六個一個都沒少</strong>。
+        Merchant Success Data Operations——<strong>連續三期一個都沒少</strong>。
+        （上一版寫 6 個、含兩個 Data Analyst，那是整併漏併造成的重複，本版已修。）
         相較之下 Appier 台北 55 缺中的分析職是 3 個，其中 2 個是 2019 年的常駐缺，
         真正在收的只有本期新開的那個資深缺。
         以「入行做資料分析」為目標，SHOPLINE 的實際機會密度仍高於 Appier，這條連三期成立。
-        六個缺全部進了 <a href="#pick">§00 推薦</a>。</p>
+        五個缺全部進了 <a href="#pick">§00 推薦</a>。</p>
     </div>
     <div class="jcard">
       <span class="tag">實抓</span>
       <h4>整體結構：商務端大於研發端，研發端裡 AI 大於資料</h4>
-      <p>265 筆去重職缺中，商務／行銷／客戶成功 106 筆佔最大宗，其次是軟體工程 54 筆；
-        <strong>純「數據分析」職稱全台合計只有 6 個</strong>（數據科學／工程另有 23 個）。
-        三期下來這個<strong>絕對數幾乎沒動過</strong>（5 → 5 → 6），
-        即使中間名單從 20 家擴到 35 家、總筆數從 196 漲到 265 也一樣——
+      <p>266 筆去重職缺中，商務／行銷／客戶成功 106 筆佔最大宗，其次是軟體工程 54 筆；
+        <strong>純「數據分析」職稱全台合計只有 5 個</strong>（數據科學／工程另有 24 個）。
+        三期下來這個<strong>絕對數幾乎沒動過</strong>（4 → 4 → 5），
+        即使中間名單從 20 家擴到 35 家、總筆數從 196 漲到 266 也一樣——
         <strong>純分析職的開口不隨覆蓋擴大而變多</strong>，這比任何比例都說明問題。
         MarTech 公司要的不是更多分析師，是能把產品賣進去、接得起來、留得住客戶的人——
         而這些角色的 JD 裡幾乎都寫著要看數據。入行路徑比較可能是「懂資料的 CS／AM」而不是「純 DA」。</p>
@@ -559,17 +600,17 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
   <div class="shead"><span class="n">04</span><h2>職缺與公司分析</h2></div>
 
   <div class="stat">
-    <div><div class="v">265</div><div class="k">四管道實抓在刊職缺（去重；名單未變，可直接比上期）</div></div>
-    <div><div class="v">±0</div><div class="k">淨變化（新增 14、消失 14，其中 3 筆是換頁的舊缺）</div></div>
-    <div><div class="v">6</div><div class="k">SHOPLINE 資料相關職缺，全台最多、連三期零流失</div></div>
-    <div><div class="v">0</div><div class="k">Appier 87 筆中公開薪資的筆數</div></div>
+    <div><div class="v">266</div><div class="k">四管道實抓在刊職缺（去重；名單未變，可直接比上期）</div></div>
+    <div><div class="v">±0</div><div class="k">淨變化（新增 13、消失 13，其中 2 筆是舊缺重新上架）</div></div>
+    <div><div class="v">5</div><div class="k">SHOPLINE 資料相關職缺，全台最多、連三期零流失</div></div>
+    <div><div class="v">0</div><div class="k">Appier 88 筆中公開薪資的筆數</div></div>
     <div><div class="v">11</div><div class="k">Appier 台北刊登於 2024 年前的常駐缺</div></div>
     <div><div class="v">7</div><div class="k">職缺只在 104、本期未取得的公司</div></div>
   </div>
 
   <h3>一、職能結構：MarTech 在台灣是「賣得動」的生意，不是「做得出」的生意</h3>
-  <p>把 265 筆去重職缺按職能分（商務／行銷／客戶成功 106、軟體工程 54、數據科學／工程 23、
-    產品／設計 13、數據分析 6、技術顧問 TSE 3），商務／行銷／客戶成功是最大群，軟體工程次之，
+  <p>把 266 筆去重職缺按職能分（商務／行銷／客戶成功 106、軟體工程 54、數據科學／工程 24、
+    產品／設計 14、數據分析 5、技術顧問 TSE 3），商務／行銷／客戶成功是最大群，軟體工程次之，
     產品與資料職明顯偏少。這個結構有它的道理：台灣 MarTech 公司的產品多半已經做出來了，
     現階段的瓶頸在<strong>導入與續約</strong>——Omnichat 7 個缺裡 3 個是 BD 與夥伴關係、
     漸強 6 個缺裡 4 個是商務或客戶成功、SHOPLINE 有整整一個 Merchant Success 家族。</p>
@@ -657,7 +698,7 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
     <p>產業趨勢由 <code>martech-trend-agent</code> 產生，本報告直接引用其
       <strong>2026-08-13（第 6 期）</strong>的分析，不重複計算——這樣兩份報告不會互相打架。
       <strong>本期兩邊同日產出、期別對齊</strong>（上游職缺 145 筆、新聞 66 篇；
-      本報告 265 筆，分母不同是因為本專案多抓了 Cake 與更多 Yourator 公司）。<br>
+      本報告 266 筆，分母不同是因為本專案多抓了 Cake 與更多 Yourator 公司）。<br>
       <strong>該期查出一件會影響本節怎麼讀的事</strong>：它的「主題聲量」是每期重抓一次 RSS
       當下的內容，本期相鄰兩期文章重疊只有 <strong>5／66</strong>，
       而且間隔從 5 天縮到 3 天重疊率並沒有變高——所以<strong>那張表不能用於跨期比較</strong>。<br>
@@ -809,10 +850,10 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
 
   <h4>抓了什麼</h4>
   <ul>
-    <li><strong>Greenhouse 官方公開 API</strong>（經上游快照取得）：Appier 全球 87 筆（含台北 55）。
+    <li><strong>Greenhouse 官方公開 API</strong>（經上游快照取得）：Appier 全球 88 筆（含台北 55）。
       唯一給得出 <code>first_published</code>（刊登日）的來源，
       §00 的「常駐缺」標記完全依賴這個欄位。</li>
-    <li><strong>Yourator 前端公開 JSON</strong>：以公司 slug 逐一查詢，本期 117 筆——
+    <li><strong>Yourator 前端公開 JSON</strong>：以公司 slug 逐一查詢，本期 118 筆——
       SHOPLINE 30、樂播科技 22、WebComm 15、Accucrazy 9、OakMega 8、12CM 7、
       簡訊設計 SimpleInfo 7、漸強 6、AlleyPin 6，其餘零星。
       <strong>adGeek 本期 0 筆</strong>（上期 5 筆，見 §01）。</li>
@@ -846,15 +887,16 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
       這一點在 §00 更嚴重：<!--REC_COUNT--> 筆推薦裡 <!--REC_TOP_N--> 筆來自 <!--REC_TOP_CO-->。</li>
     <li><strong>時間點快照</strong>：所有數字為 2026-08-13 的當下狀態，職缺會下架與新增。</li>
     <li><strong>跨期比較本期起完全成立</strong>：名單自 08/06 擴編後未再變動，
-      265 → 265 是同一批 35 家公司的直接比較，上期的可比子集限制已解除。
-      但<strong>去重鍵是 URL</strong>，同一個缺換城市或重新上架會被算成一增一減
-      （本期實際發生 3 次，見 §01），看差集時必須配合刊登日一起讀。</li>
-    <li><strong>公司職缺表只涵蓋 9 家</strong>：265 筆中有 140 筆在 §03 逐筆列出，
-      其餘 125 筆來自新收公司與上游的產業關鍵詞掃描（樂播、WebComm、緯雲等），
+      266 → 266 是同一批 35 家公司的直接比較，上期的可比子集限制已解除。
+      整併鍵本期已修（← JR-007），三期資料全部以新鍵重算，數字與上一版不同是正常的。
+      <strong>仍要注意「重新上架」</strong>：刊登日遠早於本期的職缺會以新頁面重新出現，
+      被算成新增但不是新編制（本期 2 筆），看差集時必須配合刊登日一起讀。</li>
+    <li><strong>公司職缺表只涵蓋 9 家</strong>：266 筆中有 140 筆在 §03 逐筆列出，
+      其餘 126 筆來自新收公司與上游的產業關鍵詞掃描（樂播、WebComm、緯雲等），
       計入總數與 §02 的缺數欄，但不單獨列表。</li>
     <li><strong>§00 推薦的候選池比看起來窄</strong>：三個門檻裡「口碑實測達標」這一條，
       35 家中只有 9 家抓得到面試趣資料，其餘 26 家<strong>連參選資格都沒有</strong>。
-      推薦名單只有 2 家公司，主因不是市場上只有兩家值得投，
+      A 層只有 2 家公司，主因不是市場上只有兩家值得投，
       是<strong>其他家的判斷依據不存在</strong>。</li>
     <li><strong>評分主觀性</strong>：口碑已有 9 家實抓（見 §02 原始數據表），熱門與成長力仍含判斷成分，
       證據強度已於表格標示。</li>
