@@ -175,13 +175,14 @@
   "location": "松山區, 台北市, 台灣",
   "posted": "",
   "updated": "2026-04-02",
-  "salary": "",
+  "salary": "面議（經常性薪資達4萬元）",
   "url": "https://www.cake.me/companies/shopline/jobs/tpd0803data-analyst",
   "seniority": "mid_senior_level / 2年",
   "req": "【Job Summary】\nThis is an exciting opportunity at a Global Unified Commerce enabler providing SaaS solutions. As a Data Analyst, you will be responsible for deep-diving into data and providing actionable insights to facilitate better strategic decision-making.\n【What you will be doing】\nDeliver Insights: Provide data-driven insights to internal commercial teams, addressing a wide range of business questions and needs.Business Logic  Metrics: Develop a comprehensive understanding of the business to drive the analysis of operating and tracking metricsDashboard Development: Build metrics dashboards to track and monitor platform performance and progress.Reporting: Create analytical reports to provide deep dives into key topics, enabling better decision-making to solve business problems.Proactive Exploration: Proactively explore complex datasets to uncover valuable insights and identify potential issues.Data Culture: Promote and foster a data-driven mindset within the company.\n\n【 Who we are looking for 】\nProven Experience: Demonstrated experience in conducting data analysis and utilizing analytic/visualization tools to drive decision-making.Technical Skills: Advanced SQL skills are a must; proficiency in Python or R (Web Scraping, ML, NLP) is a plus.BI Tools: Experience with Business Intelligence tools such as Looker, Tableau, or Power BI is a plus.Communication: Strong communication skills with the ability to transform numbers into compelling stories.Independence: Ability to work in",
   "_src": "cake.json",
   "channels": [
-   "Cake（原 CakeResume）"
+   "Cake（原 CakeResume）",
+   "Yourator"
   ]
  },
  {
@@ -1861,6 +1862,22 @@
  {
   "channel": "greenhouse（via trend-agent 2026-08-13）",
   "company": "Appier",
+  "title": "Staff/Senior Machine Learning Scientist (Ad Cloud)",
+  "location": "Tokyo, Japan",
+  "posted": "2025-07-22",
+  "updated": "2025-07-22",
+  "salary": "",
+  "url": "https://job-boards.greenhouse.io/appier/jobs/7092458",
+  "seniority": "",
+  "req": "About Appier&nbsp; Appier is an AI-native Agentic AI as a Service (AaaS) company that uses artificial intelligence (AI) to power business decision-making. Founded in 2012 with a vision of democratizing AI, Appier’s mission is turning AI into ROI by making software intelligent. Appier now has 17 offices across APAC, Europe and U.S., and is listed on the Tokyo Stock Exchange (Ticker number: 4180). Visit www.appier.com for more information. Open to overseas candidates/Visa Support This position is based in Tokyo, Japan. For international candidates, Appier's Japan office provides visa sponsorship to ensure a smooth transition to Japan. The Impact You’ll Make at Appier Appier is seeking a&nbsp; Senior Machine Learning Scientist &nbsp;to join our&nbsp; Advertising Cloud Optimization team , which leads the development of core machine learning algorithms driving campaign efficiency and advertiser ROI. Our programmatic advertising platform operates at a massive scale, handling over multi millions queries per second (QPS), all powered by our proprietary deep learning models for bidding, pricing, and personalized content delivery. Our engineering team has a solid technical background, which would be a great environment for a skilled engineer. In this role, you’ll directly impact the&nbsp; efficiency and profitability &nbsp;of ads campaigns by improving models for&nbsp; bidding, pricing , and&nbsp; personalized content recommendation , while ensuring system robustness and scalability in a dynamic market environment. What You’ll Work On Design, implement, and productionize&nbsp; state-of-the-art ML models &nbsp;to improve campaign outcomes. Analyze large-scale user and auction data to&nbsp; discover predictive patterns and alpha signals &nbsp;that enhance bidding and personalizatio",
+  "_src": "upstream.json",
+  "channels": [
+   "greenhouse（via trend-agent 2026-08-13）"
+  ]
+ },
+ {
+  "channel": "greenhouse（via trend-agent 2026-08-13）",
+  "company": "Appier",
   "title": "Staff/Senior Machine Learning Scientist (Ad Cloud) - Tokyo,Japan",
   "location": "Tokyo, Japan",
   "posted": "2026-04-07",
@@ -2955,22 +2972,6 @@
   "url": "https://www.yourator.co/companies/shopline/jobs/47487",
   "seniority": "銷售業務",
   "req": "SHOPLINEについて SHOPLINEは、2013年に創業したSaaS（ソフトウェア・アズ・ア・サービス）企業であり、アジア各国で高いシェアを誇るECプラットフォームです。 EC、ソーシャルコマース、POS、顧客管理など一体化した総合ソリューションを提供し、ビジネスの成長を力強くサポート。また、柔軟なシステム構成とパートナー連携により、変化の激しい市場環境でも、マーチャントの皆さまが確実...",
-  "_src": "yourator.json",
-  "channels": [
-   "Yourator"
-  ]
- },
- {
-  "channel": "Yourator",
-  "company": "SHOPLINE 商線科技",
-  "title": "【TPD0803】Data Analyst",
-  "location": "臺北市",
-  "posted": "",
-  "updated": "一個月內更新",
-  "salary": "面議（經常性薪資達4萬元）",
-  "url": "https://www.yourator.co/companies/shopline/jobs/46447",
-  "seniority": "數據 / 資料分析師",
-  "req": "【Job Summary】 This is an exciting opportunity at a Global Unified Commerce enabler providing SaaS solutions. As a Data Analyst, you will be responsible for deep-diving into data and providing actio...",
   "_src": "yourator.json",
   "channels": [
    "Yourator"
@@ -4155,6 +4156,22 @@
   "url": "https://www.yourator.co/companies/PERFECTcorp/jobs/39006",
   "seniority": "專案 / 產品管理",
   "req": "We are currently seeking a dynamic and experienced B2C Product Manager to join our team. This role will primarily focus on overseeing the YouCam family of digital products at Perfect Corp. The idea...",
+  "_src": "yourator.json",
+  "channels": [
+   "Yourator"
+  ]
+ },
+ {
+  "channel": "Yourator",
+  "company": "玩美移動 Perfect Corp",
+  "title": "【訊連科技】B2C Product Manager 產品經理",
+  "location": "新北市",
+  "posted": "",
+  "updated": "一個月內更新",
+  "salary": "面議（經常性薪資達4萬元）",
+  "url": "https://www.yourator.co/companies/PERFECTcorp/jobs/46863",
+  "seniority": "專案 / 產品管理",
+  "req": "Build the future of AI-powered creativity. We are looking for a product-driven thinker who is passionate about AI, creativity, and building products used by millions worldwide. As an B2C Product Ma...",
   "_src": "yourator.json",
   "channels": [
    "Yourator"

@@ -76,21 +76,76 @@ def normTitle(title):
 
 
 PAT_JOBCODE = re.compile(r"【([A-Za-z0-9]{4,12})】")
+# Cake 的 slug 常內嵌職缺編號：/jobs/tpd0803data-analyst
+PAT_URLCODE = re.compile(r"/([a-z]{2,5}\d{3,6})(?=[a-z-]|$)")
+PAT_PLATFORM = (
+    ("gh", re.compile(r"greenhouse\.io/[^/]+/jobs/(\d+)")),
+    ("ytr", re.compile(r"yourator\.co/companies/[^/]+/jobs/(\d+)")),
+    ("cake", re.compile(r"cake\.me/companies/[^/]+/jobs/([\w-]+)")),
+)
 
 
-def dedupeKey(row):
-    """跨管道去重鍵。不用 url——同一個缺在不同平台的 url 本來就不同。
+def jobCodes(row):
+    """抓平台職缺編號，標題的【CODE】與 url slug 內嵌的編號**兩個都收**。
 
-    有平台職缺編號（如 SHOPLINE 的【TPD0803】）時**優先用編號**：
-    2026-08-05 實測 19 筆 SHOPLINE 職缺在 Yourator 與 Cake 兩邊編號一致，
-    證明它是可靠識別碼。反過來，只靠職稱會把編號不同、職稱相同的兩個真實職缺
-    （`【SGMO0801】Data Analyst` 與 `【TPD0803】Data Analyst`，分屬不同團隊）誤併成一筆。
+    不能只信一邊，因為**兩邊都會過期，而且是各自過期**（皆為 2026-08-13 實測）：
+
+    - SHOPLINE `Data Analyst`：標題留舊碼【SGMO0801】，url 是 `/jobs/tpd0803data-analyst`；
+      Yourator 那筆標題寫【TPD0803】。兩筆 JD 內文一字不差，是同一個缺。
+    - SHOPLINE `Product Manager`：反過來，url slug 留舊碼 `tpd0303`，標題寫【TPD1401】。
+    - SHOPLINE `會計專員`：Cake 的 slug 根本沒有編號（`/jobs/ed953d`）。
+
+    所以回傳的是**集合**，由呼叫端做「任一相同即同一個缺」的分群。
+    """
+    out = set()
+    m = PAT_JOBCODE.search(row.get("title") or "")
+    if m:
+        out.add(m.group(1).lower())
+    m = PAT_URLCODE.search((row.get("url") or "").lower())
+    if m:
+        out.add(m.group(1))
+    return out
+
+
+def platformId(row):
+    """平台自己的職缺識別碼。沒有職缺編號時用它，**不要退回職稱**。
+
+    退回職稱會把職稱相同、實際不同的兩個缺併掉。實例（08-05～08-13 三期都在發生）——
+    Appier `Staff/Senior Machine Learning Scientist (Ad Cloud)` 台北（gh-6897205）與
+    東京（gh-7092458）標題一模一樣，上游兩筆都在，合併後只剩一筆，
+    而且哪一筆勝出取決於迭代順序，於是跨期比較會看到它在台北與東京之間「跳來跳去」。
+    """
+    url = (row.get("url") or "").lower()
+    for prefix, pat in PAT_PLATFORM:
+        m = pat.search(url)
+        if m:
+            return f"{prefix}-{m.group(1)}"
+    return None
+
+
+def dedupeTokens(row):
+    """回傳這筆職缺的所有識別碼（已含公司名前綴，跨公司不會互相碰撞）。
+
+    優先序：
+    1. **職缺編號**（標題與 url 各自可能有，全收）——跨平台唯一穩定的識別碼。
+       2026-08-05 實測 19 筆 SHOPLINE 職缺在 Yourator 與 Cake 兩邊編號一致。
+    2. 沒有編號時用**平台識別碼**。同平台經多條路徑（直抓／上游快照）進來仍會正確合併，
+       因為 url 相同；不同平台則不合併——這是刻意的，**沒有編號就沒有證據說它們是同一個缺**。
+    3. 完全沒有 url 時才退回職稱。
+
+    第 2 段不可以退回職稱：Appier `Staff/Senior Machine Learning Scientist (Ad Cloud)`
+    台北（gh-6897205）與東京（gh-7092458）標題一模一樣、上游兩筆都在，
+    退回職稱會併成一筆，而且哪一筆勝出取決於迭代順序——跨期比較因此會看到它
+    在台北與東京之間「跳來跳去」，看起來像職缺異動，其實是合併的假影。
     """
     company = normCompany(row.get("company"))
-    code = PAT_JOBCODE.search(row.get("title") or "")
-    if code:
-        return f"{company}|#{code.group(1).lower()}"
-    return f"{company}|{normTitle(row.get('title'))}"
+    codes = jobCodes(row)
+    if codes:
+        return {f"{company}|#{c}" for c in codes}
+    pid = platformId(row)
+    if pid:
+        return {f"{company}|@{pid}"}
+    return {f"{company}|{normTitle(row.get('title'))}"}
 
 
 def loadDir(path, label):
@@ -184,11 +239,18 @@ def main():
         return 1
 
     # ── 去重：同一個缺可能同時出現在多個管道 ──
-    merged, seen = [], {}
+    # 用「任一識別碼相同就是同一個缺」分群，不是單一鍵比對——因為**標題編號與 url
+    # 內嵌編號都會過期**，而且是各自過期：SHOPLINE `Data Analyst` 是標題留著舊碼
+    # （【SGMO0801】而 url 寫 tpd0803），`Product Manager` 反過來是 url slug 留著舊碼
+    # （tpd0303 而標題寫【TPD1401】）。挑任何一邊當唯一真相都會漏掉另一種。
+    merged, byToken = [], {}
     for r in allRows:
-        key = dedupeKey(r)
-        if key in seen:
-            prev = merged[seen[key]]
+        tokens = dedupeTokens(r)
+        hit = next((byToken[t] for t in tokens if t in byToken), None)
+        if hit is not None:
+            prev = merged[hit]
+            for t in tokens:            # 併入後讓這群的識別碼全部指向同一筆
+                byToken.setdefault(t, hit)
             # 保留資訊較多的那筆，並把兩邊的管道都記下來
             prevChans = prev.get("channels") or [prev.get("channel", "")]
             if r.get("channel") and r["channel"] not in prevChans:
@@ -199,7 +261,8 @@ def main():
                     prev[field] = r[field]
             continue
         r["channels"] = [r.get("channel", "")]
-        seen[key] = len(merged)
+        for t in tokens:
+            byToken[t] = len(merged)
         merged.append(r)
 
     outPath = pathlib.Path(args.out or (root / args.date / "jobs_final.json"))
