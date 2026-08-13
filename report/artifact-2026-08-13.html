@@ -2191,18 +2191,26 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
   <div class="callout">
     <span class="lbl">本節不自己算，引用姊妹專案的當期結論</span>
     <p>產業趨勢由 <code>martech-trend-agent</code> 產生，本報告直接引用其
-      <strong>2026-08-10（第 5 期）</strong>的分析，不重複計算——這樣兩份報告不會互相打架。
-      <strong>注意期別落差</strong>：上游的資料層本期已刷新到 2026-08-13
-      （職缺 145 筆、新聞 66 篇），但<strong>分析層尚未跑</strong>，
-      最新的 <code>analysis-*.md</code> 仍停在 08-10。
-      因此本節引用的是 08-10 的結論，不是 08-13 的——要拿到 08-13 的趨勢判斷，
-      需另外執行 <code>/martech-report</code>。
+      <strong>2026-08-13（第 6 期）</strong>的分析，不重複計算——這樣兩份報告不會互相打架。
+      <strong>本期兩邊同日產出、期別對齊</strong>（上游職缺 145 筆、新聞 66 篇；
+      本報告 265 筆，分母不同是因為本專案多抓了 Cake 與更多 Yourator 公司）。<br>
       <strong>該期查出一件會影響本節怎麼讀的事</strong>：它的「主題聲量」是每期重抓一次 RSS
-      當下的內容，相鄰兩期文章重疊只有 4–6 篇，所以<strong>那張表不能用於跨期比較</strong>，
-      上期留下的兩條判讀規則也一併降級。<br>
+      當下的內容，本期相鄰兩期文章重疊只有 <strong>5／66</strong>，
+      而且間隔從 5 天縮到 3 天重疊率並沒有變高——所以<strong>那張表不能用於跨期比較</strong>。<br>
       因此本節下方的「產業」段落只保留<strong>不依賴聲量表</strong>的證據
       （ChiefMartec 年度地圖是年度普查，不是聲量抽樣；台灣三個轉向來自公司自己的產品定位與 JD 文字），
       任何「某主題聲量正在上升」形式的說法本期一律不採用。</p>
+  </div>
+
+  <div class="callout caution">
+    <span class="lbl">本期上游收回了一個講了四期的框架</span>
+    <p>第 6 期分析<strong>修正了「研發重心從資料移到 AI」這個框架</strong>：
+      真正一致的分界不是職能（AI vs 資料），而是<strong>年資</strong>——
+      開的是 Senior 分析／Senior ML／Staff ML，收的是非 Senior 的 ML Scientist、
+      GenAI Research Intern、Data Analyst Intern。<br>
+      <strong>這與本報告 §01、§04 各自獨立查到的結論一致</strong>：
+      同一期台北新開了 <code>Senior Digital Advertising Data Analyst</code>，
+      而初階 AI 缺連兩期缺席。兩份報告從不同資料層走到同一個結論，這條的可信度因此比較高。</p>
   </div>
 
   <h3>產業：MarTech 工具數已經見頂，成長改由 AI 重新啟動舊類別</h3>
