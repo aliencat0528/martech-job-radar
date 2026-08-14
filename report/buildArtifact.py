@@ -89,7 +89,10 @@ def openScore(rows, company):
     return min(score, 5)
 
 
-PURITY_LABEL = {"service": "代理／顧問", "adjacent": "相近非純"}
+# core 也要有徽章。舊版只給 service／adjacent 掛標籤，等於**用「沒有標記」代表
+# MarTech 核心**——高亮了錯的東西。而且 `.p-service`／`.p-adjacent` 兩個 class
+# 從來沒有對應的 CSS 規則，兩層外觀完全相同、分不出來。
+PURITY_LABEL = {"core": "MarTech", "service": "代理／顧問", "adjacent": "相近非純"}
 
 
 def repScoreOf(repEntry):
@@ -165,8 +168,7 @@ def companyRows(config, jobs, rep):
                      f"{repEntry.get('annualSalaryWan')} 萬。")
 
         dash = '<span class="sub" style="display:inline">—</span>'
-        badge = ("" if purity == "core"
-                 else f'<span class="ptag p-{purity}">{PURITY_LABEL[purity]}</span>')
+        badge = f'<span class="ptag p-{purity}">{PURITY_LABEL[purity]}</span>'
         cat = "｜".join(x for x in [c.get("category"), c.get("segment")] if x)
 
         out.append(f"""<tr data-hot="{hot if scored else -1}" data-rep="{-1 if repUnknown else repVal}"

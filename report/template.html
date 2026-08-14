@@ -115,9 +115,26 @@ tr.grp:hover td{background:var(--band)}
 .ccat{color:var(--ink-3);font-size:11.5px}
 .ptag{display:inline-block;margin-left:6px;padding:1px 6px;border-radius:9px;
   border:1px solid var(--line);color:var(--ink-3);font-size:10.5px;font-weight:500;
-  vertical-align:middle;letter-spacing:.02em}
+  vertical-align:middle;letter-spacing:.02em;white-space:nowrap}
+/* MarTech 核心是這份報告的主體，用實心 accent 正面標示；另兩層各自可辨識但不搶眼 */
+.ptag.p-core{background:var(--accent);border-color:var(--accent);color:var(--card);font-weight:650}
+.ptag.p-service{border-color:var(--warn);color:var(--warn);background:transparent}
+.ptag.p-adjacent{border-style:dashed;border-color:var(--ink-3);color:var(--ink-3)}
+#coTable tr[data-purity="core"] td:nth-child(2){box-shadow:inset 3px 0 0 var(--accent)}
+#coTable tr[data-purity="core"] .cname{font-weight:700}
+#coTable tr[data-purity="service"] .cname,
+#coTable tr[data-purity="adjacent"] .cname{font-weight:550;color:var(--ink-2)}
 #coTable tr.unranked td.rank{color:var(--line)}
-#coTable tr.unranked .cname{font-weight:550}
+/* 分層組標題：讓「哪些是 MarTech」在捲動時仍然看得出來 */
+#coTable tr.gsplit td{background:var(--band);padding:9px 12px;border-bottom:1px solid var(--line)}
+#coTable tr.gsplit:hover td{background:var(--band)}
+.gsplit .gname{font-weight:700;font-size:12.5px;color:var(--ink)}
+.gsplit .gname .dot{display:inline-block;width:9px;height:9px;border-radius:2px;
+  margin-right:7px;vertical-align:baseline}
+.gsplit[data-g="core"] .dot{background:var(--accent)}
+.gsplit[data-g="service"] .dot{background:var(--warn)}
+.gsplit[data-g="adjacent"] .dot{background:var(--ink-3)}
+.gsplit .gwhy{color:var(--ink-3);font-size:11.5px;font-weight:400;margin-left:8px}
 .cnote{font-size:12.4px;color:var(--ink-2);min-width:300px;line-height:1.6}
 .chan{font-size:12px;min-width:150px}
 .tot{font-weight:700;color:var(--accent)}
@@ -169,16 +186,16 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
   <div class="top-in">
     <span class="eyebrow">求職情報簡報 · 2026-08-13 · martech-job-radar 第 3 期</span>
     <h1>台灣 MarTech 公司與職缺情報</h1>
-    <p class="lede"><!--CO_COUNT--> 家台灣行銷科技公司、四個管道實抓的 <strong>266 筆</strong>在刊職缺、
+    <p class="lede"><!--CO_COUNT--> 家台灣行銷科技公司、四個管道實抓的 <strong>282 筆</strong>在刊職缺、
       9 家的面試趣口碑原始數據，加上一份誠實標示
       「哪些查得到、哪些查不到」的判讀。開頭的 <a href="#pick">§00 推薦職缺</a>
       用三個寫死的門檻（口碑實測達標、成長力達標、職缺本身是數據／AI 方向）
-      從 266 筆裡篩出 <strong><!--REC_COUNT--> 筆</strong>，篩選規則公開在頁面上。<br>
-      <strong>本期是第一次真正可比的一期</strong>：公司名單自 08/06 擴編後<strong>沒有再變動</strong>，
-      所以 266 → 266 是同一批公司的直接比較，不再需要可比子集。
-      淨變化為零，但底下換了 14 進 14 出。</p>
+      從 282 筆裡篩出 <strong><!--REC_COUNT--> 筆</strong>，篩選規則公開在頁面上。<br>
+      <strong>266 → 282 這個 +16 不是市場成長</strong>——是名單本期補進奧美與 QSearch 兩家，
+      光奧美逐家查詢就帶進 30 筆（先前只靠關鍵詞掃描順帶撈到 12 筆）。
+      同一批公司的可比數字是 <strong>254 → 252（−2）</strong>，判讀請一律看這個。</p>
     <div class="meta">
-      <span><b>實抓職缺</b> 266 筆（去重後；上期亦 266，名單未變）</span>
+      <span><b>實抓職缺</b> 282 筆（去重後；可比子集 252）</span>
       <span><b>推薦職缺</b> <!--REC_COUNT--> 筆／<!--REC_CO_COUNT--> 家</span>
       <span><b>覆蓋公司</b> <!--CO_BREAKDOWN--></span>
       <span><b>抓取管道</b> Greenhouse／Yourator／Cake／面試趣</span>
@@ -203,7 +220,7 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
 
 <section id="pick">
   <div class="shead"><span class="n">00</span><h2>推薦我投的職缺</h2></div>
-  <p>從本期 266 筆裡篩出 <strong><!--REC_COUNT--> 筆</strong>職缺，
+  <p>從本期 282 筆裡篩出 <strong><!--REC_COUNT--> 筆</strong>職缺，
     加上觀察名單共涉及 <strong><!--REC_CO_TOTAL--> 家公司</strong>。
     篩選<strong>不是我的主觀偏好</strong>，是寫死在程式裡的門檻——資料變了名單就跟著變。</p>
 
@@ -224,7 +241,7 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
       或職稱帶 data／數據的產品職，且工作地在台灣。</p>
     <p><strong>①②③ 全過 → A 主推薦；③ 過但 ① 或 ② 缺一項 → B 次選，並在公司欄標出缺的是哪一項。</strong>
       分兩層是因為單層門檻會把「查不到」與「不夠好」混成同一件事——
-      35 家裡只有 9 家抓得到面試趣資料，用單層門檻會讓整張表只剩 2 家，
+      37 家裡只有 9 家抓得到面試趣資料，用單層門檻會讓整張表只剩 2 家，
       看起來像市場只有兩家值得投，實際上是<strong>證據不存在</strong>。</p>
     <p>排序刻意<strong>不用四維總分</strong>：四維是<em>公司</em>的分數，拿它排<em>職缺</em>，
       會把 Appier 那批 2019 年掛到現在的常駐缺排到新開的缺前面。
@@ -278,27 +295,33 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
       要把它納入推薦，得先做 104 人工匯入（見 §08）。
       CYBERBIZ 雖然成長力 5 分最高，但面試趣 repScore 只有 2（2.8／343 篇），
       補了 104 也只會進 B 層。其餘 5 家連面試趣資料都沒有，兩道門檻都無從判斷。</p>
-    <p><strong>另一個更硬的限制</strong>：35 家中<strong>只有 3 家在本期有資料／AI 方向的在台職缺</strong>。
+    <p><strong>另一個更硬的限制</strong>：37 家中<strong>只有 3 家在本期有資料／AI 方向的在台職缺</strong>。
       推薦名單短不是門檻設太嚴——把門檻整個拿掉，候選池也只會多這 3 家以外的 0 家。
-      真正的瓶頸是台灣 MarTech 的純資料職開口本來就窄（§04 的 266 筆裡只有 5 個純分析職）。</p>
+      真正的瓶頸是台灣 MarTech 的純資料職開口本來就窄（§04 的 282 筆裡只有 5 個純分析職）。<br>
+      本期補進的兩家也印證了這點：<strong>奧美 30 筆職缺裡沒有任何一筆是資料／AI 方向</strong>
+      （21 筆其他、9 筆商務行銷），QSearch 則是兩個管道都 0 筆在刊。</p>
   </div>
 </section>
 
 <section id="judge">
   <div class="shead"><span class="n">01</span><h2>我的資訊判斷與整理報告</h2></div>
-  <p>先講結論，再看資料。以下幾條是我讀完 266 筆職缺、與上一期（2026-08-10）的差集、
+  <p>先講結論，再看資料。以下幾條是我讀完 282 筆職缺、與上一期（2026-08-10）的差集、
     四個管道的覆蓋落差，以及公司財務與媒體資料後的判斷。<strong>每條都標了證據強度</strong>——
     「實抓」代表數字來自本次抓取，「查證」代表來自公開報導或財報，「推測」代表我沒有直接證據。</p>
 
   <div class="judge">
     <div class="jcard key">
       <span class="tag">本期限定 · 必須先講</span>
-      <h4>266 → 266，淨變化第一次真的是零——而且這次數字可以直接比</h4>
-      <p>公司名單自 08/06 擴編到 35 家後<strong>本期沒有再變動</strong>，
-        上期那個「196 → 266 是名單造成的、只能看可比子集」的限制<strong>到本期解除</strong>。
-        兩期都是同一批 35 家、同樣四個管道，266 對 266 是可以直接相減的。<br>
-        但淨零不等於沒事發生：底下是 <strong>13 筆新增、13 筆消失</strong>。
-        判讀要看的是這 26 筆的組成，不是那個 0。</p>
+      <h4>266 → 282 的 +16 不是市場成長，是名單又補了兩家</h4>
+      <p>本期把<strong>奧美整合行銷傳播集團</strong>與 <strong>QSearch 數解人意科技</strong>補進主檔
+        （35 → 37 家）。奧美先前只靠上游的產業關鍵詞掃描順帶撈到 12 筆，
+        建檔後改走逐家查詢，<strong>一家就帶進 30 筆</strong>——這 18 筆的差額純粹是查詢方式改變。<br>
+        <strong>可比子集才是能判讀的數字</strong>：扣掉新收的兩家，
+        <strong>254 → 252（−2）</strong>，其中新增 13 筆、消失 15 筆。
+        本頁後面所有「變多／變少」都以這個子集為準。<br>
+        <span class="sub" style="display:inline">附註：本期快照分兩次抓取（上游與口碑在上午、
+        Cake／Yourator 在補完名單後重抓），同日內的職缺異動會被記進來——
+        簡訊設計 SimpleInfo 的 −2 就是這樣來的。</span></p>
     </div>
     <div class="jcard key">
       <span class="tag">實抓 · 本期最重要的修正（已改程式）</span>
@@ -372,8 +395,8 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
       <span class="tag">實抓 · 最重要的一條</span>
       <h4>台灣 MarTech 的職缺不在同一個地方，這才是求職者最大的障礙</h4>
       <p>Appier 只用 Greenhouse、漸強用 Yourator＋自架 Teamdoor、Omnichat 與 awoo 只在 Cake、
-        91APP 與 iKala 幾乎全部在 104。本次四個管道抓到 266 筆，
-        但 35 家裡有 <strong>17 家在開放平台是 0 筆</strong>（上期 16，多的一家是 adGeek）——
+        91APP 與 iKala 幾乎全部在 104。本次四個管道抓到 282 筆，
+        但 37 家裡有 <strong>18 家在開放平台是 0 筆</strong>（上期 17，多的一家是本期新收的 QSearch）——
         其中 7 家（iKala、CYBERBIZ、Vpon、cacaFly、域動、美庫爾 Merkle、達摩媒體）
         <strong>只能靠 104</strong>，本期未人工匯入，在 §02 一律標「未取得」而非「無職缺」；
         另外 10 家（adGeek、TenMax、AccuHit、Rosetta.ai、Tagtoo、MoBagel、電子豹、意藍、
@@ -409,10 +432,10 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
     <div class="jcard">
       <span class="tag">實抓</span>
       <h4>整體結構：商務端大於研發端，研發端裡 AI 大於資料</h4>
-      <p>266 筆去重職缺中，商務／行銷／客戶成功 106 筆佔最大宗，其次是軟體工程 54 筆；
+      <p>282 筆去重職缺中，商務／行銷／客戶成功 110 筆佔最大宗，其次是軟體工程 54 筆；
         <strong>純「數據分析」職稱全台合計只有 5 個</strong>（數據科學／工程另有 24 個）。
         三期下來這個<strong>絕對數幾乎沒動過</strong>（4 → 4 → 5），
-        即使中間名單從 20 家擴到 35 家、總筆數從 196 漲到 266 也一樣——
+        即使中間名單從 20 家擴到 37 家、總筆數從 196 漲到 282 也一樣——
         <strong>純分析職的開口不隨覆蓋擴大而變多</strong>，這比任何比例都說明問題。
         MarTech 公司要的不是更多分析師，是能把產品賣進去、接得起來、留得住客戶的人——
         而這些角色的 JD 裡幾乎都寫著要看數據。入行路徑比較可能是「懂資料的 CS／AM」而不是「純 DA」。</p>
@@ -456,8 +479,24 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
 
 <section id="companies">
   <div class="shead"><span class="n">02</span><h2>公司列表與四維排序</h2></div>
-  <p>預設依<strong>四維總分</strong>排序。點按鈕可改依單一維度重排——
+  <p>表格<strong>依收錄層級分三組</strong>，組內才依四維總分排序。點按鈕可改依單一維度重排，
+    但<strong>排序只在組內作用、不會把三層混在一起</strong>——
     「我只在乎成長力」和「我只在乎文化開放」會得到很不一樣的名單，這正是重點。</p>
+
+  <div class="callout">
+    <span class="lbl">三層怎麼分、為什麼要分開看</span>
+    <p><span class="ptag p-core">MarTech</span> <strong>自有 MarTech 產品</strong>——
+      產品／平台是主要營收來源，有產品職梯、四維可比，<strong>只有這層進排名</strong>。
+      這層是本報告的主體，所以用實心標示；另兩層照列但刻意不搶眼。<br>
+      <span class="ptag p-service">代理／顧問</span> <strong>代理商、顧問、系統整合商</strong>——
+      賣的是人與專案，「熱門度」與「成長力」的口徑和 SaaS 不同義，同榜等於把兩把尺相加。<br>
+      <span class="ptag p-adjacent">相近非純</span> <strong>主業非行銷科技，但職能高度重疊</strong>——
+      職缺多半不是行銷科技職，混進排名會失真。</p>
+    <p><strong>收錄準則（決定一家公司該不該進這張表）</strong>：能不能歸進 MarTech Landscape
+      六大類之一（廣告推廣／內容體驗／社群關係／商務銷售／資料／管理）。能就收，
+      再依營收來源定層級；不能就不收。這條測試擋掉的例子是本期在職缺資料裡出現過的
+      開必拓數據（AI 製造檢測）與緯雲（體育遊戲系統）——它們有職缺但不屬六大類任何一格。</p>
+  </div>
 
   <h4>四個維度分別怎麼評的</h4>
   <ul>
@@ -600,7 +639,7 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
   <div class="shead"><span class="n">04</span><h2>職缺與公司分析</h2></div>
 
   <div class="stat">
-    <div><div class="v">266</div><div class="k">四管道實抓在刊職缺（去重；名單未變，可直接比上期）</div></div>
+    <div><div class="v">282</div><div class="k">四管道實抓在刊職缺（去重；可比子集 252）</div></div>
     <div><div class="v">±0</div><div class="k">淨變化（新增 13、消失 13，其中 2 筆是舊缺重新上架）</div></div>
     <div><div class="v">5</div><div class="k">SHOPLINE 資料相關職缺，全台最多、連三期零流失</div></div>
     <div><div class="v">0</div><div class="k">Appier 88 筆中公開薪資的筆數</div></div>
@@ -609,7 +648,7 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
   </div>
 
   <h3>一、職能結構：MarTech 在台灣是「賣得動」的生意，不是「做得出」的生意</h3>
-  <p>把 266 筆去重職缺按職能分（商務／行銷／客戶成功 106、軟體工程 54、數據科學／工程 24、
+  <p>把 282 筆去重職缺按職能分（商務／行銷／客戶成功 110、軟體工程 54、數據科學／工程 24、
     產品／設計 14、數據分析 5、技術顧問 TSE 3），商務／行銷／客戶成功是最大群，軟體工程次之，
     產品與資料職明顯偏少。這個結構有它的道理：台灣 MarTech 公司的產品多半已經做出來了，
     現階段的瓶頸在<strong>導入與續約</strong>——Omnichat 7 個缺裡 3 個是 BD 與夥伴關係、
@@ -698,7 +737,7 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
     <p>產業趨勢由 <code>martech-trend-agent</code> 產生，本報告直接引用其
       <strong>2026-08-13（第 6 期）</strong>的分析，不重複計算——這樣兩份報告不會互相打架。
       <strong>本期兩邊同日產出、期別對齊</strong>（上游職缺 145 筆、新聞 66 篇；
-      本報告 266 筆，分母不同是因為本專案多抓了 Cake 與更多 Yourator 公司）。<br>
+      本報告 282 筆，分母不同是因為本專案多抓了 Cake 與更多 Yourator 公司）。<br>
       <strong>該期查出一件會影響本節怎麼讀的事</strong>：它的「主題聲量」是每期重抓一次 RSS
       當下的內容，本期相鄰兩期文章重疊只有 <strong>5／66</strong>，
       而且間隔從 5 天縮到 3 天重疊率並沒有變高——所以<strong>那張表不能用於跨期比較</strong>。<br>
@@ -882,20 +921,21 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
   <ul>
     <li><strong>雇主規模偏誤</strong>：新創偏好 Yourator／Cake，中大型企業偏好 104。
       本報告因此偏向新創視角。</li>
-    <li><strong>單一公司主導</strong>：Appier 一家佔實抓量的 33%，
+    <li><strong>單一公司主導</strong>：Appier 一家佔實抓量的 31%（名單補進奧美後稀釋，上期 33%），
       任何「全產業比例」的推論都會被它拉偏，文中已盡量分開陳述。
       這一點在 §00 更嚴重：<!--REC_COUNT--> 筆推薦裡 <!--REC_TOP_N--> 筆來自 <!--REC_TOP_CO-->。</li>
     <li><strong>時間點快照</strong>：所有數字為 2026-08-13 的當下狀態，職缺會下架與新增。</li>
     <li><strong>跨期比較本期起完全成立</strong>：名單自 08/06 擴編後未再變動，
-      266 → 266 是同一批 35 家公司的直接比較，上期的可比子集限制已解除。
+      但本期名單補進奧美與 QSearch，266 → 282 的差額幾乎全來自名單，
+      因此<strong>可比子集重新啟用</strong>（254 → 252）。
       整併鍵本期已修（← JR-007），三期資料全部以新鍵重算，數字與上一版不同是正常的。
       <strong>仍要注意「重新上架」</strong>：刊登日遠早於本期的職缺會以新頁面重新出現，
       被算成新增但不是新編制（本期 2 筆），看差集時必須配合刊登日一起讀。</li>
-    <li><strong>公司職缺表只涵蓋 9 家</strong>：266 筆中有 140 筆在 §03 逐筆列出，
-      其餘 126 筆來自新收公司與上游的產業關鍵詞掃描（樂播、WebComm、緯雲等），
+    <li><strong>公司職缺表只涵蓋 9 家</strong>：282 筆中有 140 筆在 §03 逐筆列出，
+      其餘 142 筆來自其他名單公司（奧美 30、樂播、WebComm 等）與上游的產業關鍵詞掃描，
       計入總數與 §02 的缺數欄，但不單獨列表。</li>
     <li><strong>§00 推薦的候選池比看起來窄</strong>：三個門檻裡「口碑實測達標」這一條，
-      35 家中只有 9 家抓得到面試趣資料，其餘 26 家<strong>連參選資格都沒有</strong>。
+      37 家中只有 9 家抓得到面試趣資料，其餘 28 家<strong>連參選資格都沒有</strong>。
       A 層只有 2 家公司，主因不是市場上只有兩家值得投，
       是<strong>其他家的判斷依據不存在</strong>。</li>
     <li><strong>評分主觀性</strong>：口碑已有 9 家實抓（見 §02 原始數據表），熱門與成長力仍含判斷成分，
@@ -975,11 +1015,32 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
   var rows = Array.prototype.slice.call(tbody.querySelectorAll('tr'));
   var buttons = Array.prototype.slice.call(document.querySelectorAll('.sortbar button'));
 
-  // 只有 core 且四維齊備的公司進排名（← JR-004）。其餘照列在後面、# 欄標「—」，
+  // 依 purity 分三組顯示（← JR-004）。排序按鈕只在組內重排，**不會把三層混在一起**——
+  // 混排的話「這家是不是 MarTech 本體」就得逐列去看徽章，那正是舊版難讀的地方。
+  var GROUPS = [
+    { key: 'core',     name: '自有 MarTech 產品', why: '進四維排名' },
+    { key: 'service',  name: '代理／顧問',        why: '賣人與專案，熱門度與成長力口徑不同義，不排名' },
+    { key: 'adjacent', name: '相近非純',          why: '主業非行銷科技但職能重疊，不排名' }
+  ];
+  var COLSPAN = table.querySelectorAll('thead th').length;
+
+  function headerRow(g, count){
+    var tr = document.createElement('tr');
+    tr.className = 'gsplit';
+    tr.dataset.g = g.key;
+    tr.innerHTML = '<td colspan="' + COLSPAN + '">'
+      + '<span class="gname"><span class="dot"></span>' + g.name
+      + '（' + count + ' 家）</span>'
+      + '<span class="gwhy">' + g.why + '</span></td>';
+    return tr;
+  }
+
+  // 只有 core 且四維齊備的公司進排名。其餘照列、# 欄標「—」，
   // 因為「不排名」和「不存在」是兩回事——代理商與未評分公司仍然是實際會投的雇主。
   function renumber(){
     var n = 0;
     tbody.querySelectorAll('tr').forEach(function(tr){
+      if (tr.classList.contains('gsplit')) return;   // 組標題不編號
       var ranked = tr.dataset.ranked === '1';
       tr.querySelector('.rank').textContent = ranked ? String(++n) : '—';
       tr.classList.toggle('unranked', !ranked);
@@ -991,9 +1052,15 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
       if (d !== 0) return d;
       return Number(b.dataset.total) - Number(a.dataset.total);
     }
-    var ranked = rows.filter(function(tr){ return tr.dataset.ranked === '1'; }).sort(cmp);
-    var rest = rows.filter(function(tr){ return tr.dataset.ranked !== '1'; }).sort(cmp);
-    ranked.concat(rest).forEach(function(tr){ tbody.appendChild(tr); });
+    tbody.querySelectorAll('tr.gsplit').forEach(function(tr){ tr.remove(); });
+    GROUPS.forEach(function(g){
+      var inGroup = rows.filter(function(tr){ return (tr.dataset.purity || 'core') === g.key; });
+      if (!inGroup.length) return;
+      tbody.appendChild(headerRow(g, inGroup.length));
+      var ranked = inGroup.filter(function(tr){ return tr.dataset.ranked === '1'; }).sort(cmp);
+      var rest = inGroup.filter(function(tr){ return tr.dataset.ranked !== '1'; }).sort(cmp);
+      ranked.concat(rest).forEach(function(tr){ tbody.appendChild(tr); });
+    });
     renumber();
   }
   buttons.forEach(function(btn){
