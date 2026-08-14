@@ -3,7 +3,7 @@
 把散在四個招募管道的台灣 MarTech 職缺與公司口碑收攏成一份可重複產生的求職報告，
 回答三個問題：**現在有哪些缺、這些公司值不值得投、我該先投哪一個**。
 
-![Version](https://img.shields.io/badge/version-1.2.1-blue.svg)
+![Version](https://img.shields.io/badge/version-1.3.0-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
 姊妹專案 [`martech-trend-agent`](https://github.com/aliencat0528/martech-trend-agent)
@@ -121,6 +121,15 @@ martech-job-radar/
 ```
 
 ## 版本歷史
+
+### v1.3.0 (2026-08-13)
+
+- **名單 35 → 37 家**：補進奧美整合行銷傳播集團（`service`，職缺量全資料集第 2 多，
+  先前只靠關鍵詞掃描撈到 12 筆，建檔後逐家查詢得 30 筆）與 QSearch 數解人意科技（`core`）
+- **收錄準則明文化**：能歸進 MarTech Landscape 六大類之一才收——這條測試回答
+  「一直加數據類公司會不會脫離 MarTech」，本期擋掉開必拓數據與緯雲
+- **§02 分層視覺反轉**（← JR-008）：舊版只有非核心層掛徽章、`core` 什麼都不掛，
+  等於用「沒有標記」代表 MarTech 核心。改為 core 實心高亮，表格依 `purity` 分三組
 
 ### v1.2.1 (2026-08-13)
 

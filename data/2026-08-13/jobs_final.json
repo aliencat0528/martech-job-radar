@@ -407,7 +407,7 @@
   "channel": "Cake（原 CakeResume）",
   "title": "資深產品經理 | Senior Product Manager",
   "company": "Omnichat 全通路科技",
-  "location": "中山區, 台北市, 台灣、台北市, 台灣",
+  "location": "台北市, 台灣、中山區, 台北市, 台灣",
   "posted": "",
   "updated": "2026-08-05",
   "salary": "NT$1000000.00–1500000.00／年",
@@ -503,7 +503,7 @@
   "channel": "Cake（原 CakeResume）",
   "title": "客戶成功經理 Customer Success Manager (SEO consulting project)",
   "company": "awoo 阿物科技",
-  "location": "台北市, 台灣、鹽埕區, 高雄市, 台灣、嘉義市, 台灣",
+  "location": "嘉義市, 台灣、台北市, 台灣、鹽埕區, 高雄市, 台灣",
   "posted": "",
   "updated": "2026-08-11",
   "salary": "",
@@ -519,7 +519,7 @@
   "channel": "Cake（原 CakeResume）",
   "title": "品牌社群/口碑行銷主管",
   "company": "awoo 阿物科技",
-  "location": "台北市, 台灣、高雄市, 台灣、嘉義市, 台灣",
+  "location": "高雄市, 台灣、嘉義市, 台灣、台北市, 台灣",
   "posted": "",
   "updated": "2026-08-05",
   "salary": "",
@@ -535,7 +535,7 @@
   "channel": "Cake（原 CakeResume）",
   "title": "Junior Site Reliability Engineer (SRE)",
   "company": "awoo 阿物科技",
-  "location": "台北市, 台灣、高雄市, 台灣、嘉義市, 台灣",
+  "location": "高雄市, 台灣、嘉義市, 台灣、台北市, 台灣",
   "posted": "",
   "updated": "2026-06-30",
   "salary": "",
@@ -551,7 +551,7 @@
   "channel": "Cake（原 CakeResume）",
   "title": "Backend Engineer",
   "company": "awoo 阿物科技",
-  "location": "台北市, 台灣、鹽埕區, 高雄市, 台灣、嘉義市, 台灣",
+  "location": "嘉義市, 台灣、台北市, 台灣、鹽埕區, 高雄市, 台灣",
   "posted": "",
   "updated": "2026-04-17",
   "salary": "",
@@ -583,7 +583,7 @@
   "channel": "Cake（原 CakeResume）",
   "title": "資深會計專員",
   "company": "awoo 阿物科技",
-  "location": "松山區, 台北市, 台灣、台灣臺北",
+  "location": "台灣臺北、松山區, 台北市, 台灣",
   "posted": "",
   "updated": "2026-04-17",
   "salary": "NT$40000.00–45000.00／月",
@@ -599,7 +599,7 @@
   "channel": "Cake（原 CakeResume）",
   "title": "【Ocard顧客經營管家】商業拓展顧問 Business Consultant 〔北部〕（底薪+業績獎金優渥）",
   "company": "Ocard 瑞乘數位",
-  "location": "台北市, 台灣、104台灣台北市中山區",
+  "location": "104台灣台北市中山區、台北市, 台灣",
   "posted": "",
   "updated": "2026-04-30",
   "salary": "NT$500000.00–1000000.00／年",
@@ -2160,14 +2160,15 @@
   "title": "奧美顧客體驗 - Project Specialist 顧客體驗專案管理專員 (Web)",
   "location": "臺北市",
   "posted": "",
-  "updated": "",
+  "updated": "一週內更新",
   "salary": "NT$ 34,000 - 35,000 (月薪)",
   "url": "https://www.yourator.co/companies/ogilvy/jobs/36922",
   "seniority": "",
   "req": "Page not found (404) Yourator Homepage",
   "_src": "upstream.json",
   "channels": [
-   "yourator（via trend-agent 2026-08-13）"
+   "yourator（via trend-agent 2026-08-13）",
+   "Yourator"
   ]
  },
  {
@@ -2208,14 +2209,15 @@
   "title": "奧美廣告 - Account Executive 業務企劃",
   "location": "臺北市",
   "posted": "",
-  "updated": "",
+  "updated": "一週內更新",
   "salary": "NT$ 34,000 -  (月薪)",
   "url": "https://www.yourator.co/companies/ogilvy/jobs/36904",
   "seniority": "",
   "req": "Page not found (404) Yourator Homepage",
   "_src": "upstream.json",
   "channels": [
-   "yourator（via trend-agent 2026-08-13）"
+   "yourator（via trend-agent 2026-08-13）",
+   "Yourator"
   ]
  },
  {
@@ -2224,14 +2226,15 @@
   "title": "奧美顧客體驗 - Part-Timer 工讀生 (PM)",
   "location": "臺北市",
   "posted": "",
-  "updated": "",
+  "updated": "一週內更新",
   "salary": "NT$ 196 - 196 (時薪)",
   "url": "https://www.yourator.co/companies/ogilvy/jobs/38595",
   "seniority": "",
   "req": "Page not found (404) Yourator Homepage",
   "_src": "upstream.json",
   "channels": [
-   "yourator（via trend-agent 2026-08-13）"
+   "yourator（via trend-agent 2026-08-13）",
+   "Yourator"
   ]
  },
  {
@@ -2240,14 +2243,15 @@
   "title": "奧美廣告 - Account Manager 業務經理",
   "location": "臺北市",
   "posted": "",
-  "updated": "",
+  "updated": "一週內更新",
   "salary": "面議（經常性薪資達4萬元）",
   "url": "https://www.yourator.co/companies/ogilvy/jobs/36912",
   "seniority": "",
   "req": "Page not found (404) Yourator Homepage",
   "_src": "upstream.json",
   "channels": [
-   "yourator（via trend-agent 2026-08-13）"
+   "yourator（via trend-agent 2026-08-13）",
+   "Yourator"
   ]
  },
  {
@@ -2256,14 +2260,15 @@
   "title": "奧美廣告 - Senior Account Executive 資深業務企劃",
   "location": "臺北市",
   "posted": "",
-  "updated": "",
+  "updated": "一週內更新",
   "salary": "面議（經常性薪資達4萬元）",
   "url": "https://www.yourator.co/companies/ogilvy/jobs/36913",
   "seniority": "",
   "req": "Page not found (404) Yourator Homepage",
   "_src": "upstream.json",
   "channels": [
-   "yourator（via trend-agent 2026-08-13）"
+   "yourator（via trend-agent 2026-08-13）",
+   "Yourator"
   ]
  },
  {
@@ -2272,14 +2277,15 @@
   "title": "奧美顧客體驗 - Senior Project Manager 資深顧客體驗專案管理經理",
   "location": "臺北市",
   "posted": "",
-  "updated": "",
+  "updated": "一週內更新",
   "salary": "面議（經常性薪資達4萬元）",
   "url": "https://www.yourator.co/companies/ogilvy/jobs/36920",
   "seniority": "",
   "req": "Page not found (404) Yourator Homepage",
   "_src": "upstream.json",
   "channels": [
-   "yourator（via trend-agent 2026-08-13）"
+   "yourator（via trend-agent 2026-08-13）",
+   "Yourator"
   ]
  },
  {
@@ -2288,14 +2294,15 @@
   "title": "奧美顧客體驗 - Associate Account Director/ Account Director副數位體驗專案管理總監/總監",
   "location": "臺北市",
   "posted": "",
-  "updated": "",
+  "updated": "一週內更新",
   "salary": "面議（經常性薪資達4萬元）",
   "url": "https://www.yourator.co/companies/ogilvy/jobs/46665",
   "seniority": "",
   "req": "Page not found (404) Yourator Homepage",
   "_src": "upstream.json",
   "channels": [
-   "yourator（via trend-agent 2026-08-13）"
+   "yourator（via trend-agent 2026-08-13）",
+   "Yourator"
   ]
  },
  {
@@ -2304,14 +2311,15 @@
   "title": "奧美顧客體驗 - Project Specialist 顧客體驗專案管理專員 (Social & CRM)",
   "location": "臺北市",
   "posted": "",
-  "updated": "",
+  "updated": "一週內更新",
   "salary": "NT$ 34,000 -  (月薪)",
   "url": "https://www.yourator.co/companies/ogilvy/jobs/36918",
   "seniority": "",
   "req": "Page not found (404) Yourator Homepage",
   "_src": "upstream.json",
   "channels": [
-   "yourator（via trend-agent 2026-08-13）"
+   "yourator（via trend-agent 2026-08-13）",
+   "Yourator"
   ]
  },
  {
@@ -2320,14 +2328,15 @@
   "title": "我是大衛 - Acccount Executive 業務企劃",
   "location": "臺北市",
   "posted": "",
-  "updated": "",
+  "updated": "一週內更新",
   "salary": "NT$ 34,000 - 39,000 (月薪)",
   "url": "https://www.yourator.co/companies/ogilvy/jobs/36915",
   "seniority": "",
   "req": "Page not found (404) Yourator Homepage",
   "_src": "upstream.json",
   "channels": [
-   "yourator（via trend-agent 2026-08-13）"
+   "yourator（via trend-agent 2026-08-13）",
+   "Yourator"
   ]
  },
  {
@@ -2336,14 +2345,15 @@
   "title": "奧美顧客體驗 - Media Planner 媒體企劃",
   "location": "臺北市",
   "posted": "",
-  "updated": "",
+  "updated": "一週內更新",
   "salary": "面議（經常性薪資達4萬元）",
   "url": "https://www.yourator.co/companies/ogilvy/jobs/36993",
   "seniority": "",
   "req": "Page not found (404) Yourator Homepage",
   "_src": "upstream.json",
   "channels": [
-   "yourator（via trend-agent 2026-08-13）"
+   "yourator（via trend-agent 2026-08-13）",
+   "Yourator"
   ]
  },
  {
@@ -3236,22 +3246,6 @@
  {
   "channel": "Yourator",
   "company": "OakMega 大橡科技",
-  "title": "Product Manager 產品經理",
-  "location": "臺北市",
-  "posted": "",
-  "updated": "一個月前更新",
-  "salary": "面議（經常性薪資達4萬元）",
-  "url": "https://www.yourator.co/companies/OakMega/jobs/7406",
-  "seniority": "專案 / 產品管理",
-  "req": "如果你對科技產品充滿熱情，擁有出色的邏輯思維與解決問題的能力，並希望在 SaaS 領域打造出色的產品，這將是一個讓你發揮影響力的絕佳機會！ 你的主要工作內容包含： 管理需求與優先級：收集與分析產品需求，評估優先順序，最大化開發動能。 跨部門協作：與設計、工程、行銷等團隊緊密合作，確保功能符合最大利益。 專案管理與進度追蹤：確保產品開發流程順暢，應對開發中的挑戰並準時交付。 產品優化與 QA：...",
-  "_src": "yourator.json",
-  "channels": [
-   "Yourator"
-  ]
- },
- {
-  "channel": "Yourator",
-  "company": "OakMega 大橡科技",
   "title": "Solution Consultant（SC）解決方案顧問",
   "location": "臺北市",
   "posted": "",
@@ -3260,6 +3254,22 @@
   "url": "https://www.yourator.co/companies/OakMega/jobs/47609",
   "seniority": "數據 / 資料分析師",
   "req": "這個職缺適合具備系統思維與溝通能力的人才，能從客戶需求出發，設計出可落地的系統解決方案。SC 代表 OakMega 第一線與企業客戶協作，從 Pre-Sales 階段的方案規劃，到需求訪談、架構規劃與規格產出，確保技術方案與業務目標一致，讓後續開發有清楚的依據可以執行。 你具體的工作內容會有： 1. Pre-Sales 協作與需求評估 與商務團隊協作，參與客戶拜訪與需求討論 了解 OakMe...",
+  "_src": "yourator.json",
+  "channels": [
+   "Yourator"
+  ]
+ },
+ {
+  "channel": "Yourator",
+  "company": "OakMega 大橡科技",
+  "title": "Product Manager 產品經理",
+  "location": "臺北市",
+  "posted": "",
+  "updated": "一個月前更新",
+  "salary": "面議（經常性薪資達4萬元）",
+  "url": "https://www.yourator.co/companies/OakMega/jobs/7406",
+  "seniority": "專案 / 產品管理",
+  "req": "如果你對科技產品充滿熱情，擁有出色的邏輯思維與解決問題的能力，並希望在 SaaS 領域打造出色的產品，這將是一個讓你發揮影響力的絕佳機會！ 你的主要工作內容包含： 管理需求與優先級：收集與分析產品需求，評估優先順序，最大化開發動能。 跨部門協作：與設計、工程、行銷等團隊緊密合作，確保功能符合最大利益。 專案管理與進度追蹤：確保產品開發流程順暢，應對開發中的挑戰並準時交付。 產品優化與 QA：...",
   "_src": "yourator.json",
   "channels": [
    "Yourator"
@@ -3783,7 +3793,7 @@
   "title": "(台中) 客服主管",
   "location": "臺中市",
   "posted": "",
-  "updated": "兩週內更新",
+  "updated": "一個月內更新",
   "salary": "NT$ 60,000 - 80,000 (月薪)",
   "url": "https://www.yourator.co/companies/jambolive/jobs/46455",
   "seniority": "客戶服務",
@@ -3799,7 +3809,7 @@
   "title": "(台北) 客服主管",
   "location": "臺北市",
   "posted": "",
-  "updated": "兩週內更新",
+  "updated": "一個月內更新",
   "salary": "NT$ 60,000 - 80,000 (月薪)",
   "url": "https://www.yourator.co/companies/jambolive/jobs/46943",
   "seniority": "客戶服務",
@@ -4196,22 +4206,6 @@
  {
   "channel": "Yourator",
   "company": "簡訊設計 SimpleInfo",
-  "title": "志祺七七｜頻道影片剪輯師",
-  "location": "臺北市",
-  "posted": "",
-  "updated": "兩週內更新",
-  "salary": "NT$ 40,000 - 46,000 (月薪)",
-  "url": "https://www.yourator.co/companies/simpleinfo/jobs/47542",
-  "seniority": "攝影 / 影音製作",
-  "req": "** 投遞履歷請至簡訊設計官網 https://simpleinfo.cc/hiring，收件以官網為主喔！** 志祺七七，是台灣的新聞時事 / 議題評論 YouTube 頻道，主題涵蓋國內外政治、法律、社會、心理、商業、科技、醫藥衛生、冷知識、影劇娛樂及社群炎上事件等。 至今，頻道訂閱人數已突破 160 萬，累計觀看次數超過 13 億，每支影片平均有 10 萬次以上的觀看。 現在，我們要尋...",
-  "_src": "yourator.json",
-  "channels": [
-   "Yourator"
-  ]
- },
- {
-  "channel": "Yourator",
-  "company": "簡訊設計 SimpleInfo",
   "title": "Knowledge Pie! 知識派｜產品行銷企劃（接案合作）",
   "location": "臺北市",
   "posted": "",
@@ -4220,22 +4214,6 @@
   "url": "https://www.yourator.co/companies/simpleinfo/jobs/47686",
   "seniority": "行銷企劃 / 社群經營",
   "req": "** 投遞履歷請至簡訊設計官網 https://simpleinfo.cc/hiring，收件以官網為主喔！** 「Knowledge Pie! 知識派」製課團隊擁有 8 年以上的資訊設計與行銷募資經驗，我們將協助講師系統化知識並建立市場定位，並持續洞察學習者未被滿足的需求和待解決的痛點，提供職場、設計、社群和生活等多元面向的優質課程內容。 （看更多「Knowledge Pie! 知識派」精...",
-  "_src": "yourator.json",
-  "channels": [
-   "Yourator"
-  ]
- },
- {
-  "channel": "Yourator",
-  "company": "簡訊設計 SimpleInfo",
-  "title": "志祺七七｜頻道影片剪輯師暨後製專案執行",
-  "location": "臺北市",
-  "posted": "",
-  "updated": "兩週內更新",
-  "salary": "NT$ 46,000 - 55,000 (月薪)",
-  "url": "https://www.yourator.co/companies/simpleinfo/jobs/47541",
-  "seniority": "攝影 / 影音製作",
-  "req": "** 投遞履歷請至簡訊設計官網 https://simpleinfo.cc/hiring，收件以官網為主喔！** 志祺七七，是台灣的新聞時事 / 議題評論 YouTube 頻道，主題涵蓋國內外政治、法律、社會、心理、商業、科技、醫藥衛生、冷知識、影劇娛樂及社群炎上事件等。 至今，頻道訂閱人數已突破 160 萬，累計觀看次數超過 13 億，每支影片平均有 10 萬次以上的觀看。 現在，我們要尋...",
   "_src": "yourator.json",
   "channels": [
    "Yourator"
@@ -4284,6 +4262,294 @@
   "url": "https://www.yourator.co/companies/simpleinfo/jobs/36710",
   "seniority": "編輯 / 內容經營",
   "req": "** 投遞履歷請至簡訊設計官網 https://simpleinfo.cc/hiring，收件以官網為主喔！** 「Knowledge Pie! 知識派」製課團隊擁有 6 年以上的資訊設計與行銷募資經驗，我們將協助講師系統化知識並建立市場定位，並持續洞察學習者未被滿足的需求和待解決的痛點，提供職場、設計、社群和生活等多元面向的優質課程內容。 （看更多「Knowledge Pie! 知識派」精...",
+  "_src": "yourator.json",
+  "channels": [
+   "Yourator"
+  ]
+ },
+ {
+  "channel": "Yourator",
+  "company": "奧美整合行銷傳播集團",
+  "title": "奧美顧客體驗 - Project Manager 顧客體驗專案經理",
+  "location": "臺北市",
+  "posted": "",
+  "updated": "一週內更新",
+  "salary": "面議（經常性薪資達4萬元）",
+  "url": "https://www.yourator.co/companies/ogilvy/jobs/38143",
+  "seniority": "行銷企劃 / 社群經營",
+  "req": "「人」是奧美最重要的資產，我們持續打造一個多元共融、自由、且充滿創意氛圍的學習性組織，一同發展客戶品牌所需要的專業能力，提升對客戶銷售生意的影響及貢獻透過客戶官網維運、數位活動專案協調、客戶滿意度調查與 CRM 數據管理，更有效的規劃和實施客戶關係管理策略 工作內容■ GA 數據管理與分析，透過數據整理洞察■ 品牌官網維運：負責官網日常維運、網站內容上下架■ 資料彙整：資料蒐集及歸納■ 行銷...",
+  "_src": "yourator.json",
+  "channels": [
+   "Yourator"
+  ]
+ },
+ {
+  "channel": "Yourator",
+  "company": "奧美整合行銷傳播集團",
+  "title": "我是大衛 - Digital Project Manager 數位專案經理",
+  "location": "臺北市",
+  "posted": "",
+  "updated": "一週內更新",
+  "salary": "面議（經常性薪資達4萬元）",
+  "url": "https://www.yourator.co/companies/ogilvy/jobs/38147",
+  "seniority": "行銷企劃 / 社群經營",
+  "req": "【職位概述】「人」是奧美最重要的資產，我們持續打造多元共融、自由且充滿創意氛圍的學習型組織，陪你一同成長、發展品牌行銷所需的專業能力。你將主導官網與各數位渠道（LINE OA、online survey、CRM）的整體優化方向，是這個專案流程的 owner ——從問題辨識、方案拍板、跨部門協調到客戶溝通，整個迭代循環的節奏和優先順序都在你的主導之下推進，在這裡，你能完整練就一套「用數據驅動決...",
+  "_src": "yourator.json",
+  "channels": [
+   "Yourator"
+  ]
+ },
+ {
+  "channel": "Yourator",
+  "company": "奧美整合行銷傳播集團",
+  "title": "我是大衛 -  Strategist 策略",
+  "location": "臺北市",
+  "posted": "",
+  "updated": "一週內更新",
+  "salary": "面議（經常性薪資達4萬元）",
+  "url": "https://www.yourator.co/companies/ogilvy/jobs/38149",
+  "seniority": "廣告創意 / 企劃",
+  "req": "你將直接參與真實品牌課題，從資料分析到策略簡報，從消費者洞察到創意發想全程涉入 —— 是一個讓你快速累積代理商以外視角的舞台【核心職責】釐清商業課題：從客戶 brief 出發，透過市場、產業、品牌與競品分析，整理資訊並協助找出真正需要被解決的問題挖掘消費者洞察：結合消費者行為資料、市場調查、社群觀察與質化／量化研究，理解目標受眾的需求、動機與痛點，協助整理成清晰的 consumer insi...",
+  "_src": "yourator.json",
+  "channels": [
+   "Yourator"
+  ]
+ },
+ {
+  "channel": "Yourator",
+  "company": "奧美整合行銷傳播集團",
+  "title": "奧美顧客體驗 - Associate Digital Media Planning Director/ Digital Media Planning Director 數位媒體策略(副)總監",
+  "location": "臺北市",
+  "posted": "",
+  "updated": "一週內更新",
+  "salary": "面議（經常性薪資達4萬元）",
+  "url": "https://www.yourator.co/companies/ogilvy/jobs/47258",
+  "seniority": "廣告創意 / 企劃",
+  "req": "「人」是奧美最重要的資產，我們持續打造一個多元共融、自由、且充滿創意氛圍的學習性組織，一同發展客戶品牌所需要的專業能力，提升對客戶銷售生意的影響及貢獻【關於這個角色：為什麼你會想加入？】如果你想在數據與創意的交會點，真正影響品牌與消費者的連結方式，這裡是你的舞台。在奧美，我們不只做廣告投放，我們正在重新定義品牌在數位世界被看見的方式。從媒體策略到 AI 搜尋推薦，從流量數據到轉換優化，我們尋...",
+  "_src": "yourator.json",
+  "channels": [
+   "Yourator"
+  ]
+ },
+ {
+  "channel": "Yourator",
+  "company": "奧美整合行銷傳播集團",
+  "title": "奧美顧客體驗 - Digital Media Planning Manager 數位媒體策略經理",
+  "location": "臺北市",
+  "posted": "",
+  "updated": "一週內更新",
+  "salary": "面議（經常性薪資達4萬元）",
+  "url": "https://www.yourator.co/companies/ogilvy/jobs/47791",
+  "seniority": "廣告創意 / 企劃",
+  "req": "「人」是奧美最重要的資產，我們持續打造一個多元共融、自由、且充滿創意氛圍的學習性組織，一同發展客戶品牌所需要的專業能力，提升對客戶銷售生意的影響及貢獻【關於這個角色：為什麼你會想加入？】如果你想在數據與創意的交會點，真正影響品牌與消費者的連結方式，這裡是你的舞台。在奧美，我們不只做廣告投放，我們正在重新定義品牌在數位世界被看見的方式。從媒體策略到 AI 搜尋推薦，從流量數據到轉換優化，我們尋...",
+  "_src": "yourator.json",
+  "channels": [
+   "Yourator"
+  ]
+ },
+ {
+  "channel": "Yourator",
+  "company": "奧美整合行銷傳播集團",
+  "title": "我是大衛 - Designer 設計",
+  "location": "臺北市",
+  "posted": "",
+  "updated": "一週內更新",
+  "salary": "NT$ 33,000 - 40,000 (月薪)",
+  "url": "https://www.yourator.co/companies/ogilvy/jobs/37005",
+  "seniority": "廣告創意 / 企劃",
+  "req": "1. 與業務、客戶進行溝通，深入了解客戶需求。2. 與文案夥伴遵循傳播策略進行創意發想。",
+  "_src": "yourator.json",
+  "channels": [
+   "Yourator"
+  ]
+ },
+ {
+  "channel": "Yourator",
+  "company": "奧美整合行銷傳播集團",
+  "title": "策略部 - Senior Strategist 資深策略人員",
+  "location": "臺北市",
+  "posted": "",
+  "updated": "一週內更新",
+  "salary": "面議（經常性薪資達4萬元）",
+  "url": "https://www.yourator.co/companies/ogilvy/jobs/37382",
+  "seniority": "廣告創意 / 企劃",
+  "req": "1.負責市場分析，品牌／行銷傳播策略規劃2.對廣告聚焦議題，提出觀點與建議，設立傳播主軸與架構，刺激創意想法，提升提案與新生意的成功率3.具備獨立作業能力",
+  "_src": "yourator.json",
+  "channels": [
+   "Yourator"
+  ]
+ },
+ {
+  "channel": "Yourator",
+  "company": "奧美整合行銷傳播集團",
+  "title": "創意部 - Writer 文案 ",
+  "location": "臺北市",
+  "posted": "",
+  "updated": "一週內更新",
+  "salary": "面議（經常性薪資達4萬元）",
+  "url": "https://www.yourator.co/companies/ogilvy/jobs/37455",
+  "seniority": "廣告創意 / 企劃",
+  "req": "如果你是天生好手，能夠寫出吸引群眾的故事，喜歡一起發想創意，歡迎投遞！ 1.請務必附上你的文字作品 具4A廣告ATL ，及 Digital 廣告創意發想與文案撰寫經驗尤佳",
+  "_src": "yourator.json",
+  "channels": [
+   "Yourator"
+  ]
+ },
+ {
+  "channel": "Yourator",
+  "company": "奧美整合行銷傳播集團",
+  "title": "奧美廣告 - 業務執行工讀生 (社群相關)",
+  "location": "臺北市",
+  "posted": "",
+  "updated": "一週內更新",
+  "salary": "NT$ 190 -  (時薪)",
+  "url": "https://www.yourator.co/companies/ogilvy/jobs/38385",
+  "seniority": "廣告創意 / 企劃",
+  "req": "▌你將在團隊中負責這些任務◆ 協助每日庶務（資料、照片整理、總部新素材檢查）◆ 圖片、影像編輯，基礎影片編輯◆ 撰寫social貼文、更新social數據與成效◆ 維持高社群黏著度◆ 有社群企劃經驗佳、有文案撰寫經驗佳▌誠摯歡迎這樣的你加入奧美◆ 一週可配合至少 3天◆ 對傳播有熱情、求知慾強、彈性高◆ 善溝通協調、反應靈敏、適應力強◆ 態度積極、細心負責、有工讀經驗佳",
+  "_src": "yourator.json",
+  "channels": [
+   "Yourator"
+  ]
+ },
+ {
+  "channel": "Yourator",
+  "company": "奧美整合行銷傳播集團",
+  "title": "我是大衛 - Assistant Art Director 助理藝術指導",
+  "location": "臺北市",
+  "posted": "",
+  "updated": "一週內更新",
+  "salary": "面議（經常性薪資達4萬元）",
+  "url": "https://www.yourator.co/companies/ogilvy/jobs/39344",
+  "seniority": "廣告創意 / 企劃",
+  "req": "有能力執行具有質感與品味的平面作品 具影片及平面發想與執行能力，熟悉digitial與簡易之影片編輯工具 有汽車或機車經驗尤佳 應徵請附作品或是Portfolio link",
+  "_src": "yourator.json",
+  "channels": [
+   "Yourator"
+  ]
+ },
+ {
+  "channel": "Yourator",
+  "company": "奧美整合行銷傳播集團",
+  "title": "我是大衛 - Copywriter 文案",
+  "location": "臺北市",
+  "posted": "",
+  "updated": "一週內更新",
+  "salary": "面議（經常性薪資達4萬元）",
+  "url": "https://www.yourator.co/companies/ogilvy/jobs/39452",
+  "seniority": "行銷企劃 / 社群經營",
+  "req": "你熱愛寫作、擅長用字句打動人心？喜歡關注社群趨勢、腦中總有源源不絕的創意點子？歡迎加入我們，一起打造有溫度又有共鳴的社群內容！你會負責的工作：1. 撰寫社群貼文（Facebook / Instagram 等），文字風格要貼近社群又不失品牌專業形象2. 發想貼文主題、內文等，讓文字成為品牌與粉絲的橋樑3. 為每篇文案找到最適合的語氣和節奏，無論是輕鬆幽默還是簡潔有力，你都能駕馭4. 有機會參與...",
+  "_src": "yourator.json",
+  "channels": [
+   "Yourator"
+  ]
+ },
+ {
+  "channel": "Yourator",
+  "company": "奧美整合行銷傳播集團",
+  "title": "我是大衛 - Senior Art Director 資深藝術指導",
+  "location": "臺北市",
+  "posted": "",
+  "updated": "一週內更新",
+  "salary": "面議（經常性薪資達4萬元）",
+  "url": "https://www.yourator.co/companies/ogilvy/jobs/40780",
+  "seniority": "廣告創意 / 企劃",
+  "req": "有能力執行具有質感與品味的平面作品 具影片及平面發想與執行能力，熟悉digitial與簡易之影片編輯工具 有汽車或機車經驗尤佳 應徵請附作品或是Portfolio link",
+  "_src": "yourator.json",
+  "channels": [
+   "Yourator"
+  ]
+ },
+ {
+  "channel": "Yourator",
+  "company": "奧美整合行銷傳播集團",
+  "title": "我是大衛 -  Strategist Supervisor 策略指導",
+  "location": "臺北市",
+  "posted": "",
+  "updated": "一週內更新",
+  "salary": "面議（經常性薪資達4萬元）",
+  "url": "https://www.yourator.co/companies/ogilvy/jobs/46373",
+  "seniority": "廣告創意 / 企劃",
+  "req": "【職位概述】作為 Strategy Supervisor，你不再只是被動接收 Brief 的執行者，而是能主動與業務、創意團隊並肩作戰的夥伴。你需要具備高度的獨立作業能力，能在少量的指導下精準定義課題，並以具個人風格的敘事邏輯，產出能啟發創意並說服客戶的策略方案【核心職責 Key Responsibilities】1. 策略架構與課題定義 (Strategy & Problem Solvin...",
+  "_src": "yourator.json",
+  "channels": [
+   "Yourator"
+  ]
+ },
+ {
+  "channel": "Yourator",
+  "company": "奧美整合行銷傳播集團",
+  "title": "創意部 - Art Director 藝術指導",
+  "location": "臺北市",
+  "posted": "",
+  "updated": "一週內更新",
+  "salary": "面議（經常性薪資達4萬元）",
+  "url": "https://www.yourator.co/companies/ogilvy/jobs/46577",
+  "seniority": "廣告創意 / 企劃",
+  "req": "1. 與業務、客戶進行溝通，深入了解客戶需求。 2. 與文案夥伴遵循傳播策略進行創意發想。 3. 擔任視覺執行的主力，夠獨立完成設計工作，並負責品質控管。",
+  "_src": "yourator.json",
+  "channels": [
+   "Yourator"
+  ]
+ },
+ {
+  "channel": "Yourator",
+  "company": "奧美整合行銷傳播集團",
+  "title": "我是大衛 - Senior Account Executive 資深業務企劃",
+  "location": "臺北市",
+  "posted": "",
+  "updated": "一週內更新",
+  "salary": "NT$ 0 -  (月薪)",
+  "url": "https://www.yourator.co/companies/ogilvy/jobs/36916",
+  "seniority": "廣告創意 / 企劃",
+  "req": "業務執行就是創意產業的超級製作人。 我們整合資源、分析數據、尋找渠道、激發創意、開發產品、媒合機會、甚至挖掘人才；在客戶、創意、策略、市場、消費者之間，用創意找到生意的撬動點、平衡點、爆發點。 ▌你將在團隊中負責這些任務◆ 社群企劃與執行：FB / IG / Line OA 內容發想 & 平台維運、後台數據分析◆ 活用不同社群平台，達成客戶目標與策略，適時因應成效提出優化◆ 善於數據報表分析...",
+  "_src": "yourator.json",
+  "channels": [
+   "Yourator"
+  ]
+ },
+ {
+  "channel": "Yourator",
+  "company": "奧美整合行銷傳播集團",
+  "title": "我是大衛 - Account Manager 業務經理",
+  "location": "臺北市",
+  "posted": "",
+  "updated": "一週內更新",
+  "salary": "面議（經常性薪資達4萬元）",
+  "url": "https://www.yourator.co/companies/ogilvy/jobs/36924",
+  "seniority": "廣告創意 / 企劃",
+  "req": "1. 整合行銷傳播策略執行與企劃2. 熟悉客戶的產品及業務，並瞭解廣告全盤作業與功能3. 新客戶業務開發，與客戶溝通維繫與服務4. 獨立完成作業，執行比稿、簡報、說服及銷售5. 資料收集、分析報告、專案管理、時程控管",
+  "_src": "yourator.json",
+  "channels": [
+   "Yourator"
+  ]
+ },
+ {
+  "channel": "Yourator",
+  "company": "奧美整合行銷傳播集團",
+  "title": "創意部 - Assistant Art Director 助理藝術指導 ",
+  "location": "臺北市",
+  "posted": "",
+  "updated": "一週內更新",
+  "salary": "面議（經常性薪資達4萬元）",
+  "url": "https://www.yourator.co/companies/ogilvy/jobs/36938",
+  "seniority": "廣告創意 / 企劃",
+  "req": "1. 與業務、客戶進行溝通，深入了解客戶需求。2. 與文案夥伴遵循傳播策略進行創意發想。3. 擔任視覺執行的主力，夠獨立完成設計工作，並能主動提出獨創的創意概念。",
+  "_src": "yourator.json",
+  "channels": [
+   "Yourator"
+  ]
+ },
+ {
+  "channel": "Yourator",
+  "company": "奧美整合行銷傳播集團",
+  "title": "奧美廣告 - Account Director / Associate Account Director  業務總監 / 副業務總監",
+  "location": "臺北市",
+  "posted": "",
+  "updated": "一週內更新",
+  "salary": "面議（經常性薪資達4萬元）",
+  "url": "https://www.yourator.co/companies/ogilvy/jobs/36903",
+  "seniority": "廣告創意 / 企劃",
+  "req": "1. 整合行銷傳播策略企劃與執行2. 掌握客戶需求，與客戶溝通維繫關係3. 跨單位管理並帶領團隊完成任務4. 資料收集、分析報告、專案管理、時程控管5. 協助新生意開發",
   "_src": "yourator.json",
   "channels": [
    "Yourator"

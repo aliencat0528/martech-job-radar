@@ -408,3 +408,26 @@ companies:
     purity: service
     channels:
       yourator: simpleinfo
+
+  # 2026-08-13 建檔（招募出口皆實查過，見 docs/candidates.md）
+  - name: 奧美整合行銷傳播集團
+    category: 廣告推廣
+    segment: 整合行銷傳播／廣告代理（WPP 集團）
+    purity: service
+    channels:
+      yourator: ogilvy
+    note: >-
+      2026-08-13 實查 Yourator 有 2 頁職缺。先前只靠上游產業關鍵詞掃描順帶撈到 12 筆，
+      逐家查詢後可完整取得；賣的是人與專案，依 JR-004 歸 service、不進排名
+
+  - name: QSearch 數解人意科技
+    category: 社群關係
+    segment: 社群聲量／輿情分析（原名 Dolyman）
+    purity: core
+    channels:
+      yourator: QSearch
+      cake: qsearch
+    careers: https://zh-tw.qsearch.cc/
+    note: >-
+      與意藍 eLand 同一條社群數據賽道。2026-08-13 實查：Yourator 與 Cake 公司頁都存在，
+      但兩邊本期皆 0 筆在刊——這是「未在刊」不是「未取得」，與 104-only 的七家性質不同
