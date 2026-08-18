@@ -7,3 +7,9 @@ __pycache__/
 data/manual/104/**/*.html
 
 .DS_Store
+
+# 環境變數與金鑰（← D-029）
+.env
+.env.*
+!.env.example
+!.env.*.example
