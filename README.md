@@ -3,7 +3,7 @@
 把散在四個招募管道的台灣 MarTech 職缺與公司口碑收攏成一份可重複產生的求職報告，
 回答三個問題：**現在有哪些缺、這些公司值不值得投、我該先投哪一個**。
 
-![Version](https://img.shields.io/badge/version-1.3.0-blue.svg)
+![Version](https://img.shields.io/badge/version-1.3.1-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
 姊妹專案 [`martech-trend-agent`](https://github.com/aliencat0528/martech-trend-agent)
@@ -121,6 +121,14 @@ martech-job-radar/
 ```
 
 ## 版本歷史
+
+### v1.3.1 (2026-08-19)
+
+- **跨期差集改以網址為鍵**（← JR-009）：整併（去重）早就用網址比對，但報告每期手算的
+  「新增／消失」前三期用的是「公司＋職稱」。本期實測差 5 筆——全是同一個網址只改標題，
+  包含 Appier 那個把 `Senior` 拿掉的分析職。**照舊算法會把改標題寫成職缺異動**
+- **收回「初階在收、資深在開」**：上游 2026-08-19 撤回該框架，本報告 §01／§04／§05 跟著收回
+- **282 → 280 是第一個沒有口徑雜訊的跨期數字**：名單、整併鍵、管道三者本期都沒動
 
 ### v1.3.0 (2026-08-13)
 
