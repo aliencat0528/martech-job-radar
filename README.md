@@ -3,7 +3,7 @@
 把散在四個招募管道的台灣 MarTech 職缺與公司口碑收攏成一份可重複產生的求職報告，
 回答三個問題：**現在有哪些缺、這些公司值不值得投、我該先投哪一個**。
 
-![Version](https://img.shields.io/badge/version-1.3.1-blue.svg)
+![Version](https://img.shields.io/badge/version-1.3.2-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
 姊妹專案 [`martech-trend-agent`](https://github.com/aliencat0528/martech-trend-agent)
@@ -121,6 +121,19 @@ martech-job-radar/
 ```
 
 ## 版本歷史
+
+### v1.3.2 (2026-08-31)
+
+- **查出去重鍵的一個結構性漏洞，但先立不改**（← JR-010）：awoo 同時刊在 Cake 與 Yourator，
+  兩邊對不起來（職稱不帶平台無關編號 → 退回用網址）、公司名也對不起來
+  （`awoo` vs `awoo 阿物科技`），Yourator 又把同一個角色拆成三個城市。
+  **14 列最多只對應 7 個實際職缺**，274 筆裡約 7 筆重複（2.6%）。
+  JR-002 已因舉錯例子更正過一次，這次先看下期有沒有第二個實例再決定改哪一層
+- **awoo 從開放平台 0 筆變成一次開九列**，並把 `SEO/GEO` 寫進職稱——
+  八期快照裡這個字串第一次出現，且開了明寫「初階」的工程職（嘉義／高雄）
+- **Appier 的 2019 年常駐缺第一次少人**：`Machine Learning Scientist`（2019-01-10）與
+  `Campaign Management Intern`（2019-04-01）同期下架，台北 2024 年前的缺 10 → 8。
+  推薦名單因此從 20 掉到 18 筆
 
 ### v1.3.1 (2026-08-19)
 
