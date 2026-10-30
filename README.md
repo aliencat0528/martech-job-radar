@@ -3,7 +3,7 @@
 把散在四個招募管道的台灣 MarTech 職缺與公司口碑收攏成一份可重複產生的求職報告，
 回答三個問題：**現在有哪些缺、這些公司值不值得投、我該先投哪一個**。
 
-![Version](https://img.shields.io/badge/version-1.3.2-blue.svg)
+![Version](https://img.shields.io/badge/version-1.3.3-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
 姊妹專案 [`martech-trend-agent`](https://github.com/aliencat0528/martech-trend-agent)
@@ -122,6 +122,13 @@ martech-job-radar/
 
 ## 版本歷史
 
+### v1.3.3 (2026-10-30)
+
+- **第 6 期快照，距上期 60 天**：248 筆（上期 274），Appier 82 → 67，縮減集中在 Enterprise Solution 業務線
+- **JR-010 的第二個實例出現**：meepShop 同一個網址在直抓與上游兩條路徑各算一次，
+  只因公司名對不起來。修法 (a) 公司別名表能同時修好 awoo 與 meepShop，**要不要動手待決**
+- Cake 對 QSearch 連兩次回 HTTP 429，本期標「未取得」
+
 ### v1.3.2 (2026-08-31)
 
 - **查出去重鍵的一個結構性漏洞，但先立不改**（← JR-010）：awoo 同時刊在 Cake 與 Yourator，
@@ -221,7 +228,7 @@ MIT License
 
 ## 相關文件
 
-- **待驗證與待操作事項（10 筆）** → `prepare.md` 文末。
+- **待驗證與待操作事項（15 筆）** → `prepare.md` 文末。
   第 9 筆是新收 15 家的四維補分；第 1 筆最重要：`import104.py` 從未對真實 104 頁面跑過
 - 架構圖、模組職責、跨期比較的前提 → `docs/ARCHITECTURE.md`
 - 版本變更明細 → `CHANGELOG.md`

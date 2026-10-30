@@ -4,6 +4,29 @@
 
 > 本檔於 v1.1.1 補建，v1.0.0 與 v1.1.0 的條目由 README 版本歷史與 git log 回填。
 
+## [1.3.3] - 2026-10-30
+
+### Added
+- **2026-10-30 第 6 期快照**：整併後 **248 筆**（Yourator 92、Greenhouse 67、
+  上游 Yourator 54、Cake 35，去重前 294）／37 家／口碑 9 家。
+  `data/2026-10-30/jobs_final.json`、`report/artifact-2026-10-30.html`。
+  **距上期 60 天**，跨期變化是兩個月的淨值（新增 73、消失 100）
+
+### Changed
+- **§01 全面改寫**：JR-010 的第二個實例（meepShop 同網址兩列）、Appier 82→67 且縮減集中在
+  Enterprise Solution 業務線、`Digital Advertising Data Analyst` 撐過滿月（「招募壓力」推測收掉）、
+  91APP 遭駭同期開放平台變 0 筆、口碑五期來第一次有分數變動
+- **§05 改引用上游第 9 期**（2026-10-30）的分析：91APP 遭駭與分類誤判、GEO 首見於新聞、增量測量
+- **§06 投遞優先序**：新增 `Data Analytics Consultant (Enterprise Solution)`；
+  `Digital Advertising Data Analyst` 改標「已成常駐缺、不再是急件」；TSE 線 2→3 個開口
+- §02 註記：已測口碑中位數 3→2（91APP 掉一格），漸強的代入值跟著少 1
+- 各章數字更新：248 筆；Appier 82→67（台北 52→40）；SHOPLINE 32→31；漸強 6→7；
+  開放平台 0 筆的公司 19→21 家；推薦 18→20 筆
+
+### Known Issues
+- QSearch 的 Cake 頁面連兩次回 HTTP 429，本期未取得（`prepare.md` 待驗證 #15）
+- JR-010 的修法仍未動手，248 筆裡至少 5 筆是重複計數（待驗證 #14）
+
 ## [1.3.2] - 2026-08-31
 
 ### Added
